@@ -1,0 +1,25 @@
+{
+  "schema_version": "truth_v1_decoy_audit_v1",
+  "fixture_id": "harako_truth_bulk_v1",
+  "fixture_scientific_manifest_sha256": "2302601bc962a5d9880e93fe3f56b813355bad56817b4141da2c510b195c42c6",
+  "fixture_preserved": true,
+  "old_formula": {
+    "numerator": "max(zero_expression_estimated_count_mass,total_estimated_count_mass_minus_transcript_origin_fragments)",
+    "denominator": "generated_decoy_origin_paired_fragments",
+    "unit": "estimated_count_mass_per_generated_paired_fragment",
+    "read_level_attribution": false,
+    "zero_expression_mass": "582.000",
+    "total_estimated_mass": "297582.000",
+    "transcript_origin_fragments": 297000,
+    "generated_decoy_fragments": 3000,
+    "reproduced_fraction": "0.194"
+  },
+  "identifiability_classes": {
+    "DECOY_UNIQUE": 1621,
+    "DECOY_DOMINANT": 767,
+    "DECOY_AMBIGUOUS": 30,
+    "DECOY_EXACT_TIE": 582
+  },
+  "scientific_digest": "4eb57c27f8c98eca8c363e1fd1151c65c7c80c920f97e630e2e38017372120ef",
+  "truth_v1_reclassification": "PARTIALLY_VALID_WITH_IDENTIFIABILITY_STRATIFICATION"
+}

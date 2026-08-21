@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "goal": "HARAKO_GPU_GUI_USABILITY_ACCESSIBILITY_AND_ACCEPTANCE_READINESS",
+  "verdict": "HARAKO_GPU_GUI_USABILITY_ACCESSIBILITY_ACCEPTANCE_READY_WITH_LIMITATIONS",
+  "branch": "test/gui-usability-accessibility-acceptance-readiness",
+  "start_commit": "ba3018640fc4f433733530cbebe2d56329461434",
+  "required_ancestor": "39c9bdfc594b2781f8fb2bd51277a49eb86bf6ca",
+  "python_version": "3.12.13",
+  "streamlit_version": "1.60.0",
+  "playwright_test_version": "1.62.0",
+  "qualification_levels": {
+    "AUTOMATED_FUNCTIONAL_UI": "PASS",
+    "DEVELOPER_MEDIATED_WALKTHROUGH": "PASS",
+    "EXTERNAL_USER_ACCEPTANCE": "PENDING_EXTERNAL_USERS"
+  },
+  "critical_scenarios": {
+    "human_quantification_recommended": "PASS_RETAINED_RUNTIME_AND_WALKTHROUGH",
+    "human_compare_both": "PASS_RETAINED_RUNTIME",
+    "human_bam_block_and_handoff": "PASS",
+    "small_reference_gpu_bam": "PASS_RETAINED_RUNTIME",
+    "failure_and_resume": "PASS_RETAINED_LIFECYCLE_CONTRACT",
+    "existing_run_reconnect": "PASS",
+    "english_ui": "PASS",
+    "keyboard_only": "PASS",
+    "zoom_and_narrow_viewport": "PASS"
+  },
+  "browser": {
+    "engine": "local Microsoft Edge",
+    "viewports_css_pixels": [1920, 1366, 1280, 900, 720, 600, 450],
+    "narrow_document_overflow_pixels": 0,
+    "visible_focus": true,
+    "keyboard_trap_observed": false,
+    "duplicate_navigation_links": 0,
+    "screenshots": ["GUI-WALK-01", "GUI-WALK-02", "GUI-WALK-03", "GUI-WALK-04", "GUI-WALK-05", "GUI-WALK-06"],
+    "screenshots_committed": false
+  },
+  "developer_walkthrough": {
+    "keyboard_project_to_review_seconds": 6.754,
+    "mouse_clicks": 0,
+    "moderator_interventions": 0,
+    "critical_misconceptions": 0,
+    "classification": "DEVELOPER_MEDIATED_NOT_EXTERNAL_ACCEPTANCE"
+  },
+  "issues": {
+    "unresolved_critical": 0,
+    "unresolved_major": 0,
+    "resolved_major": ["duplicate Streamlit automatic module navigation"],
+    "resolved_minor": ["technical hashes preceded the Results comprehension summary"],
+    "residual_minor": ["Streamlit-controlled assistive-technology behavior requires external evaluation"]
+  },
+  "polling": {
+    "default_seconds": 2,
+    "selectable_seconds": [2, 5],
+    "pause_available": true,
+    "manual_refresh_available": true,
+    "atomic_updates": 1000,
+    "corrupt_json": 0,
+    "state_regressions": 0
+  },
+  "responsiveness_seconds": {
+    "app_health": 0.536,
+    "capability": 0.014,
+    "status_poll": 0.024,
+    "matrix_preview": 0.019,
+    "report_load": 0.040,
+    "scan_100_files": 0.020,
+    "scan_1000_files": 0.187
+  },
+  "tests": {
+    "full_pytest_passed": 308,
+    "full_pytest_skipped": 1,
+    "explicit_browser_passed": 1,
+    "bilingual_missing": 0,
+    "placeholder_translations": 0
+  },
+  "external_acceptance": {
+    "status": "PENDING_EXTERNAL_USERS",
+    "participants": 0,
+    "participant_results_fabricated": false,
+    "thresholds_frozen": true
+  },
+  "formal_wcag_conformance_claim": false,
+  "telemetry_added": false
+}

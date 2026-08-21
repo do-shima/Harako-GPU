@@ -1,0 +1,164 @@
+{
+  "schema_version": 1,
+  "completion_classification": "HARAKO_GPU_MAPPING_BASED_SALMON_FALLBACK_REQUIRED",
+  "repository": {
+    "branch": "fix/transcriptome-bam-grouping-compatibility",
+    "start_commit": "7bd17838c3cca22ceffee39af25f59d11f2dfe4d",
+    "base": "origin/main",
+    "required_ancestor": "82656286f9803ce64ce0ce929fa9579fe3502bcb"
+  },
+  "backend": {
+    "pipeline": "nf-core/rnaseq",
+    "revision": "3.26.0",
+    "resolved_commit": "e7ca46272c8f9d5ceee3f71759f4ba551d3217a4",
+    "nextflow": "25.04.3",
+    "parabricks": "4.6.0-1",
+    "salmon": "1.10.3",
+    "salmon_threads": 6,
+    "samtools": "1.23.1"
+  },
+  "raw_topology": {
+    "run_count": 5,
+    "record_count": 73886,
+    "unique_qname_count": 32980,
+    "contiguous_qname_group_count_range": [33011, 33030],
+    "split_qname_count_range": [31, 50],
+    "maximum_groups_per_qname": 2,
+    "primary_count": 65960,
+    "secondary_count": 7926,
+    "supplementary_count": 0,
+    "unmapped_count": 0,
+    "paired_flag_count": 73886,
+    "distinct_byte_sha256_count": 5,
+    "distinct_record_order_checksum_count": 5,
+    "record_multiset_checksum": "2479446427d16065e5d37530b7065e47b08c1d3f16b76e06c7d4a7aca7b1ca3f",
+    "processed_fragments_equal_contiguous_groups": true,
+    "salmon_ready": false
+  },
+  "grouping_contract": {
+    "schema_version": 1,
+    "parameter_contract_version": 1,
+    "required": [
+      "all QNAME records contiguous",
+      "split QNAME count zero",
+      "record count and multiset preserved",
+      "primary secondary supplementary and unmapped counts preserved",
+      "paired flags and alignment tags preserved",
+      "non-order header and reference dictionary preserved",
+      "not target sorted",
+      "not coordinate sorted"
+    ],
+    "raw_artifact_role": "raw_transcriptome_bam",
+    "qualified_artifact_role": "salmon_ready_transcriptome_bam"
+  },
+  "candidate_a_samtools_collate": {
+    "image": "community.wave.seqera.io/library/htslib_samtools:1.23.1--5b6bb4ede7e612e5",
+    "image_digest": "sha256:6df2a43541963ac73551a79c48bf2dbd743b37ab8dd1bdec364de1d6bc8cd7f0",
+    "argv_contract": ["samtools", "collate", "--no-PG", "-@", "2", "-n", "64", "-T", "<fixed-prefix>", "-o", "<output>", "<input>"],
+    "fast_mode": false,
+    "same_input_repeat_count": 10,
+    "grouping_success_count": 10,
+    "split_qname_count": 0,
+    "record_multiset_preserved": true,
+    "flags_tags_reference_dictionary_preserved": true,
+    "order_declaration": "SO:unsorted GO:query",
+    "distinct_output_byte_sha256_count": 1,
+    "output_byte_sha256": "30ae28b88fec39d761fd55fa318d02b54ff34d921415fc9d8b595d405766c6e1",
+    "input_size_bytes": 4841175,
+    "output_size_bytes": 4369775,
+    "wall_seconds_range": [1.89, 2.18],
+    "wrapper_max_rss_kib": 25852,
+    "container_peak_ram_qualified": false,
+    "peak_temporary_storage_measured": false,
+    "grouping_contract": "PASS",
+    "numerical_contract": "FAIL",
+    "production_selected": false
+  },
+  "frozen_grouped_bam_salmon": {
+    "run_count": 10,
+    "processed_fragments": 32980,
+    "mapped_fragments": 32980,
+    "processed_and_mapped_exact": true,
+    "feature_identity_and_order_exact": true,
+    "total_num_reads_exact": true,
+    "zero_nonzero_transition_count": 0,
+    "num_reads_max_absolute_difference": 2.111,
+    "effective_length_max_absolute_difference": 0.030,
+    "transcript_tpm_ge_1_max_relative_difference": 0.008010407301083159,
+    "gene_tpm_ge_1_max_relative_difference": 0.008011147875907708,
+    "transcript_and_gene_spearman_minimum": 1.0,
+    "classification": "MATERIAL_VARIABILITY"
+  },
+  "fresh_parabricks_grouped_salmon": {
+    "parabricks_source_run_count": 5,
+    "grouping_success_count": 5,
+    "salmon_success_count": 5,
+    "record_multiset_preserved": true,
+    "distinct_group_order_checksum_count": 5,
+    "split_qname_count": 0,
+    "unique_qname_count": 32980,
+    "processed_fragments": 32980,
+    "mapped_fragments": 32980,
+    "processed_and_mapped_exact": true,
+    "total_num_reads_exact": false,
+    "num_reads_max_absolute_difference": 75.900,
+    "effective_length_max_absolute_difference": 2.398,
+    "transcript_tpm_ge_1_max_relative_difference": 3.990339704473616,
+    "gene_tpm_ge_1_max_relative_difference": 3.990337957412799,
+    "transcript_and_gene_spearman_minimum": 0.987542566218648,
+    "zero_nonzero_transition_count_across_pairs": 10,
+    "classification": "MATERIAL_VARIABILITY"
+  },
+  "candidate_b_sort_n_control": {
+    "grouping_contract": "PASS",
+    "production_allowed": false,
+    "reason": "queryname order is not a random-order guarantee and materially changes Salmon inference"
+  },
+  "candidate_c_mudskipper": {
+    "tag": "v0.1.0",
+    "peeled_commit": "59ba072bb5b4aff192557e1503fd82376562a2e2",
+    "release_binary_available": false,
+    "local_binary_available": false,
+    "local_rust_toolchain_available": false,
+    "status": "NOT_RUN",
+    "production_dependency_adopted": false
+  },
+  "native_star_oracle": {
+    "version": "2.7.2a",
+    "record_count": 73886,
+    "unique_qname_count": 32980,
+    "contiguous_qname_group_count": 32980,
+    "split_qname_count": 0,
+    "record_multiset_equal_to_parabricks": false,
+    "alignment_core_multiset_equal_to_parabricks": false,
+    "parabricks_alignment_core_checksum": "004688fdd5b0fcdab9a00f47eab8701c08c91ba2f27dbff3d8a47c1391ee1b37",
+    "native_alignment_core_checksum": "2d236dabf69f150818502811b399f19a2d747b4843aa8041980080b87fe6560e",
+    "direct_exact_quant_equivalence_applicable": false
+  },
+  "nf_core_patch": {
+    "created": false,
+    "reason": "no grouping candidate passed the scientific and numerical gates",
+    "existing_star_metrics_patch_changed": false
+  },
+  "actual_corrected_nf_core_run": "NOT_RUN_UNQUALIFIED_CANDIDATE",
+  "multiqc_regression": "NOT_RUN_UNQUALIFIED_CANDIDATE",
+  "resume_regression": "NOT_RUN_UNQUALIFIED_CANDIDATE",
+  "decision": {
+    "raw_alignment_mode_path": "FAIL_CLOSED",
+    "selected_grouping_strategy": null,
+    "fallback_goal": "HARAKO_GPU_INDEPENDENT_FASTQ_SALMON_QUANTIFICATION"
+  },
+  "qualified_scope": [
+    "small-fixture raw topology diagnosis",
+    "record-preserving samtools collate grouping behavior",
+    "versioned grouping and fragment-accounting contract"
+  ],
+  "unqualified_scope": [
+    "Parabricks transcriptome BAM to alignment-mode Salmon release path",
+    "mudskipper deterministic shuffle",
+    "nf-core grouping patch",
+    "corrected actual pipeline and resume",
+    "full-size data",
+    "production and diagnostic use"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "goal": "HARAKO_GPU_EXECUTION_ADAPTER_RUN_STATUS_RESUME_ARTIFACTS",
+  "classification": "HARAKO_GPU_EXECUTION_ADAPTER_RUN_STATUS_RESUME_ARTIFACTS_QUALIFIED",
+  "start_commit": "c34c6006433b48361ae97132af5f3732263737b8",
+  "pipeline_commit": "e7ca46272c8f9d5ceee3f71759f4ba551d3217a4",
+  "nextflow_version": "25.04.3",
+  "runtime": {
+    "recommended_only": {"run_id": "20260817T033359Z-088c586f", "state": "COMPLETED", "elapsed_seconds": 199, "attempts": 2, "validated_tasks_reused": 6, "resume_evidence": true},
+    "compatibility_only": {"run_id": "20260817T033744Z-46d30edf", "state": "COMPLETED", "wall_seconds": 103, "nextflow_completed": 39},
+    "compare_both": {"run_id": "20260817T033952Z-69ee2e22", "state": "COMPLETED", "wall_seconds": 108, "nextflow_completed": 39},
+    "lifecycle": {"first_failed": true, "resume_succeeded": true, "cached_tasks": 1},
+    "completed_nfcore_cache_regression": {"returncode": 0, "cached": 38, "completed": 1, "scientific_artifacts_unchanged": true},
+    "active_status": true,
+    "stale_lock_interruption_resume": true,
+    "deep_artifact_verification": true,
+    "support_bundle": {"qualified": true, "manifest_entries": 28, "biological_data_included": false, "absolute_user_home_present": false},
+    "truth_v2_six_sample_dual_profile": true,
+    "salmon_2_5_1_three_repeat_byte_identity": true,
+    "salmon_1_10_3_three_repeat_bounded_numerical": true
+  },
+  "process_identity": {"parabricks_present": true, "native_star_alignment": 0, "bam_salmon": 0, "nfcore_fastq_salmon": 0},
+  "limitations": ["small fixture only", "native Linux runtime not executed on this host", "no BAM deletion", "no GUI", "no DESeq2"]
+}

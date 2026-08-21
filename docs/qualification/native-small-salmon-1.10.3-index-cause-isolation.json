@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "contract_id": "native-small-salmon-1.10.3-index-cause-isolation-v1",
+  "classification": "HARAKO_GPU_SALMON_1103_INDEX_CAUSE_ISOLATION_QUANT_DIAGNOSTIC_UNSTABLE",
+  "preregistration_commit": "f03dfe8e8cbd7af4abff63d6bdfbc1b166d206ff",
+  "evidence_root": "external-evidence-redacted",
+  "fixed_identities": {
+    "genome_sha256": "df70973809f672aa58a414fef3f01e0e465bf26f10159174a616b0dee2d458e1",
+    "gtf_sha256": "913092a6524a7de2a95c3a1695d0dfc8143f047f4c9c9bc7b206719a7388242a",
+    "transcriptome_sha256": "4f6a6733546b01a96a71f13c63215d9b854dfb1873c2fa484ed69707d6443ac3",
+    "gentrome_sha256": "8e0b5df12173dfbb34ff64e3e3b6e028975a45678c0c6686f1a285c10f5cc802",
+    "decoys_sha256": "7fdca686b46a12886513de3f6166c815efcb501bbe0f6ecda4acd20c6d48fed7",
+    "tx2gene_sha256": "5a6168d1e9de15b8c8d3c7a05302906e346302b94ba827d87d151492e273c627",
+    "salmon_repo_digest": "sha256:f83ebb158845ee8138d793347f83b92c75e83c58dd8f4600c6fea2a2453ef08e",
+    "fastp_repo_digest": "sha256:d228dace961ab50d04471e02e7fd2c8f2b8cd5b1b37be2d4039e2db64fcfae45"
+  },
+  "environment": {
+    "uid": 1000,
+    "gid": 1000,
+    "LC_ALL": "C",
+    "LANG": "C",
+    "TZ": "UTC",
+    "source_date_epoch_set": false,
+    "builds_sequential": true
+  },
+  "builds": {
+    "S1": {"threads": 1, "exit_code": 0, "file_count": 15, "full_manifest_sha256": "1af47e3cba6c7fd5e77511024c7b0b3286c65cbdd79693f93166575ed14debd1", "runtime_payload_manifest_sha256": "df4c55ff3c2ad6e87e9f31165fe576c0cd787c9a9aa36da2e72de4ada67066ed"},
+    "S2": {"threads": 1, "exit_code": 0, "file_count": 15, "full_manifest_sha256": "779ebd242e820cbe1941dd379f08e19fa6040b9643bd5a803b3d1316404fa50e", "runtime_payload_manifest_sha256": "e9ddca9baff975d9cbe826a741e3f4fa75c37fd5adf37434724a2ac8923189f0"},
+    "S3": {"threads": 1, "exit_code": 0, "file_count": 15, "full_manifest_sha256": "e031aad74c63a30ae3cd8b89b46ec074b2286371bf3a22abac40b689b7a586ed", "runtime_payload_manifest_sha256": "a76609fcbc19af0b9bf0dcf43c6904b0274d23a33a1580cbe429f23a3312b99a"},
+    "P1": {"threads": 6, "exit_code": 0, "file_count": 15, "full_manifest_sha256": "39100f94b43f9853613e45507fc5b7fc1e2dce8ca790fbe87c2576f74b3524d9", "runtime_payload_manifest_sha256": "bfb5f865540aa738627826e05401eea3d2382e10deb79f1f314963db9c9ac55a"},
+    "P2": {"threads": 6, "exit_code": 0, "file_count": 15, "full_manifest_sha256": "85955df0d43a3c1b860815555b941d2dd173d4124c56fa8b750465272ec2d6fc", "runtime_payload_manifest_sha256": "1c048c90e49a35a5fedd906d003c6784f7a6a0f0c342e30ccf4d28e839995ae4"},
+    "P3": {"threads": 6, "exit_code": 0, "file_count": 15, "full_manifest_sha256": "696d2efc9c86e3d79aaaa0cf7da22a003d9d38f5afc51d4564f9b7d4c3da7fc7", "runtime_payload_manifest_sha256": "ffb75935d5744c354ae001dff29f75f1c6c586adf1d7f4e8cc6d51c85112708e"}
+  },
+  "comparison": {
+    "serial_full_identical": false,
+    "serial_runtime_payload_identical": false,
+    "parallel_full_identical": false,
+    "parallel_runtime_payload_identical": false,
+    "different_in_every_within_arm_pair": ["ctable.bin", "pos.bin", "pre_indexing.log", "ref_indexing.log", "seq.bin"],
+    "runtime_payload_exclusions": ["pre_indexing.log", "ref_indexing.log"],
+    "additional_exclusions_applied": false,
+    "binary_files_excluded": false,
+    "runtime_payload_log_removal_load_exit_code": 0
+  },
+  "representative_bounded_binary_differences": {
+    "S1_S2": {
+      "ctable.bin": {"size_bytes": 18098, "differing_bytes": 783},
+      "pos.bin": {"size_bytes": 501256, "differing_bytes": 126276},
+      "seq.bin": {"size_bytes": 62016, "differing_bytes": 18408}
+    },
+    "P1_P2": {
+      "ctable.bin": {"size_bytes": 18098, "differing_bytes": 525},
+      "pos.bin": {"size_bytes": 501256, "differing_bytes": 129407},
+      "seq.bin": {"size_bytes": 62016, "differing_bytes": 17492}
+    }
+  },
+  "source_audit": {
+    "salmon_commit": "a2f6912b3f9f9af91e3a4b0d74adcb3bdc4c9a32",
+    "pufferfish_commit": "484243eb6f72e0868389b4edc7fdb8b8f29f92aa",
+    "pufferfish_archive_sha256": "52b6699de0d33814b73edb3455175568c2330d8014be017dce7b564e54134860",
+    "archive_verified": true,
+    "container_source_commit_proven": false,
+    "thread_count_independent_randomized_hash_seed_present": true,
+    "random_seed_source": "/dev/urandom with time()/clock() fallback",
+    "definitive_per_byte_cause_claimed": false
+  },
+  "processed_fastq": {
+    "fragments": 47605,
+    "r1_sha256": "a39a425c9c0e652bc0df0a5a59d172a073ebc78f9d741cb65bad7f4cedcad625",
+    "r2_sha256": "75fcc5e66900610fbf3777840f991c27611a0210b21565279cb44ec604e91143",
+    "read_only": true
+  },
+  "quantification": {
+    "threads": 1,
+    "repeats_per_index": 2,
+    "all_exit_zero": true,
+    "all_structurally_valid": true,
+    "num_processed": 47605,
+    "num_mapped": 37586,
+    "percent_mapped": 78.9538913979624,
+    "within_index_repeat_identical": {"S1": false, "S2": false, "S3": false, "P1": false, "P2": false, "P3": false},
+    "across_index_functional_identical": false,
+    "functional_divergence_classifiable": false
+  },
+  "promotion_performed": false,
+  "product_plan_or_run_performed": false,
+  "semantic_equivalence_is_qualification_gate": false,
+  "next_recommendation": "Reject native-built Salmon 1.10.3 index adoption for this route under this contract; preserve all evidence and do not tune parameters."
+}

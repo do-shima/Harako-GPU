@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "goal": "HARAKO_GPU_REFERENCE_AWARE_BAM_OPTIONAL_AND_HUMAN_QUANTIFICATION",
+  "classification": "HARAKO_GPU_REFERENCE_AWARE_BAM_OPTIONAL_AND_HUMAN_QUANTIFICATION_QUALIFIED",
+  "start_commit": "df451285d27713f183770fd5484e1cd019794861",
+  "host_profile_id": "windows_wsl2_rtx3090_ram64_v1",
+  "capability_matrix_version": "reference-aware-capability-v1",
+  "small_reference_gpu_bam": "AVAILABLE_QUALIFIED",
+  "human_one_pass_gpu_bam": "UNSUPPORTED_HOST_MEMORY",
+  "human_two_pass_gpu_bam": "UNSUPPORTED_HOST_MEMORY",
+  "human_discard_after_validation": "UNSUPPORTED_HOST_MEMORY",
+  "human_quantification_recommended": "AVAILABLE_QUALIFIED",
+  "human_quantification_compare_both": "AVAILABLE_WITH_LIMITATION",
+  "quantification_route": {"id": "fastq_quantification_only", "gpu_used": false, "bam_generated": false, "fastp_contract": "harako-fastp-1.0.1-fixed-v1", "star_comparator": "NOT_APPLICABLE"},
+  "runtime_report": "human-quantification-only-capacity.json",
+  "runtime_levels_completed": ["Q1", "Q2", "Q3", "Q4", "Q5"],
+  "tests": {"full_pytest": "275 passed", "python_compile": "PASS", "cli_smoke": "PASS", "json_parse": "PASS", "git_diff_check": "PASS"},
+  "high_memory_handoff": "full-human-gpu-bam-high-memory-v1",
+  "historical_failures_preserved": true,
+  "silent_fallback": false,
+  "scope": ["internal research use", "non-diagnostic", "non-clinical", "CPU Salmon expression quantification"],
+  "excluded": ["human BAM on current host", "CPU STAR fallback", "GUI", "DESeq2", "enrichment"]
+}

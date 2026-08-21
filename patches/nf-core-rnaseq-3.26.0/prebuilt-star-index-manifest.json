@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "patch_id": "nfcore-rnaseq-3.26.0-parabricks-prebuilt-star-index-v1",
+  "resolved_commit": "e7ca46272c8f9d5ceee3f71759f4ba551d3217a4",
+  "patch_sha256": "a6c7000b100b9d4d6f064caec1a9aea7a287dd57d20c23a7e8465f9636bb04f0",
+  "targets": [
+    {
+      "path": "subworkflows/local/prepare_genome/main.nf",
+      "source_sha256": "e565b2e67e460cc353361b927067db81ae14169307003a261fa27e6900c9645f",
+      "patched_sha256": "31d508d96dafc07b241cc7c470b31a46800643640ae486c48897a7d6b50d74be"
+    }
+  ]
+}

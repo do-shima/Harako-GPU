@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "classification": "HARAKO_GPU_EXTERNAL_TRUTH_FAILURE_CAUSES_MIXED",
+  "start_commit": "a5c7113b5eb5d038ab9eb63d0898ba0f7e7a4b69",
+  "required_ancestor": "549136af6ec2dbdfa1dfbcb3d765b4080ae19d39",
+  "preserved": {
+    "external_preregistration_v1_sha256": "5ba814f25ce1bb1ab872a3649761f87bcb593af7797458b378933d8015c22077",
+    "external_preregistration_v2_sha256": "d65570ad5d47bb99ad185e792ef1e1c9616016262189b1e24e84e43c59124794",
+    "external_v2_result_sha256": "e89cf368d2f90d475fc0325469ef803ce04cfd5041fac56a9a6aa800b094a8bc",
+    "original_verdict": "HARAKO_GPU_SALMON_2_5_1_EXTERNAL_TRUTH_FAILED",
+    "original_thresholds_changed": false
+  },
+  "sirv": {
+    "gate_scale": "INCOMPARABLE_METRICS",
+    "partition_valid": true,
+    "singleton_groups": 66,
+    "multi_transcript_groups": 1,
+    "sirv502": "PARTIAL_CONTRIBUTOR",
+    "reference_competition": "NOT_SUPPORTED",
+    "quantifier_specificity": "SALMON_1X_AND_2X_SHARED",
+    "cause": "METRIC_CONTRACT_INVALID_FOR_ALGORITHMIC_REJECTION"
+  },
+  "ercc": {
+    "holdout_preregistration_sha256": "baac95911880339535178da9d148344911438a58f51597a3ba4b4ca5febb0cf9",
+    "heldout_mix2_aggregate_fractions": [0.0014242176226065605, 0.0013373940677966101],
+    "named_mt_training_human_unique": "432/434",
+    "named_mt_holdout_human_unique": "441/442",
+    "named_mt_cause": "EXTERNAL_SAMPLE_HUMAN_CONTAMINATION",
+    "aggregate_cause": "INCONCLUSIVE_DUE_TO_FROZEN_REFERENCE_SCOPE",
+    "salmon_specific_defect_confirmed": false
+  },
+  "candidate": {
+    "version": "2.5.1",
+    "image_id": "sha256:e6e64f39a479458ef6f007757498321ee5a3ef8a2227ff2af414fbe3c36e6f7f",
+    "default_changed": false,
+    "adoption_decision_performed": false
+  },
+  "runtime_artifacts_committed": false,
+  "raw_read_sequences_committed": false
+}

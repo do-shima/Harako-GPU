@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "preregistration_id": "ercc_crossmapping_holdout_v1",
+  "frozen_before_holdout_download_or_classification": true,
+  "freeze_date": "2026-08-17",
+  "parent_external_preregistration_v2_sha256": "d65570ad5d47bb99ad185e792ef1e1c9616016262189b1e24e84e43c59124794",
+  "parent_external_result_sha256": "e89cf368d2f90d475fc0325469ef803ce04cfd5041fac56a9a6aa800b094a8bc",
+  "training": {
+    "mix1": ["SRR896983", "SRR896985"],
+    "mix2": ["SRR897015", "SRR897017"]
+  },
+  "selection_rule": "same SEQC Sample E/F, BGI, Illumina HiSeq 2000, library 1, paired 100 bp, flowcell AC0AYTACXX; exclude training runs; select lexicographically first two remaining run accessions per mix",
+  "holdout": {
+    "mix1": [
+      {
+        "run": "SRR896987",
+        "experiment": "SRX302454",
+        "gsm": "GSM1157121",
+        "lane": "L03",
+        "r1_md5": "67638e4bdc9cc0e6910886d3d8bc285d",
+        "r2_md5": "121d138f4d66dbba9bf7ff562575bf79"
+      },
+      {
+        "run": "SRR896989",
+        "experiment": "SRX302456",
+        "gsm": "GSM1157123",
+        "lane": "L04",
+        "r1_md5": "1584a2480aa5247891769d3808669c3a",
+        "r2_md5": "2514816688d6ee3d4c81be8067e15270"
+      }
+    ],
+    "mix2": [
+      {
+        "run": "SRR897019",
+        "experiment": "SRX302486",
+        "gsm": "GSM1157153",
+        "lane": "L03",
+        "r1_md5": "f22813c47b20b0498ad0a4de06f46002",
+        "r2_md5": "46a222a4413f1558a4e19be99dd1c57c"
+      },
+      {
+        "run": "SRR897021",
+        "experiment": "SRX302488",
+        "gsm": "GSM1157155",
+        "lane": "L04",
+        "r1_md5": "6bf1257852cd1a9f3246f25eeb9c346f",
+        "r2_md5": "803ad1ceafa271d7aa72d4df90764a79"
+      }
+    ]
+  },
+  "classification_contract": {
+    "reference_universe": ["official ERCC92", "GRCh38 mitochondrial chromosome", "observed mitochondrial transcripts", "Illumina adapter controls"],
+    "exact_layer": "paired exact substring and reverse-complement evidence plus 31-mer uniqueness",
+    "aligner": {
+      "name": "minimap2",
+      "version": "2.28-r1209",
+      "image": "quay.io/biocontainers/minimap2:2.28--he4a0461_3",
+      "manifest_digest": "sha256:0c397895db3b494baa4f78de7110d516a1a57707d9c7df456634220bffd965ba",
+      "argv_profile": ["minimap2", "-x", "sr", "-a", "--secondary=yes", "-t", "2", "<diagnostic-reference>", "<R1>", "<R2>"]
+    },
+    "pair_score": "sum of best AS tags for both mates within each reference class",
+    "unique_score_margin_min": 10,
+    "exact_tie_score_margin": 0,
+    "ambiguous_absolute_score_margin_max": 9,
+    "low_complexity": "either mate has Shannon entropy <=1.0 bits/base or one base occupies >=80 percent",
+    "adapter": "either mate contains an exact >=12-base prefix from the fixed Illumina universal adapter controls",
+    "classes": ["HUMAN_MT_UNIQUE", "ERCC_UNIQUE_MISASSIGNED", "EXACT_TIE", "AMBIGUOUS", "LOW_COMPLEXITY_OR_ADAPTER", "UNRESOLVED"]
+  },
+  "fixed_metrics": {
+    "sample_purity_rate": "HUMAN_MT_UNIQUE / all processed fragments",
+    "algorithmic_misassignment_rate": "ERCC_UNIQUE_MISASSIGNED / ERCC-identifiable processed fragments",
+    "ambiguous_rate": "(EXACT_TIE + AMBIGUOUS) / all processed fragments"
+  },
+  "forbidden_after_freeze": ["holdout lane substitution", "classification threshold change", "failed-run exclusion", "original 0.10 percent threshold change", "original verdict rewrite"]
+}

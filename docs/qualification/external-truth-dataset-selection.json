@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "selection_frozen_before_quantification": true,
+  "sirv": {
+    "run_accession": "SRR3497201",
+    "experiment_accession": "SRX1752558",
+    "biosample": "SAMN04939713",
+    "study": "PRJNA312485",
+    "title": "SIRVs: Spike-In RNA Variants as External Isoform Controls in RNA-Sequencing",
+    "layout": "PAIRED",
+    "platform": "Illumina HiSeq 2500",
+    "selection": "PolyA",
+    "library_protocol": "TruSeq Stranded mRNA HT",
+    "batch": "216652830",
+    "mix": "E0",
+    "paired_fragments": 1297881,
+    "singleton_spots": 98365,
+    "r1_sha256": "76791beaa519ac48b3e28a4745d2ffca7d9ce05a4bf4021ec00c901520312376",
+    "r2_sha256": "17c5ad558ab944455d7be1dd65e5503de00655e1ffebb97d95632813f920b93d"
+  },
+  "ercc": {
+    "project": "PRJNA208369",
+    "super_series": "GSE47792",
+    "data_series": "GSE47774",
+    "sample_e": "Ambion ERCC Spike-In Control Mix 1",
+    "sample_f": "Ambion ERCC Spike-In Control Mix 2",
+    "site": "BGI",
+    "platform": "Illumina HiSeq 2000",
+    "library_id": "1",
+    "flowcell": "AC0AYTACXX",
+    "read_length": 100,
+    "layout": "PAIRED",
+    "selected": [
+      {"mix": "Mix1", "lane": "L01", "gsm": "GSM1157117", "experiment": "SRX302450", "run": "SRR896983"},
+      {"mix": "Mix1", "lane": "L02", "gsm": "GSM1157119", "experiment": "SRX302452", "run": "SRR896985"},
+      {"mix": "Mix2", "lane": "L01", "gsm": "GSM1157149", "experiment": "SRX302482", "run": "SRR897015"},
+      {"mix": "Mix2", "lane": "L02", "gsm": "GSM1157151", "experiment": "SRX302484", "run": "SRR897017"}
+    ],
+    "fallback_used": false,
+    "selection_result_used": false
+  }
+}

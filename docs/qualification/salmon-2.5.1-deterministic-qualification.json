@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "classification": "HARAKO_GPU_SALMON_2_5_1_CANDIDATE_REJECTED",
+  "historical_classification_preserved": true,
+  "remediation_reclassification": "HARAKO_GPU_SALMON_2_5_1_TECHNICALLY_QUALIFIED_EXTERNAL_TRUTH_REQUIRED",
+  "remediation_report": "expression-truth-decoy-accounting-remediation.json",
+  "start_commit": "60d3f8a5b393f2c5312f0512eae4674b26800840",
+  "candidate": {
+    "version": "2.5.1",
+    "implementation": "rust",
+    "profile_status": "qualification_only",
+    "source_commit": "c360459bbf16e649a5c10c097e59f3c72e6b2e3c",
+    "binary_sha256": "6ad2a01b2022092f88f4c95601d19751e594dd3aa7be77ee7c11c1abf4842cbe",
+    "source_archive_sha256": "6adde21a2baa6d0c3b8725e3180f7228b2c8a913668a81130990e6fb4dbd6036",
+    "image_id": "sha256:e6e64f39a479458ef6f007757498321ee5a3ef8a2227ff2af414fbe3c36e6f7f",
+    "index_id": "60a4f66452d40b59c06125219a4a0f6894a9d6f5908d58af39731cd821152751"
+  },
+  "public_fixture": {
+    "num_processed": 47605,
+    "num_mapped": 37397,
+    "mapping_percent": 78.55687427791199,
+    "six_thread_repeats": 50,
+    "quant_sf_sha256": "44020ba1bc41c8d395fb41be44796c9e0877a42153101845e6060a3a3fd5c31c",
+    "gene_quant_sha256": "1afc1dec894c028120da4f47ebaf19e0b5d93e1a010e215a4d0dc8f72429f332",
+    "exact_gate": "PASS"
+  },
+  "thread_matrix": {
+    "threads": [1, 2, 4, 6],
+    "runs_per_thread": 5,
+    "cross_thread_byte_identity": "PASS"
+  },
+  "truth": {
+    "fixture_id": "harako_truth_bulk_v1",
+    "samples": 6,
+    "fragments_per_sample": 50000,
+    "fragment_accounting": "PASS",
+    "estimated_mass_accounting": "PASS",
+    "unique_transcript_pearson": 1.0,
+    "unique_transcript_spearman": 1.0,
+    "unique_transcript_median_ape": 0.0,
+    "unique_transcript_p95_ape": 0.0,
+    "gene_pearson": 1.0,
+    "gene_spearman": 1.0,
+    "gene_median_ape": 0.0,
+    "gene_p95_ape": 0.0,
+    "zero_false_positive_mass_fraction": 0.0019557634534346836,
+    "decoy_leakage_fraction": 0.194,
+    "decoy_leakage_ceiling": 0.01,
+    "fold_change_direction_accuracy": 1.0,
+    "fold_change_rmse": 0.0,
+    "fold_change_spearman": 1.0,
+    "accuracy_gate": "FAIL"
+  },
+  "version_truth_comparison": {
+    "salmon_1_10_3_decoy_leakage_fraction": 0.29933333333333334,
+    "salmon_1_12_1_decoy_leakage_fraction": 0.194,
+    "salmon_2_5_1_decoy_leakage_fraction": 0.194
+  },
+  "conditional_runtime": {
+    "online_diagnostic": "NOT_RUN_NOT_REQUIRED",
+    "nfcore_integration": "NOT_RUN_TRUTH_GATE_FAILED",
+    "five_fresh_pipelines": "NOT_RUN_TRUTH_GATE_FAILED",
+    "tximport": "NOT_RUN_TRUTH_GATE_FAILED",
+    "multiqc": "NOT_RUN_TRUTH_GATE_FAILED",
+    "resume": "NOT_RUN_TRUTH_GATE_FAILED"
+  },
+  "default_salmon_changed": false,
+  "candidate_image_pushed": false,
+  "runtime_biological_artifacts_committed": false,
+  "full_size_dataset_run": false
+}

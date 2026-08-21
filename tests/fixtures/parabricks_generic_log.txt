@@ -1,0 +1,5 @@
+[PB Info 2026-Jan-01 00:00:00] Parabricks accelerated Genomics Pipeline
+[PB Info 2026-Jan-01 00:00:00] Version 4.6.0-1
+[PB Info 2026-Jan-01 00:00:01] started STAR run
+[PB Info 2026-Jan-01 00:00:02] cudaSuccess
+[PB Info 2026-Jan-01 00:00:03] finished successfully

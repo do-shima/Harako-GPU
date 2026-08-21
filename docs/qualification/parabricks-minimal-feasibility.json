@@ -1,0 +1,254 @@
+{
+  "schema_version": 1,
+  "completion_classification": "HARAKO_GPU_PARABRICKS_MINIMAL_FEASIBILITY_QUALIFIED",
+  "original_completion_classification": "HARAKO_GPU_PARABRICKS_MINIMAL_FEASIBILITY_QUALIFIED_WITH_DOWNSTREAM_LIMITATION",
+  "qualified_scope": "one pinned paired-end nf-core test fixture only",
+  "completed_at_utc": "2026-08-15T17:18:12Z",
+  "repository": {
+    "branch": "feat/parabricks-minimal-feasibility",
+    "start_commit": "46ee9f8214127bddf3967cd2651b0be864e345e6",
+    "origin_main_at_start": "46ee9f8214127bddf3967cd2651b0be864e345e6"
+  },
+  "runtime": {
+    "host_os": "Windows 11",
+    "execution_context": "WSL2 Ubuntu 22.04",
+    "wsl_kernel": "6.18.33.2-microsoft-standard-WSL2",
+    "logical_cpu_count": 12,
+    "wsl_total_ram_bytes": 50514718720,
+    "wsl_work_root_free_bytes": 156145958912,
+    "docker_client_version": "29.7.2",
+    "docker_server_version": "29.7.2",
+    "docker_server_os": "linux",
+    "java_version": "17.0.19",
+    "nextflow_version": "25.04.3",
+    "doctor_status": "PREFLIGHT_READY_LOW_MEMORY_CANDIDATE",
+    "doctor_warnings": [
+      "NVIDIA_SMI_PATH_NOT_EXPORTED",
+      "WSL_CPU_THREADS_BELOW_CANDIDATE",
+      "PARABRICKS_HOST_MEMORY_BELOW_RECOMMENDED",
+      "NF_CORE_CLI_UNAVAILABLE"
+    ],
+    "gpu": {
+      "index": 0,
+      "uuid": "GPU-729a533c-e203-acc9-47b0-27ac387bc151",
+      "name": "NVIDIA GeForce RTX 3090",
+      "total_vram_mib": 24576,
+      "driver_version": "591.86"
+    }
+  },
+  "fixtures": [
+    {
+      "role": "reference_fasta",
+      "repository": "nf-core/test-datasets",
+      "commit": "626c8fab639062eade4b10747e919341cbf9b41a",
+      "source_path": "reference/genome.fasta",
+      "downloaded_at_utc": "2026-08-15T16:55:46.806Z",
+      "size_bytes": 234058,
+      "sha256": "df70973809f672aa58a414fef3f01e0e465bf26f10159174a616b0dee2d458e1"
+    },
+    {
+      "role": "reference_gtf",
+      "repository": "nf-core/test-datasets",
+      "commit": "626c8fab639062eade4b10747e919341cbf9b41a",
+      "source_path": "reference/genes_with_empty_tid.gtf.gz",
+      "downloaded_at_utc": "2026-08-15T16:55:47.194Z",
+      "size_bytes": 10466,
+      "sha256": "913092a6524a7de2a95c3a1695d0dfc8143f047f4c9c9bc7b206719a7388242a"
+    },
+    {
+      "role": "transcript_fasta",
+      "repository": "nf-core/test-datasets",
+      "commit": "626c8fab639062eade4b10747e919341cbf9b41a",
+      "source_path": "reference/transcriptome.fasta",
+      "downloaded_at_utc": "2026-08-15T16:55:47.579Z",
+      "size_bytes": 155606,
+      "sha256": "4f6a6733546b01a96a71f13c63215d9b854dfb1873c2fa484ed69707d6443ac3"
+    },
+    {
+      "role": "fastq_r1",
+      "repository": "nf-core/test-datasets",
+      "commit": "e07c1b158d1c4c9ea7978959d31e651098bec581",
+      "source_path": "testdata/GSE110004/SRR6357070_1.fastq.gz",
+      "downloaded_at_utc": "2026-08-15T16:55:47.945Z",
+      "size_bytes": 2239317,
+      "records": 50000,
+      "sha256": "3f50541fa9cf2bedc87e7b682ada0fccfdfcd6d27b9bb81f17be230ff140ebe7"
+    },
+    {
+      "role": "fastq_r2",
+      "repository": "nf-core/test-datasets",
+      "commit": "e07c1b158d1c4c9ea7978959d31e651098bec581",
+      "source_path": "testdata/GSE110004/SRR6357070_2.fastq.gz",
+      "downloaded_at_utc": "2026-08-15T16:55:48.307Z",
+      "size_bytes": 2232117,
+      "records": 50000,
+      "sha256": "8590e1e01e568fba256aa7dced40519604cbb111ee44ab106a3dcb869660aaf4"
+    }
+  ],
+  "pipeline": {
+    "name": "nf-core/rnaseq",
+    "revision": "3.26.0",
+    "resolved_commit": "e7ca46272c8f9d5ceee3f71759f4ba551d3217a4",
+    "nf_schema_plugin": "2.5.1",
+    "nextflow": "25.04.3",
+    "profile": "docker",
+    "aligner": "star_salmon",
+    "star_index_version": "2.7.2a",
+    "star_index_container": {
+      "reference": "community.wave.seqera.io/library/htslib_samtools_star_gawk:4de2f983041d42e6",
+      "digest": "sha256:f60e2def4ddd483acd575579f3596e4f9c82b7b1b85a3caa5ebceb05194efd08"
+    },
+    "parabricks_container": {
+      "reference": "nvcr.io/nvidia/clara/clara-parabricks:4.6.0-1",
+      "digest": "sha256:d0761eb4b9921bc046c53520287316d545eb79feaeb8f22387e9bb5734650447",
+      "version": "4.6.0-1",
+      "size_bytes": 2745112480,
+      "preexisting_before_run": true
+    },
+    "samtools_container": {
+      "reference": "community.wave.seqera.io/library/htslib_samtools:1.23.1--5b6bb4ede7e612e5",
+      "digest": "sha256:6df2a43541963ac73551a79c48bf2dbd743b37ab8dd1bdec364de1d6bc8cd7f0",
+      "version": "1.23.1"
+    },
+    "unique_task_image_content_bytes": 5664864252,
+    "newly_resolved_task_image_content_bytes": 2919751772
+  },
+  "harako_plan": {
+    "schema_version": 1,
+    "plan_id": "bc138670a8511f2257780eec90022915942a04456bbeb03ecf4fcfceacf24a46",
+    "bam_retention": "keep",
+    "memory_mode": "low_memory_candidate",
+    "qualification_debug_mode": "x3",
+    "use_parabricks_star": true,
+    "skip_markduplicates": true,
+    "extra_star_align_args": "--low-memory --x3",
+    "save_reference": true,
+    "save_align_intermeds": true,
+    "skip_pseudo_alignment": true,
+    "gpu_selection": "0",
+    "resource_limits": {"cpus": 8, "memory": "30.GB", "time": "2.h"},
+    "arbitrary_parameters": false,
+    "shell_eval_used": false
+  },
+  "orchestration_precheck": {
+    "stub_status": "PASS",
+    "stub_duration_seconds": 86,
+    "parabricks_alignment_selected": true,
+    "native_star_alignment_selected": false,
+    "initial_scheduler_failure": "72 GB declared index memory exceeded 47 GiB WSL-visible RAM",
+    "resolution": "fixed debug-only nf-core test_gpu resourceLimits"
+  },
+  "actual_run": {
+    "status": "TERMINAL_SUCCESS_WITH_SAMPLE_QC_WARNING",
+    "started_at_utc": "2026-08-15T17:10:31Z",
+    "ended_at_utc": "2026-08-15T17:15:13Z",
+    "wall_time_seconds": 282,
+    "nextflow_reported_duration": "4m 38s",
+    "succeeded_tasks": 25,
+    "failed_tasks": 0,
+    "star_index_task_seconds": 0.494,
+    "parabricks_task_seconds": 40.7,
+    "parabricks_internal_star_seconds": 21,
+    "alignment_salmon_task_seconds": 1.0,
+    "multiqc_task_seconds": 8.9,
+    "execution_identity": {
+      "trace_process_present": true,
+      "container_4_6_0_1": true,
+      "pbrun_rna_fq2bam": true,
+      "low_memory": true,
+      "no_markdups": true,
+      "native_star_align_process_count": 0,
+      "gpu_usage_increase": true,
+      "parabricks_version_log": true
+    }
+  },
+  "gpu_and_resources": {
+    "monitor_interval_seconds": 1.0,
+    "run_samples": 267,
+    "baseline_vram_mib": 1240,
+    "parabricks_interval_samples": 39,
+    "parabricks_peak_vram_mib": 9619,
+    "parabricks_median_gpu_utilization_percent": 5,
+    "parabricks_maximum_gpu_utilization_percent": 81,
+    "parabricks_peak_power_w": 209.62,
+    "maximum_temperature_c": 54,
+    "peak_wsl_memory_used_bytes": 19854188544,
+    "peak_cpu_utilization_percent": 98.971,
+    "nextflow_trace_parabricks_peak_rss": "15.3 GB"
+  },
+  "storage": {
+    "input_fastq_bytes": 4471434,
+    "work_root_bytes": 74454198,
+    "result_root_bytes": 40156697,
+    "output_bam_bytes": 3347850,
+    "output_bai_bytes": 1488
+  },
+  "bam_validation": {
+    "status": "PASS",
+    "artifact": "star_salmon/WT_REP1.sorted.bam",
+    "index": "star_salmon/WT_REP1.sorted.bam.bai",
+    "quickcheck": "PASS",
+    "sort_order": "coordinate",
+    "sq": [{"name": "I", "length": 230218}],
+    "reference_contigs_match": true,
+    "sample_identity": "WT_REP1",
+    "read_group_present": true,
+    "total_records": 92113,
+    "primary_records": 88853,
+    "mapped_records": 92113,
+    "truncated": false,
+    "bam_sha256": "33372ca6b549b77e862cbb6a0845159170062330f74da24d4bde93931e8202d5",
+    "bai_sha256": "f5fa435d54c1d44ecbe2f1c43666eea9d819711ddcd4f078c2c052dd0bbbc6e6"
+  },
+  "artifacts": {
+    "alignment_logs": "PASS",
+    "splice_junctions": "PASS",
+    "samtools_metrics": "PASS",
+    "transcriptome_bam": "PASS",
+    "salmon_quant": {"status": "PASS", "transcripts": 124, "alignment_mode_processed": 33017, "alignment_mode_mapped": 33017},
+    "gene_counts": "PASS",
+    "gene_tpm": "PASS",
+    "transcript_counts": "PASS",
+    "transcript_tpm": "PASS",
+    "multiqc": {"status": "PASS_WITH_STAR_METRIC_LIMITATION", "report_sha256": "537c9244a87ea5bd62acd90bb00e5dd189b02fe610314ef8f95e15bbc6e24e65"},
+    "nextflow_report": "PASS",
+    "nextflow_timeline": "PASS",
+    "nextflow_trace": "PASS",
+    "nextflow_dag": "PASS",
+    "software_versions": "PASS"
+  },
+  "resume": {
+    "status": "PASS_WITH_REPORT_REGENERATION",
+    "started_at_utc": "2026-08-15T17:17:42Z",
+    "ended_at_utc": "2026-08-15T17:18:12Z",
+    "wall_time_seconds": 30.6,
+    "task_count": 25,
+    "cached_tasks": 24,
+    "completed_tasks": 1,
+    "parabricks_index": "CACHED",
+    "parabricks_alignment": "CACHED",
+    "bam_sort_and_index": "CACHED",
+    "salmon_and_tximport": "CACHED",
+    "multiqc": "REGENERATED_FOR_RUN_REPORT",
+    "bam_regenerated": false,
+    "plan_reference_input_checksums_unchanged": true,
+    "resume_peak_vram_mib": 1240,
+    "resume_maximum_gpu_utilization_percent": 9
+  },
+  "compatibility_followup": {
+    "status": "PASS",
+    "classification": "HARAKO_GPU_PARABRICKS_STAR_METRICS_COMPATIBILITY_QUALIFIED",
+    "report": "parabricks-star-metrics-compatibility.json",
+    "strategy": "separate Parabricks generic log and use genuine second-pass STAR Log.final.out",
+    "star_unique_mapped_percent": 87.33,
+    "false_mapping_warning_resolved": true,
+    "bam_record_checksum_unchanged": true,
+    "gene_and_transcript_counts_unchanged": true,
+    "actual_run_and_resume": "PASS"
+  },
+  "limitations": [
+    "The original run's mislabelled Parabricks log and false mapping warning are historical evidence; the pinned follow-up resolves them only for the qualified 3.26.0/4.6.0-1 compatibility path.",
+    "The resume cached 24 computational tasks but regenerated the run-specific MultiQC aggregation task.",
+    "No full-size reference, performance qualification, scientific equivalence, CPU comparison, mark-duplicates qualification, or production readiness is claimed."
+  ]
+}

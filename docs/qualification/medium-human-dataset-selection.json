@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "selection_id": "medium-human-err188044-v1",
+  "status": "PREREGISTERED_BEFORE_ACQUISITION",
+  "selected_accession": "ERR188044",
+  "fallback_used": false,
+  "source": {
+    "archive": "ENA",
+    "study_accession": "PRJEB3366",
+    "study_alias": "ERP001942",
+    "study_title": "RNA-sequencing of 465 lymphoblastoid cell lines from the 1000 Genomes",
+    "sample_accession": "SAMEA1573216",
+    "sample_alias": "ERS185292",
+    "sample_title": "NA18498",
+    "experiment_accession": "ERX162864",
+    "organism": "Homo sapiens",
+    "library_strategy": "RNA-Seq",
+    "library_source": "TRANSCRIPTOMIC",
+    "library_selection": "cDNA",
+    "library_layout": "PAIRED",
+    "library_name": "NA18498.2.M_120131_1 extract",
+    "library_protocol": "TruSeq RNA Sample Prep Kit v2 high-throughput protocol",
+    "platform": "ILLUMINA",
+    "instrument_model": "Illumina HiSeq 2000",
+    "declared_read_count": 36349964,
+    "declared_base_count": 5525194528,
+    "public_unrestricted": true
+  },
+  "fastq": [
+    {
+      "role": "R1",
+      "name": "ERR188044_1.fastq.gz",
+      "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR188/ERR188044/ERR188044_1.fastq.gz",
+      "bytes": 2579821104,
+      "md5": "75d29217a2477c91bde22d6e71c61df0"
+    },
+    {
+      "role": "R2",
+      "name": "ERR188044_2.fastq.gz",
+      "url": "https://ftp.sra.ebi.ac.uk/vol1/fastq/ERR188/ERR188044/ERR188044_2.fastq.gz",
+      "bytes": 2575579256,
+      "md5": "3d2a3ace20342c37436b231d7bfee635"
+    }
+  ],
+  "library_type": {
+    "status": "PENDING_RESULT_INDEPENDENT_ORIENTATION_PROBE",
+    "candidates": ["IU", "ISF", "ISR"],
+    "selection_metric": "orientation-compatible fragment proportion only",
+    "minimum_selected_consistency": 0.8,
+    "minimum_margin_over_runner_up": 0.2,
+    "abundance_or_mapping_rate_selection_forbidden": true,
+    "unknown_if_threshold_not_met": true
+  },
+  "selection_rationale": [
+    "official public paired-end human bulk RNA-seq",
+    "more than 20 million declared paired spots",
+    "official FASTQ sizes and MD5 values available",
+    "used as a Salmon upstream human performance fixture"
+  ]
+}

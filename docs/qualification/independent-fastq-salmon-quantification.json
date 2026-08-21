@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "classification": "HARAKO_GPU_SALMON_VERSION_UPGRADE_QUALIFICATION_REQUIRED",
+  "scope": "public_small_fixture_only",
+  "backend": {
+    "nf_core_revision": "3.26.0",
+    "nf_core_commit": "e7ca46272c8f9d5ceee3f71759f4ba551d3217a4",
+    "nextflow_version": "25.04.3",
+    "parabricks_version": "4.6.0-1",
+    "salmon_version": "1.10.3",
+    "salmon_image_digest": "sha256:f83ebb158845ee8138d793347f83b92c75e83c58dd8f4600c6fea2a2453ef08e",
+    "salmon_threads": 6,
+    "salmon_library_type": "ISR",
+    "quantification_mode": "mapping",
+    "alignment_mode_salmon": "disabled_unqualified"
+  },
+  "integration": {
+    "strategy": "candidate_a_config_only",
+    "nf_core_source_patch": false,
+    "bam_salmon_tasks": 0,
+    "fastq_salmon_tasks_per_sample": 1,
+    "separate_runner": false
+  },
+  "input_identity": {
+    "sample": "WT_REP1",
+    "processed_r1_sha256": "a39a425c9c0e652bc0df0a5a59d172a073ebc78f9d741cb65bad7f4cedcad625",
+    "processed_r2_sha256": "75fcc5e66900610fbf3777840f991c27611a0210b21565279cb44ec604e91143",
+    "paired_fragments": 47605,
+    "fastp_version": "1.0.1",
+    "fastp_image_digest": "sha256:d228dace961ab50d04471e02e7fd2c8f2b8cd5b1b37be2d4039e2db64fcfae45",
+    "fastp_option_profile": ["paired", "reports", "failed_and_unpaired_outputs", "threads_6", "detect_adapter_for_pe"]
+  },
+  "index_identity": {
+    "salmon_index_id": "364ab1bb39830756ae301b96839e986b47bd93af2ef2d321bbf80be05b615713",
+    "builder_version": "1.10.3",
+    "manifest_sha256": "7db7188f1967f5bb3303936627206aaa911a49dfd20108e92e910cff44ed8bf1",
+    "kmer": 31,
+    "decoy_aware": true
+  },
+  "minimal_run": {
+    "terminal_success": true,
+    "tasks": 46,
+    "wall_seconds": 105,
+    "resume_success": true,
+    "resume_wall_seconds": 39,
+    "processed_fragments": 47605,
+    "mapped_fragments": 37586,
+    "mapped_percent": 78.9538913979624,
+    "star_unique_mapped_percent": 88.04,
+    "genomic_bam_quickcheck": true,
+    "genomic_alignment_record_checksum": "70b490c1dccaacbbc88a1f07be34a737b5ee0abc95da36e7ee95356ee609aea7",
+    "multiqc_pass": true,
+    "tximport_outputs_pass": true
+  },
+  "frozen_fastq_repeats": {
+    "runs": 10,
+    "fragment_identity": true,
+    "count_identity": true,
+    "zero_nonzero_transitions": 0,
+    "effective_length_max_absolute_difference": 0.037,
+    "tpm_high_max_relative_difference": 0.0020137328653801094,
+    "gene_tpm_high_max_relative_difference": 0.002013881638989826,
+    "spearman": 1.0,
+    "material_comparisons": 2,
+    "gate_pass": false
+  },
+  "thread_matrix": {
+    "threads": [1, 2, 4, 6],
+    "repeats_per_thread": 3,
+    "fragment_identity": true,
+    "count_identity": true,
+    "maximum_cross_thread_tpm_relative_difference": 0.010603658356249893,
+    "all_thread_counts_had_material_within_thread_comparison": true
+  },
+  "fresh_full_branch": {
+    "runs": 5,
+    "terminal_successes": 5,
+    "processed_fastq_identity": true,
+    "alignment_record_multiset_identity": true,
+    "transcriptome_record_order_varied": true,
+    "fragment_identity": true,
+    "count_identity": true,
+    "zero_nonzero_transitions": 0,
+    "material_comparisons": 3,
+    "maximum_tpm_high_relative_difference": 0.002001191495738442,
+    "gate_pass": false
+  },
+  "harako_rnaseq_continuity": {
+    "source_commit": "9d8628f48226c330e159ac79c14595f2cf65a551",
+    "runtime_comparison": true,
+    "salmon_1_10_0_library_type": "IU",
+    "salmon_1_10_0_mapped_fragments": 37848,
+    "salmon_1_10_3_library_type": "ISR",
+    "salmon_1_10_3_mapped_fragments": 37586,
+    "transcript_tpm_spearman": 0.8336995053086653,
+    "zero_nonzero_transitions": 11,
+    "classification": "version_and_library_type_command_contract_difference"
+  },
+  "mutations_not_performed": [
+    "salmon_version_change",
+    "nf_core_version_change",
+    "parabricks_version_change",
+    "threshold_relaxation",
+    "push",
+    "pull_request",
+    "merge",
+    "tag",
+    "release"
+  ]
+}

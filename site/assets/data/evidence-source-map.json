@@ -1,0 +1,47 @@
+{
+  "generated_artifact": "site/assets/data/public-benchmark-summary.json",
+  "private_paths_included": false,
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "one_pass",
+      "path": "docs/qualification/native-high-memory-full-human-one-pass.json",
+      "sha256": "4c8017e5f37fe9b530c41ca18e56ac7bc5890ff53534910dd252d720508cca68"
+    },
+    {
+      "id": "two_pass",
+      "path": "docs/qualification/native-high-memory-full-human-two-pass.json",
+      "sha256": "6f1511fe70997337971f2849d9b7ee0793d9b57692510788173d69419baed1db"
+    },
+    {
+      "id": "salmon",
+      "path": "docs/qualification/salmon-1.10.3-vs-2.5.1-c1-comparison.json",
+      "sha256": "00ac39f2b18cb2b4053bb1c0141f523d9294707e5eb029bdf876b76d79972d3b"
+    },
+    {
+      "id": "parity",
+      "path": "docs/qualification/harako-native-vs-nfcore-c1-parity.json",
+      "sha256": "8ee18a091408dc4433725ed7515bb3b2210395beede91487ce0adebbc4a37ccc"
+    },
+    {
+      "id": "gui",
+      "path": "docs/qualification/ubuntu-native-gui-scientific-launch.json",
+      "sha256": "e6ce232a2c7a010705cf788afe0cd510e9b93685bc277fda45a12fff56ac7eee"
+    },
+    {
+      "id": "external:evidence-source-map.json",
+      "path": "verified-external-bundle/evidence-source-map.json",
+      "sha256": "0dbece6a8896d271fabeac9f6dfa61371b80b137d1b36a9d74ae0db90b01ff02"
+    },
+    {
+      "id": "external:host-capability-evidence.json",
+      "path": "verified-external-bundle/host-capability-evidence.json",
+      "sha256": "d13224114bdd9990bb4d299a654982380fcb85c253e95ee99120447be758f324"
+    },
+    {
+      "id": "external:f2/final-report.md",
+      "path": "verified-external-bundle/f2/final-report.md",
+      "sha256": "48b3af66048e4e111c880c04aa0d1ee48b6679a6cb332a2718fb867e8ce16569"
+    }
+  ]
+}

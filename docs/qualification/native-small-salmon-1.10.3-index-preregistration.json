@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "contract_id": "native-small-salmon-1.10.3-index-v1",
+  "status": "PREREGISTERED_BEFORE_INDEX_BUILD",
+  "scope": "fixed_native_small_reference_only",
+  "historical_index_reproduction_claim": false,
+  "source": {
+    "repository": "nf-core/test-datasets",
+    "commit": "626c8fab639062eade4b10747e919341cbf9b41a",
+    "genome": {
+      "path": "reference/genome.fasta",
+      "sha256": "df70973809f672aa58a414fef3f01e0e465bf26f10159174a616b0dee2d458e1",
+      "record_count": 1
+    },
+    "gtf": {
+      "path": "reference/genes_with_empty_tid.gtf.gz",
+      "sha256": "913092a6524a7de2a95c3a1695d0dfc8143f047f4c9c9bc7b206719a7388242a"
+    },
+    "transcriptome": {
+      "path": "reference/transcriptome.fasta",
+      "sha256": "4f6a6733546b01a96a71f13c63215d9b854dfb1873c2fa484ed69707d6443ac3",
+      "record_count": 125
+    }
+  },
+  "derived_inputs": {
+    "decoy_strategy": "complete_fixed_genome",
+    "decoy_order": "genome_source_record_order",
+    "ordered_decoy_ids": [
+      "I"
+    ],
+    "decoy_count": 1,
+    "decoys_sha256": "7fdca686b46a12886513de3f6166c815efcb501bbe0f6ecda4acd20c6d48fed7",
+    "gentrome_algorithm": "exact transcriptome bytes followed immediately by exact genome bytes",
+    "gentrome_record_count": 126,
+    "gentrome_sha256": "8e0b5df12173dfbb34ff64e3e3b6e028975a45678c0c6686f1a285c10f5cc802",
+    "tx2gene_algorithm": "parse_transcript_gene_map; header; rows sorted lexicographically by transcript_id; LF",
+    "tx2gene_row_count": 124,
+    "tx2gene_sha256": "5a6168d1e9de15b8c8d3c7a05302906e346302b94ba827d87d151492e273c627"
+  },
+  "builder": {
+    "version": "1.10.3",
+    "image_reference": "quay.io/biocontainers/salmon:1.10.3--h6dccd9a_2",
+    "identity_kind": "repo_digest",
+    "image_digest": "sha256:f83ebb158845ee8138d793347f83b92c75e83c58dd8f4600c6fea2a2453ef08e",
+    "execution_reference": "quay.io/biocontainers/salmon@sha256:f83ebb158845ee8138d793347f83b92c75e83c58dd8f4600c6fea2a2453ef08e",
+    "uid": 1000,
+    "gid": 1000,
+    "salmon_argv": [
+      "salmon",
+      "index",
+      "-t",
+      "/input/gentrome.fa",
+      "-d",
+      "/input/decoys.txt",
+      "-i",
+      "/output/index",
+      "-k",
+      "31",
+      "-p",
+      "6"
+    ],
+    "docker_argv_template": [
+      "docker",
+      "run",
+      "--rm",
+      "--pull=never",
+      "--user",
+      "1000:1000",
+      "--mount",
+      "type=bind,src=<derived-root>,dst=/input,readonly",
+      "--mount",
+      "type=bind,src=<build-root>,dst=/output",
+      "quay.io/biocontainers/salmon@sha256:f83ebb158845ee8138d793347f83b92c75e83c58dd8f4600c6fea2a2453ef08e",
+      "salmon",
+      "index",
+      "-t",
+      "/input/gentrome.fa",
+      "-d",
+      "/input/decoys.txt",
+      "-i",
+      "/output/index",
+      "-k",
+      "31",
+      "-p",
+      "6"
+    ],
+    "forbidden_options": [
+      "--gencode",
+      "--keepDuplicates",
+      "alternate_k",
+      "alternate_threads",
+      "arbitrary_options"
+    ]
+  },
+  "inventory": {
+    "scope": "every regular file recursively under index",
+    "fields": [
+      "relative POSIX path",
+      "size_bytes",
+      "sha256"
+    ],
+    "sort": "relative POSIX path",
+    "encoding": "canonical JSON sort_keys=true separators=(comma,colon)",
+    "exclusions": []
+  },
+  "index_identity": {
+    "algorithm": "SHA-256 of canonical compact JSON payload",
+    "builder": "1.10.3",
+    "image_digest": "sha256:f83ebb158845ee8138d793347f83b92c75e83c58dd8f4600c6fea2a2453ef08e",
+    "transcript_fasta_sha256": "4f6a6733546b01a96a71f13c63215d9b854dfb1873c2fa484ed69707d6443ac3",
+    "genome_fasta_sha256": "df70973809f672aa58a414fef3f01e0e465bf26f10159174a616b0dee2d458e1",
+    "decoys_sha256": "7fdca686b46a12886513de3f6166c815efcb501bbe0f6ecda4acd20c6d48fed7",
+    "parameters": [
+      "-k",
+      "31",
+      "decoy_aware_gentrome"
+    ],
+    "manifest_sha256": "UNKNOWN_UNTIL_BUILD",
+    "prospective_index_id": "UNKNOWN_UNTIL_BUILD",
+    "historical_index_id_required": false
+  },
+  "reproducibility_gate": {
+    "independent_builds": 2,
+    "required_exit_code": 0,
+    "same_file_list": true,
+    "same_file_sizes": true,
+    "same_file_sha256": true,
+    "same_manifest_sha256": true,
+    "same_prospective_index_id": true,
+    "tolerance": 0,
+    "post_build_exclusions_permitted": false,
+    "semantic_fallback_permitted": false
+  },
+  "claims_not_made": [
+    "historical index reproduction",
+    "biological accuracy",
+    "full-human qualification",
+    "production use",
+    "diagnostic use"
+  ]
+}

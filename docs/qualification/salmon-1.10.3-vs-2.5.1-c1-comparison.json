@@ -1,0 +1,104 @@
+{
+  "classification": "SALMON_1103_VS_251_C1_TIME_AND_CONCORDANCE_COMPLETED",
+  "cross_host_equality": "NOT_EVALUATED",
+  "cross_version": {
+    "q1": {
+      "descriptive_tier": "B_MODERATE_METHOD_SENSITIVITY",
+      "gene_num_reads": {"common_features": 87307, "log_pearson": 0.9946917164939645, "method_sensitive_features": 552, "spearman": 0.9889113989671028, "top100_overlap": 0.99, "top50_overlap": 0.98, "zero_transitions": 352},
+      "gene_tpm": {"common_features": 87307, "log_pearson": 0.9903028919584376, "method_sensitive_features": 733, "spearman": 0.9874856267579568, "top100_overlap": 0.98, "top50_overlap": 1.0, "zero_transitions": 352},
+      "transcript_num_reads": {"common_features": 517038, "log_pearson": 0.9619979164066245, "method_sensitive_features": 2929, "spearman": 0.9544253337798938, "top100_overlap": 0.97, "top50_overlap": 0.96, "zero_transitions": 2389},
+      "transcript_tpm": {"common_features": 517038, "log_pearson": 0.9569766587224333, "method_sensitive_features": 2882, "spearman": 0.9537426072869233, "top100_overlap": 0.98, "top50_overlap": 0.98, "zero_transitions": 2389}
+    },
+    "q2": {
+      "descriptive_tier": "B_MODERATE_METHOD_SENSITIVITY",
+      "gene_num_reads": {"common_features": 87307, "log_pearson": 0.9946829241042636, "method_sensitive_features": 554, "spearman": 0.9889087427516308, "top100_overlap": 0.99, "top50_overlap": 0.98, "zero_transitions": 352},
+      "gene_tpm": {"common_features": 87307, "log_pearson": 0.9902754132287843, "method_sensitive_features": 731, "spearman": 0.9874762280081808, "top100_overlap": 0.98, "top50_overlap": 1.0, "zero_transitions": 352},
+      "transcript_num_reads": {"common_features": 517038, "log_pearson": 0.9621299379328042, "method_sensitive_features": 2925, "spearman": 0.9543532363724591, "top100_overlap": 0.97, "top50_overlap": 0.96, "zero_transitions": 2394},
+      "transcript_tpm": {"common_features": 517038, "log_pearson": 0.9569136627714002, "method_sensitive_features": 2883, "spearman": 0.9536519156846527, "top100_overlap": 0.98, "top50_overlap": 0.98, "zero_transitions": 2394}
+    }
+  },
+  "default_primary_policy": {
+    "future_default": "salmon_2_5_1_deterministic",
+    "observed_results_change_default": false,
+    "salmon_1_10_3_status": "VISIBLE_EXECUTABLE_BOUNDED_NUMERICAL_COMPATIBILITY"
+  },
+  "fixture": {
+    "accession": "ERR188044",
+    "paired_fragments_raw": 1000000,
+    "r1_sha256": "4a0741bea63c0165d7b85eaa786b17da5a489e81d98b9c28325fbaeed6724ca1",
+    "r2_sha256": "cd8cb74fea4fcf6e4cd5d4c9658fba1ec08b40b8e76ae02fde8bcbab1090daca"
+  },
+  "handoff": {
+    "handoff_manifest_sha256": "763f23bfb8fd1b8eb5d2f85038ec9b02b0005af3aa75c8dd5c8027d93eee7848",
+    "index_file_count": 15,
+    "index_inventory_sha256": "1843542aa3c2aaa113265404b39b2c571e54af261262477cccda5b8e4a46a68b",
+    "index_total_bytes": 18223695337,
+    "pax_tar_sha256": "c8350853bb72b0aa1052b5baff8fad34f0ed57ba145cf1315eefe53495252261",
+    "profile_index_sha256": "446f9c163aafe79ea58c7bc285666cb28bbe8c4f7782439984489e3eb52dea08",
+    "sha256sums": "PASS",
+    "tar_member_safety": "PASS"
+  },
+  "indices": {
+    "comparable": true,
+    "common_sources": {
+      "genome_sha256": "e49b92b3e4f321bf254c042f25b726d9931c4d74c7523e8b6bb530e63b0cfd4b",
+      "gtf_sha256": "8eb596086228540c93ccf56fbb6601fd99f19a6df2cecdde239af423e5db0729",
+      "transcript_sha256": "c41a37f792b10399838246200dbaf54a334ec3f514cd36545bb2f9c9995b27ac",
+      "tx2gene_sha256": "5db4d8cf73e5c5087c50ae2c26ce081f7604947b5bde09c793e8ff7301b1f0d5"
+    },
+    "salmon_1_10_3": {"builder_version": "1.10.3", "id": "salmon-1.10.3-52224ad2355cc52b", "installed_manifest_sha256": "054db4d71af0acf41b9a142ebb0c38ae64dcb65b318feb617f52496ed53b46c6", "profile_id": "salmon_1_10_3_compatibility"},
+    "salmon_2_5_1": {"builder_version": "2.5.1", "id": "salmon-2.5.1-1c037278d376f40f", "profile_id": "salmon_2_5_1_deterministic"}
+  },
+  "limitations": {
+    "biological_truth": "NOT_EVALUATED",
+    "benchmark_generality": "NOT_CLAIMED_N_EQUALS_2",
+    "clinical_use": "NOT_QUALIFIED",
+    "native_gui_scientific_launch": "GUARDED"
+  },
+  "method_sensitive_feature_examples": {
+    "gene_tpm_q1": ["ENSG00000211651.3", "ENST00000628287.1", "ENSG00000227097.5", "ENSG00000206634.1", "ENSG00000238405.1"],
+    "transcript_tpm_q1": ["ENST00000406022.6", "ENST00000390297.3", "ENST00000894299.1", "ENST00000628287.1", "ENST00000336458.13"]
+  },
+  "processed_fastq": {
+    "fastp_contract_id": "harako-fastp-1.0.1-fixed-v1",
+    "fastp_image_identity": "sha256:d228dace961ab50d04471e02e7fd2c8f2b8cd5b1b37be2d4039e2db64fcfae45",
+    "paired_fragments": 958978,
+    "q1_q2_canonical_content_equal": true,
+    "q1_q2_compressed_files_equal": true,
+    "r1_decompressed_sha256": "8d1ed751996d41502ed8cac359c99ca8642f868f9361f98c178f3dd8d379d680",
+    "r2_decompressed_sha256": "b461ba57015a63d069d6724f5d225a23c5c95f7cc7b575c9f8934cb27b536c3e"
+  },
+  "public_runs": {
+    "q1": {"analysis_series_id": "5987ba82acc143e574bd89b660ebbc52302e36967488ed41e076925a06ba66b3", "approval_hash": "844274d46a43030676eae8992feca24702d9298544bb3293b7e40b3357d3f457", "artifact_deep_verification": "PASS", "execution_order": ["salmon_2_5_1_deterministic", "salmon_1_10_3_compatibility"], "plan_id": "7e587fb42beabd9a798d8f0a0a3b0d025e6634e59367f979241bb2271fe16954", "primary_profile_id": "salmon_2_5_1_deterministic", "run_id": "20260819T152655Z-7e587fb4", "state": "COMPLETED", "support_bundle_biological_data": false},
+    "q2": {"analysis_series_id": "deaf27d766fe99564d55cb8dc5bef1d0c4b077cc75522db75c4a45ff81a0ecbf", "approval_hash": "37194d31e59bceea8223a873405019a90248faf210dc774cdb3a7f940a717a2f", "artifact_deep_verification": "PASS", "execution_order": ["salmon_1_10_3_compatibility", "salmon_2_5_1_deterministic"], "plan_id": "90bb362a5514da78fa634d7bcefd8e3f545af2144f5ec7840c16417dd35464e9", "primary_profile_id": "salmon_1_10_3_compatibility", "run_id": "20260819T153025Z-90bb362a", "state": "COMPLETED", "support_bundle_biological_data": false}
+  },
+  "repeatability": {
+    "salmon_1_10_3": {
+      "classification": "BOUNDED_NUMERICAL",
+      "byte_equal": false,
+      "gene_num_reads": {"log_pearson": 0.9999555057062659, "maximum_absolute_difference": 7.143999999999998, "median_absolute_difference": 0.0, "spearman": 0.9999309299258744, "top100_overlap": 1.0, "zero_transitions": 2},
+      "gene_tpm": {"log_pearson": 0.9999419145025578, "maximum_absolute_difference": 37.66399999999999, "median_absolute_difference": 0.0, "spearman": 0.9999314262347107, "top100_overlap": 1.0, "zero_transitions": 2},
+      "numerical_digest_equal": false,
+      "transcript_num_reads": {"log_pearson": 0.995991973593006, "maximum_absolute_difference": 58.205, "median_absolute_difference": 0.0, "spearman": 0.99608787971529, "top100_overlap": 1.0, "zero_transitions": 199},
+      "transcript_tpm": {"log_pearson": 0.9963152961301194, "maximum_absolute_difference": 119.12690099999998, "median_absolute_difference": 0.0, "spearman": 0.9961225906759682, "top100_overlap": 1.0, "zero_transitions": 199}
+    },
+    "salmon_2_5_1": {"byte_equal": true, "feature_order_equal": true, "matrix_sha256_equal": true, "numerical_digest_equal": true, "spearman": 1.0, "zero_transitions": 0}
+  },
+  "repository": {"starting_commit": "5a92660e643bd6ee5bcaec5b45cf09dd74a964b5", "starting_tree": "5c799096892a9c9b615ae47cce4044ffef91d837"},
+  "runtime": {
+    "median_fragments_per_second_ratio_2_5_1_to_1_10_3": 1.2601306026286287,
+    "median_wall_time_ratio_1_10_3_to_2_5_1": 1.2445654566148785,
+    "q1": {"salmon_1_10_3_second": {"fragments_per_second": 34006.04836515491, "wall_seconds": 28.20021867000105}, "salmon_2_5_1_first": {"fragments_per_second": 38089.94196364463, "wall_seconds": 25.17667264800002}},
+    "q2": {"salmon_1_10_3_first": {"fragments_per_second": 34006.83531460688, "wall_seconds": 28.199566090999724}, "salmon_2_5_1_second": {"fragments_per_second": 47615.17413424441, "wall_seconds": 20.140176266000708}},
+    "salmon_1_10_3_first_minus_second_seconds": -0.0006525790013256483,
+    "salmon_1_10_3_median_wall_seconds": 28.199892380500387,
+    "salmon_2_5_1_first_minus_second_seconds": 5.036496381999314,
+    "salmon_2_5_1_median_wall_seconds": 22.658424457000365
+  },
+  "runtime_images": {
+    "salmon_1_10_3": {"docker_image_id": "sha256:1192967ff3e30299f414cbb062e27c4ae6bef09f1aabb711bdd94b564ffa0c78", "platform": "linux/amd64", "repo_digest": "quay.io/biocontainers/salmon@sha256:f83ebb158845ee8138d793347f83b92c75e83c58dd8f4600c6fea2a2453ef08e", "version_probe": "1.10.3"},
+    "salmon_2_5_1": {"execution_identity": "sha256:6ec01c872926f446b20933ed8c948cd66eca2b49c93427d77370fb4a2e403cfe", "version": "2.5.1"}
+  },
+  "schema_version": 1,
+  "structural_acceptance": {"all_four_salmon_executions": "PASS", "deep_artifact_verification": "PASS", "support_bundles_sanitized": true, "threads": 6}
+}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "fixture_id": "harako_truth_bulk_v1",
+  "generator_version": 1,
+  "master_seed": 25120260816,
+  "conditions": 2,
+  "replicates_per_condition": 3,
+  "samples": 6,
+  "fragments_per_sample": 50000,
+  "decoy_fragments_per_sample": 500,
+  "read_length": 100,
+  "fragment_length_mean": 220,
+  "fragment_length_sd": 18,
+  "substitution_error_rate": 0.001,
+  "library_type": "ISR",
+  "transcripts": 48,
+  "genes": 30,
+  "zero_expression_transcripts": 12,
+  "decoys": 4,
+  "scientific_manifest_sha256": "2302601bc962a5d9880e93fe3f56b813355bad56817b4141da2c510b195c42c6",
+  "repeat_manifest_sha256": "af95a1befc46737a26fc0a4df6bb646aa180bac7b4384be0485c3679a3944f91",
+  "runtime_biological_artifacts_committed": false
+}

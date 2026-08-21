@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "classification": "DESCRIPTIVE_NOT_EQUIVALENCE",
+  "sample": "WT_REP1",
+  "one_pass_run_id": "20260817T081410Z-d10703fc",
+  "two_pass_run_id": "20260817T033952Z-69ee2e22",
+  "parameter_delta": {"--two-pass-mode": {"one_pass": "None", "two_pass": "Basic"}},
+  "process_identity": {"one_pass_parabricks_tasks": 1, "native_star_tasks": 0, "nf_core_salmon_tasks": 0},
+  "mapping": {
+    "input_reads": 47605,
+    "one_pass_unique_percent": 88.12,
+    "two_pass_unique_percent": 88.04,
+    "one_pass_total_mapped_percent": 89.95,
+    "two_pass_total_mapped_percent": 89.95,
+    "one_pass_multimapping_percent": 1.83,
+    "two_pass_multimapping_percent": 1.91
+  },
+  "splices": {
+    "one_pass_total": 534,
+    "two_pass_total": 693,
+    "one_pass_annotated": 344,
+    "two_pass_annotated": 578,
+    "one_pass_non_annotated_derived": 190,
+    "two_pass_non_annotated_derived": 115,
+    "one_pass_sj_rows": 19,
+    "two_pass_sj_rows": 19,
+    "exact_sj_row_overlap": 4
+  },
+  "bam": {"one_pass_records": 88586, "two_pass_records": 88628, "both_quickcheck": true},
+  "gene_counts": {"common_genes": 124, "spearman": 1.0, "zero_nonzero_transitions": 0},
+  "salmon_2_5_1": {
+    "quant_sf_byte_identical": true,
+    "sha256": "44020ba1bc41c8d395fb41be44796c9e0877a42153101845e6060a3a3fd5c31c"
+  },
+  "salmon_1_10_3": {"feature_ids_identical": true, "processed_fragments_identical": true, "num_processed": 47605},
+  "resources": {
+    "one_pass": {"wall_seconds": 96, "peak_ram_bytes": 18170785792, "minimum_available_ram_bytes": 32343941120, "peak_vram_mib": 9626},
+    "two_pass": {"peak_ram_bytes": 18686078976, "minimum_available_ram_bytes": 31828639744, "peak_vram_mib": 9527}
+  },
+  "runtime_manifest": "external-evidence-redacted/manifest.json",
+  "runtime_report_sha256": "cd0e4b9e1e4aae0894b1ebc9691e21e079074d93b9ed5957977de4eaf609817d",
+  "limitations": ["not a correct/incorrect verdict", "not an equivalence claim", "small fixture only"]
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "classification": "HARAKO_GPU_SALMON_2X_QUALIFICATION_REQUIRED",
+  "scope": "public_small_fixture_only",
+  "repository": {
+    "start_commit": "454e62e81fc4097c2d59b6c530efe1e66d75abd6",
+    "required_ancestor": "08ceaf5ccd64c0d9b7427c4451bc0a1d9c025b5e",
+    "branch": "test/salmon-1.12.1-upgrade-qualification"
+  },
+  "candidate": {
+    "version": "1.12.1",
+    "tag": "v1.12.1",
+    "source_commit": "971a2ad6e86cc32315d919faed0be0e88d36c9e5",
+    "asset_sha256": "00900135ecca10b45e3d78a6ab64463f957d0b2b0069eaa078c10784f1e2f8d6",
+    "implementation": "cpp_legacy",
+    "candidate_status": "rejected_numerical_gate",
+    "default_adopted": false
+  },
+  "container": {
+    "local_tag": "harako-gpu/salmon:1.12.1-qualification",
+    "image_id": "sha256:88b88863b8830ca6eb6747c305522c220bf660caa16eb82400240ba7637d81dd",
+    "config_digest": "sha256:c57bb5ebead25bc5a4d10ab55432e510bb14b64ac71c1c0b663ed982f461b749",
+    "base_digest": "sha256:f83ebb158845ee8138d793347f83b92c75e83c58dd8f4600c6fea2a2453ef08e",
+    "published": false
+  },
+  "index": {
+    "salmon_index_id": "7e64ba84894294a0c3a46d2fab44deefa657a27839cd5fb706c7d8c4f072cd55",
+    "builder_version": "1.12.1",
+    "inventory_sha256": "7de7129ef6e61ef6142bcd4df22d74969c1cf2c81cae01e220c4331d7c56e16f",
+    "files": 12,
+    "size_bytes": 301444,
+    "kmer": 31,
+    "version_specific": true
+  },
+  "baseline_1_10_3": {
+    "runs": 3,
+    "processed_fragments": 47605,
+    "mapped_fragments": 37586,
+    "maximum_tpm_high_relative_difference": 0.007988346093908801,
+    "maximum_effective_length_absolute_difference": 0.064,
+    "gate_pass": false,
+    "classification_consistent_with_previous": true
+  },
+  "frozen_fastq_1_12_1": {
+    "runs": 10,
+    "successes": 10,
+    "processed_fragments": 47605,
+    "mapped_fragments_min": 5818,
+    "mapped_fragments_max": 5831,
+    "mapped_fragment_identity": false,
+    "maximum_effective_length_absolute_difference": 0.194,
+    "maximum_transcript_tpm_high_relative_difference": 0.037594919271450085,
+    "maximum_gene_tpm_high_relative_difference": 0.03759201259161513,
+    "maximum_num_reads_absolute_difference": 10,
+    "zero_nonzero_transitions": 0,
+    "spearman": 1.0,
+    "gate_pass": false
+  },
+  "thread_matrix": {
+    "threads": [1, 2, 4, 6],
+    "repeats_per_thread": 3,
+    "six_thread_maximum_effective_length_absolute_difference": 0.252,
+    "six_thread_maximum_tpm_high_relative_difference": 0.00959636033255566,
+    "cross_thread_maximum_tpm_high_relative_difference": 0.1131003711981557,
+    "cross_thread_maximum_num_reads_absolute_difference": 38,
+    "gate_pass": false
+  },
+  "version_comparison": {
+    "processed_fragments_equal": true,
+    "baseline_mapped_fragments": 37586,
+    "candidate_mapped_fragments": 5818,
+    "mapping_rate_absolute_percentage_point_difference": 66.7324860833946,
+    "transcript_id_set_equal": true,
+    "gene_id_set_equal": true,
+    "transcript_spearman": 0.6195845943193258,
+    "gene_spearman": 0.6195845943193258,
+    "zero_nonzero_transitions": 33,
+    "non_regression_gate_pass": false
+  },
+  "not_run_after_gate_failure": [
+    "fresh_full_pipeline_repeats",
+    "nf_core_candidate_integration",
+    "tximport_candidate_validation",
+    "multiqc_candidate_validation",
+    "resume_validation"
+  ],
+  "mutations_not_performed": [
+    "default_salmon_version_change",
+    "nf_core_version_change",
+    "parabricks_version_change",
+    "nextflow_version_change",
+    "threshold_relaxation",
+    "output_rounding",
+    "salmon_2x_installation",
+    "push",
+    "pull_request",
+    "merge",
+    "tag",
+    "release",
+    "candidate_image_push"
+  ]
+}

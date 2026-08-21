@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "contract_id": "native-small-salmon-1.10.3-index-cause-isolation-v1",
+  "status": "PREREGISTERED_BEFORE_MATRIX",
+  "diagnostic_only": true,
+  "promotion_permitted": false,
+  "product_route_permitted": false,
+  "semantic_equivalence_is_qualification_gate": false,
+  "v1_result_commit": "5281063ab362f2a4929247d523ae4ff961049593",
+  "fixed_identities": {
+    "genome_sha256": "df70973809f672aa58a414fef3f01e0e465bf26f10159174a616b0dee2d458e1",
+    "gtf_sha256": "913092a6524a7de2a95c3a1695d0dfc8143f047f4c9c9bc7b206719a7388242a",
+    "transcriptome_sha256": "4f6a6733546b01a96a71f13c63215d9b854dfb1873c2fa484ed69707d6443ac3",
+    "gentrome_sha256": "8e0b5df12173dfbb34ff64e3e3b6e028975a45678c0c6686f1a285c10f5cc802",
+    "decoys_sha256": "7fdca686b46a12886513de3f6166c815efcb501bbe0f6ecda4acd20c6d48fed7",
+    "tx2gene_sha256": "5a6168d1e9de15b8c8d3c7a05302906e346302b94ba827d87d151492e273c627",
+    "salmon_repo_digest": "sha256:f83ebb158845ee8138d793347f83b92c75e83c58dd8f4600c6fea2a2453ef08e",
+    "fastp_repo_digest": "sha256:d228dace961ab50d04471e02e7fd2c8f2b8cd5b1b37be2d4039e2db64fcfae45",
+    "raw_r1_sha256": "3f50541fa9cf2bedc87e7b682ada0fccfdfcd6d27b9bb81f17be230ff140ebe7",
+    "raw_r2_sha256": "8590e1e01e568fba256aa7dced40519604cbb111ee44ab106a3dcb869660aaf4"
+  },
+  "host_identity": {
+    "uid": 1000,
+    "gid": 1000
+  },
+  "environment": {
+    "LC_ALL": "C",
+    "LANG": "C",
+    "TZ": "UTC"
+  },
+  "docker_contract": {
+    "pull_policy": "never",
+    "input_target": "/input",
+    "input_readonly": true,
+    "output_target": "/output",
+    "image": "quay.io/biocontainers/salmon@sha256:f83ebb158845ee8138d793347f83b92c75e83c58dd8f4600c6fea2a2453ef08e",
+    "fixed_k": 31,
+    "allowed_index_threads": [1, 6],
+    "source_date_epoch_set": false
+  },
+  "build_matrix": [
+    {"label": "S1", "arm": "serial", "threads": 1},
+    {"label": "S2", "arm": "serial", "threads": 1},
+    {"label": "S3", "arm": "serial", "threads": 1},
+    {"label": "P1", "arm": "parallel", "threads": 6},
+    {"label": "P2", "arm": "parallel", "threads": 6},
+    {"label": "P3", "arm": "parallel", "threads": 6}
+  ],
+  "file_sets": {
+    "full": [
+      "complete_ref_lens.bin", "ctable.bin", "ctg_offsets.bin", "duplicate_clusters.tsv",
+      "info.json", "mphf.bin", "pos.bin", "pre_indexing.log", "rank.bin",
+      "refAccumLengths.bin", "ref_indexing.log", "reflengths.bin", "refseq.bin",
+      "seq.bin", "versionInfo.json"
+    ],
+    "runtime_payload_candidate": [
+      "complete_ref_lens.bin", "ctable.bin", "ctg_offsets.bin", "duplicate_clusters.tsv",
+      "info.json", "mphf.bin", "pos.bin", "rank.bin", "refAccumLengths.bin",
+      "reflengths.bin", "refseq.bin", "seq.bin", "versionInfo.json"
+    ],
+    "runtime_payload_exclusions": ["pre_indexing.log", "ref_indexing.log"],
+    "additional_post_build_exclusions_permitted": false,
+    "binary_file_exclusions_permitted": false
+  },
+  "binary_difference": {
+    "count_all_differing_bytes": true,
+    "first_offset_limit": 32,
+    "difference_range_limit": 32,
+    "printable_string_limit": 200,
+    "matching_string_limit": 32,
+    "inspect_timestamp_path_pid_random_markers": true,
+    "equal_size_implies_equivalence": false
+  },
+  "fastp": {
+    "threads": 6,
+    "detect_adapter_for_pe": true,
+    "failed_and_unpaired_outputs": true,
+    "repeats": 1,
+    "processed_pair_reused_for_all_quantification": true
+  },
+  "quantification": {
+    "version": "1.10.3",
+    "threads": 1,
+    "library_type": "ISR",
+    "repeats_per_index": 2,
+    "index_count": 6,
+    "argv": [
+      "salmon", "quant", "--geneMap", "/input/tx2gene.tsv", "--threads", "1",
+      "--libType=ISR", "--index", "/input/index", "-1", "/input/R1.fastq.gz",
+      "-2", "/input/R2.fastq.gz", "-o", "/output"
+    ],
+    "functional_comparison": "exact canonical ordered transcript/gene rows and selected mapping metadata",
+    "biological_accuracy_gate": false
+  },
+  "source_audit": {
+    "version": "Salmon 1.10.3",
+    "targets": ["ctable.bin", "pos.bin", "seq.bin", "pre_indexing.log", "ref_indexing.log"],
+    "patch_or_custom_build_permitted": false,
+    "causal_claim_requires_source_or_experiment": true
+  },
+  "classifications": [
+    "HARAKO_GPU_SALMON_1103_INDEX_CAUSE_ISOLATION_SERIAL_BYTE_DETERMINISTIC",
+    "HARAKO_GPU_SALMON_1103_INDEX_CAUSE_ISOLATION_BYTE_NONDETERMINISTIC_FUNCTIONALLY_EQUIVALENT",
+    "HARAKO_GPU_SALMON_1103_INDEX_CAUSE_ISOLATION_FUNCTIONAL_DIVERGENCE",
+    "HARAKO_GPU_SALMON_1103_INDEX_CAUSE_ISOLATION_QUANT_DIAGNOSTIC_UNSTABLE",
+    "HARAKO_GPU_SALMON_1103_INDEX_CAUSE_ISOLATION_FAILED"
+  ]
+}

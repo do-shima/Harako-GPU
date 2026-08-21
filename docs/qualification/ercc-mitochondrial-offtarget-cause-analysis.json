@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "historical_aggregate_gate_preserved": true,
+  "classification": "MIXED_CAUSE_WITH_CONFIRMED_HUMAN_MT_CONTAMINATION_AND_UNRESOLVED_NUCLEAR_TARGETS",
+  "oracle": {
+    "reference_scope": ["official ERCC92", "GRCh38 mitochondrial chromosome", "observed mitochondrial transcripts", "Illumina adapters"],
+    "aligner": "minimap2 2.28-r1209",
+    "image_digest": "sha256:0c397895db3b494baa4f78de7110d516a1a57707d9c7df456634220bffd965ba",
+    "unique_score_margin": 10,
+    "limitation": "the frozen oracle did not include the complete nuclear transcriptome, so most nuclear Salmon targets remain UNRESOLVED"
+  },
+  "aggregate_by_role_mix": {
+    "training_mix1": {"processed": 13421472, "salmon_offtarget": 3332, "fraction": 0.00024825890930592413, "human_mt_unique": 267, "ercc_unique_misassigned": 69, "ambiguous": 0, "low_complexity": 91, "unresolved": 2905},
+    "training_mix2": {"processed": 11052189, "salmon_offtarget": 14456, "fraction": 0.0013079761846273169, "human_mt_unique": 1581, "ercc_unique_misassigned": 55, "ambiguous": 1, "low_complexity": 122, "unresolved": 12697},
+    "holdout_mix1": {"processed": 13571261, "salmon_offtarget": 3410, "fraction": 0.00025126626037182543, "human_mt_unique": 255, "ercc_unique_misassigned": 54, "ambiguous": 1, "low_complexity": 86, "unresolved": 3014},
+    "holdout_mix2": {"processed": 11159960, "salmon_offtarget": 15409, "fraction": 0.0013807397159129602, "human_mt_unique": 1671, "ercc_unique_misassigned": 57, "ambiguous": 0, "low_complexity": 109, "unresolved": 13572}
+  },
+  "named_mitochondrial_targets": {
+    "targets": ["MT-RNR2", "MT-CO2"],
+    "training_mix2_pairs": 434,
+    "training_mix2_human_mt_unique": 432,
+    "holdout_mix2_pairs": 442,
+    "holdout_mix2_human_mt_unique": 441,
+    "holdout_mix2_ercc_unique_misassigned": 1,
+    "holdout_mix2_preexisting_in_raw": 419,
+    "holdout_mix2_exposed_by_trimming": 22,
+    "finding": "the named mitochondrial signal is genuine human-mitochondrial evidence and reproduces in held-out lanes"
+  },
+  "lane_fractions": {
+    "SRR896983": 0.00024696805450801493,
+    "SRR896985": 0.00024950937889766727,
+    "SRR897015": 0.0013004798724117018,
+    "SRR897017": 0.0013156144917073541,
+    "SRR896987": 0.0002557753875890048,
+    "SRR896989": 0.0002467706085463269,
+    "SRR897019": 0.0014242176226065605,
+    "SRR897021": 0.0013373940677966101
+  },
+  "ercc_only_vs_combined": {
+    "training_mix1_ercc_only_mapped": 13236805,
+    "training_mix2_ercc_only_mapped": 10856869,
+    "holdout_mix1_ercc_only_mapped": 13384267,
+    "holdout_mix2_ercc_only_mapped": 10962242,
+    "interpretation": "ERCC-only recovers most fragments, but index competition alone cannot classify biological origin; read-level oracle remains controlling evidence"
+  },
+  "decision": {
+    "named_mt_subset": "EXTERNAL_SAMPLE_HUMAN_CONTAMINATION",
+    "aggregate_offtarget": "INCONCLUSIVE_DUE_TO_FROZEN_REFERENCE_SCOPE",
+    "preprocessing": "PREDOMINANTLY_PREEXISTING_IN_RAW_FOR_NAMED_MT",
+    "salmon_specific_defect_confirmed": false
+  },
+  "thresholds_changed": false,
+  "original_fail_reclassified_as_pass": false,
+  "raw_sequences_committed": false
+}

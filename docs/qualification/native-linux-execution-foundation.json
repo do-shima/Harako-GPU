@@ -1,0 +1,26 @@
+{
+  "attempt_history_preserved": true,
+  "cached_tasks_on_resume": 1,
+  "completed_tasks_on_resume": 1,
+  "completed_token": "fixed-lifecycle-token",
+  "execution_context": "native_linux",
+  "fail_once_completed": true,
+  "first_exit_code": 1,
+  "first_failed": true,
+  "first_process_exit_42": true,
+  "fixture": "fixed-fail-once-v1",
+  "generated_at": "2026-08-18T09:22:44.461492Z",
+  "host": {
+    "machine": "x86_64",
+    "release": "6.14.0-37-generic",
+    "system": "Linux"
+  },
+  "nextflow_version": "25.04.3",
+  "pipeline_sha256": "bfb482844c88db2ef7fb7cf670b0fb1a56221a289d51449b1c8523372e9ab609",
+  "prepare_token_cached": true,
+  "resource_sampled": true,
+  "resume_exit_code": 0,
+  "resume_succeeded": true,
+  "schema_version": 1,
+  "wsl_command_detected": false
+}

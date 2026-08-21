@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "classification": "HARAKO_GPU_NATIVE_SMALL_SALMON_INDEX_NONDETERMINISTIC",
+  "contract_id": "native-small-salmon-1.10.3-index-v1",
+  "preregistration_commit": "f37871e308898227e7652b54955f772f1ba23bf4",
+  "preregistration_amended_after_build": false,
+  "historical_index_reproduction_claim": false,
+  "source_identities": {
+    "genome_sha256": "df70973809f672aa58a414fef3f01e0e465bf26f10159174a616b0dee2d458e1",
+    "gtf_sha256": "913092a6524a7de2a95c3a1695d0dfc8143f047f4c9c9bc7b206719a7388242a",
+    "transcriptome_sha256": "4f6a6733546b01a96a71f13c63215d9b854dfb1873c2fa484ed69707d6443ac3",
+    "gentrome_sha256": "8e0b5df12173dfbb34ff64e3e3b6e028975a45678c0c6686f1a285c10f5cc802",
+    "decoys_sha256": "7fdca686b46a12886513de3f6166c815efcb501bbe0f6ecda4acd20c6d48fed7",
+    "tx2gene_sha256": "5a6168d1e9de15b8c8d3c7a05302906e346302b94ba827d87d151492e273c627",
+    "salmon_repo_digest": "sha256:f83ebb158845ee8138d793347f83b92c75e83c58dd8f4600c6fea2a2453ef08e"
+  },
+  "frozen_salmon_argv": [
+    "salmon", "index", "-t", "/input/gentrome.fa", "-d", "/input/decoys.txt",
+    "-i", "/output/index", "-k", "31", "-p", "6"
+  ],
+  "build_a": {
+    "exit_code": 0,
+    "file_count": 15,
+    "index_manifest_sha256": "3e3588a16a7aa1db9fa23349695a29111f49c0b47e09a29d5811f68bf0519d91",
+    "prospective_index_id": "98605aae5f5e0bfa19d852e55d884fdff5aa7808addb9fc3f19b25bed985fa1f"
+  },
+  "build_b": {
+    "exit_code": 0,
+    "file_count": 15,
+    "index_manifest_sha256": "2a18cfa2e127b830b70fd385425686a85c3cbb671c96a96a9c310cfb26674d0d",
+    "prospective_index_id": "341d387aa76ce0412417fbca4af4c61bebdd8ff868662a29a9e239532716228d"
+  },
+  "different_files": [
+    "ctable.bin", "pos.bin", "pre_indexing.log", "ref_indexing.log", "seq.bin"
+  ],
+  "conclusions": {
+    "byte_identity_gate_passed": false,
+    "index_promoted": false,
+    "legacy_manifest_created": false,
+    "profile_manifest_created": false,
+    "product_plan_created": false,
+    "product_run_created": false,
+    "evidence_retained": true,
+    "semantic_equivalence_used_as_gate": false
+  },
+  "external_evidence": "external-evidence-redacted"
+}

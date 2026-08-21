@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "patch_id": "harako-parabricks-star-logfile-separation-v1",
+  "pipeline": "nf-core/rnaseq",
+  "revision": "3.26.0",
+  "resolved_commit": "e7ca46272c8f9d5ceee3f71759f4ba551d3217a4",
+  "patch_file": "parabricks-logfile-separation.patch",
+  "patch_sha256": "fce22aa246ab82532b0860dd74fcf5f285262ba1277b1df34d0359aab6d72410",
+  "targets": [
+    {
+      "path": "conf/modules/align_star.config",
+      "source_sha256": "23276136a2b40bec32f3a6e2ec066595a7d10583ebc39d664bb439015ce94308",
+      "patched_sha256": "1fea4eebd8214aaae94a28a1bb60ba5602fa9b3fffd63f8c7f82eb8638cc8c27"
+    },
+    {
+      "path": "modules/nf-core/parabricks/rnafq2bam/main.nf",
+      "source_sha256": "231d896e2ab0e7a474e42493c13ca209ab19c8d20df8a8cf7903cb3429894321",
+      "patched_sha256": "103a42559cf2f59788c92960a7c08250c021d548f5bc3761a9b74b61dcde3a9b"
+    }
+  ],
+  "behavior": {
+    "parabricks_log": "${prefix}.parabricks.log",
+    "star_final_log": "${prefix}.Log.final.out",
+    "alignment_arguments_changed": false,
+    "container_changed": false
+  }
+}

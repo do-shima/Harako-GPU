@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "preregistration_id": "harako_gpu_salmon_2_5_1_external_truth_v1",
+  "status": "INVALIDATED_BEFORE_PRIMARY_QUANTIFICATION",
+  "candidate": {
+    "salmon_version": "2.5.1",
+    "implementation": "rust",
+    "deterministic": true,
+    "decoder": "serial",
+    "threads": 6,
+    "image_id": "sha256:e6e64f39a479458ef6f007757498321ee5a3ef8a2227ff2af414fbe3c36e6f7f",
+    "default": false
+  },
+  "sirv": {
+    "run": "SRR3497201",
+    "mix": "E0",
+    "batch": "216652830",
+    "library_type": "ISR",
+    "library_type_evidence": "TruSeq Stranded mRNA HT Sample Prep Kit",
+    "paired_fastq_policy": "use ENA split-pair files; exclude and report singleton spots",
+    "downsampling": "none",
+    "reference_policy": "batch-specific corrected annotation; exclude fragmented SIRV502",
+    "primary_subset": "sequence-identifiable expected-positive corrected-annotation transcripts",
+    "thresholds": {
+      "positive_detection_rate_min": 0.9,
+      "upper_half_detection_rate_min": 0.95,
+      "transcript_spearman_min": 0.9,
+      "transcript_log2_pearson_min": 0.9,
+      "median_absolute_log2_error_max": 0.75,
+      "p90_absolute_log2_error_max": 1.5
+    }
+  },
+  "ercc": {
+    "project": "PRJNA208369",
+    "super_series": "GSE47792",
+    "data_series": "GSE47774",
+    "site": "BGI",
+    "platform": "Illumina HiSeq 2000",
+    "library_id": "1",
+    "flowcell": "AC0AYTACXX",
+    "mix1_runs": ["SRR896983", "SRR896985"],
+    "mix2_runs": ["SRR897015", "SRR897017"],
+    "selection": "same site/platform/library/flowcell/read layout/read length; lexicographically first two lanes per mix",
+    "library_type": "IU_PENDING_ALLOWED_ORIENTATION_PROBE",
+    "downsampling": "none",
+    "primary_subset": "truth-concentration upper 75 percent, fixed before results",
+    "thresholds": {
+      "concentration_spearman_min": 0.95,
+      "concentration_pearson_min": 0.95,
+      "primary_detection_rate_min": 0.95,
+      "fold_change_spearman_min": 0.95,
+      "fold_change_rmse_max": 0.5,
+      "fold_change_median_absolute_error_max": 0.35
+    }
+  },
+  "preprocessing": {
+    "tool": "fastp",
+    "threads": 6,
+    "detect_adapter_for_pe": true,
+    "extra_dataset_specific_options": false
+  },
+  "cross_mapping": {
+    "warning_fraction": 0.0005,
+    "blocking_fraction": 0.001
+  },
+  "exclusions": [
+    "SIRV502 is excluded by the batch-specific corrected annotation",
+    "SIRV singleton spots are excluded from paired-input quantification and reported",
+    "ERCC lower concentration quartile is excluded only from the primary gate and remains in secondary reporting"
+  ],
+  "invalidating_observation": {
+    "code": "SIRV_E0_PRIMARY_CORRELATION_ZERO_VARIANCE",
+    "detail": "All corrected-annotation expected transcript concentrations are equal; Pearson and Spearman truth correlations are undefined.",
+    "observed_before_primary_quantification": true,
+    "results_used_to_change_contract": false,
+    "primary_quantification_authorized": false
+  }
+}

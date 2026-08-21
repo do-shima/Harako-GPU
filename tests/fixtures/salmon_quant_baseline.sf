@@ -1,0 +1,5 @@
+Name	Length	EffectiveLength	TPM	NumReads
+tx_zero	100	80.000	0.000000	0.000
+tx_low	200	180.000	0.050000	1.000
+tx_mid	300	280.000	0.500000	10.000
+tx_high	400	380.000	10.000000	100.000

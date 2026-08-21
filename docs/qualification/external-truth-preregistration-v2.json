@@ -1,0 +1,121 @@
+{
+  "schema_version": 2,
+  "preregistration_id": "harako_gpu_salmon_2_5_1_external_truth_v2",
+  "parent_preregistration_id": "harako_gpu_salmon_2_5_1_external_truth_v1",
+  "parent_file_sha256": "5ba814f25ce1bb1ab872a3649761f87bcb593af7797458b378933d8015c22077",
+  "amendment_reason": "Replace mathematically undefined E0 constant-vector correlations with pre-specified equimolar detection and mole-fraction error gates.",
+  "amendment_date": "2026-08-16",
+  "amendment_performed_before_quantification": true,
+  "primary_quantification_seen": false,
+  "datasets_unchanged_from_v1": true,
+  "candidate": {
+    "salmon_version": "2.5.1",
+    "implementation": "rust",
+    "deterministic": true,
+    "decoder": "serial",
+    "threads": 6,
+    "image_id": "sha256:e6e64f39a479458ef6f007757498321ee5a3ef8a2227ff2af414fbe3c36e6f7f",
+    "status": "qualification_only_non_default",
+    "structured_argv": ["salmon", "quant", "--deterministic", "--decoder", "serial", "--geneMap", "<tx2gene>", "--threads", "<1|2|4|6>", "--libType=<fixed>", "--index", "<version-specific-index>", "-1", "<processed-r1>", "-2", "<processed-r2>", "-o", "<output>"]
+  },
+  "preprocessing": {
+    "tool": "fastp",
+    "version": "1.0.1",
+    "image_id": "sha256:d228dace961ab50d04471e02e7fd2c8f2b8cd5b1b37be2d4039e2db64fcfae45",
+    "threads": 6,
+    "detect_adapter_for_pe": true,
+    "dataset_specific_options": false,
+    "repeat_byte_identity_required": true
+  },
+  "sirv": {
+    "run": "SRR3497201",
+    "mix": "E0",
+    "batch": "216652830",
+    "library_type": "ISR",
+    "paired_input_policy": "ENA split-pair files; report and exclude singleton spots",
+    "expected_transcripts": 69,
+    "expected_genes": 7,
+    "expected_transcript_fraction": "1/69",
+    "expected_gene_fraction": "included commercial isoform count/69",
+    "truth_source_sha256": "d85afcedc7bf3cf663517885a61268e0445549fb5cff5a4007b64b72f2f6e1e1",
+    "target_fasta_sha256": "21de7e29f94689ead509826e6807dc35e94980eb005651a4c3aec4eb14019dd6",
+    "all_transcript_ids_sha256": "1a12a39fd2e5d07172afad592aa54508c8c1232df5f3ce853c951556569c3a1f",
+    "identifiability": {
+      "method": "exact transcript-specific 31-mer evidence within fixed paired read length 120 geometry, independent of Salmon output",
+      "manifest_sha256": "fe0c13faa66a3de46bb06a602b5003e06145e21b2450ffa54bca57c9881e1871",
+      "primary_transcript_count": 63,
+      "primary_transcript_ids_sha256": "d645150c9647b837d27eb158a07cfc058e86d89d60b6c18a68e9952086805b44",
+      "equivalence_group_transcript_count": 6,
+      "classification_frozen_before_quantification": true
+    },
+    "known_batch_limitation": "SIRV502 is fragmented in batch 216652830; it remains expected-positive and is not excluded from the 69-feature report or gates.",
+    "primary_index": {
+      "role": "combined_human_sirv_decoy_aware",
+      "human_release": "GENCODE 49",
+      "assembly": "GRCh38.p14 primary assembly",
+      "human_transcripts_gzip_sha256": "08ee7ee86514061de6fd62dc643c2fe962fbc393080589ebc491bd11e22b119e",
+      "human_genome_gzip_sha256": "3023c0705e83e86309271b09e25bdf678945fac98ce2fe5bb6b6e068f2225452",
+      "gentrome_sha256": "e9b438673f64eefddff79743ef8cf9ec0a8ef553a54661481072708d8e87dc09",
+      "decoys_sha256": "2a6ad41315a63770960b8d52773ce6067bbde58388bed67462354a18dc736333",
+      "kmer": 31
+    },
+    "diagnostic_index": {
+      "role": "sirv_only",
+      "primary_promotion_forbidden": true,
+      "kmer": 31
+    },
+    "removed_metric": "Pearson/Spearman correlation against the constant E0 expected vector",
+    "removed_metric_status": "NOT_APPLICABLE_ZERO_VARIANCE",
+    "thresholds": {
+      "identifiable_transcript_detection_min": 0.90,
+      "transcript_median_absolute_log2_molar_error_max": 0.75,
+      "transcript_p90_absolute_log2_molar_error_max": 1.50,
+      "all_seven_genes_detected": true,
+      "gene_median_absolute_log2_molar_error_max": 0.50,
+      "gene_p90_absolute_log2_molar_error_max": 1.00,
+      "equivalence_group_median_relative_error_max": 0.25,
+      "equivalence_group_p90_relative_error_max": 0.50
+    },
+    "undetected_policy": "expected-positive undetected features receive infinite log2 error and remain in detection and error distributions"
+  },
+  "ercc": {
+    "project": "PRJNA208369",
+    "mix1_runs": ["SRR896983", "SRR896985"],
+    "mix2_runs": ["SRR897015", "SRR897017"],
+    "library_type": "IU",
+    "truth_sha256": "5151b394332477301851404d37b907cb6f27c9aaa2569e288531a839d6ca2b3b",
+    "sequence_fasta_sha256": "ab9720a49d9af5463e535fe0c3f6ea2a8c7f9fbf4a4afe29969fb5c1b9e3a2b4",
+    "index_role": "ercc_92",
+    "kmer": 31,
+    "primary_subset_rule": "top 75 percent by min(Mix1 concentration, Mix2 concentration), descending concentration then ERCC ID",
+    "primary_subset_count": 69,
+    "primary_subset_ids_sha256": "43a90980712783e07d94bec15f6605b0cfd239fd46edf4936c2d3691a0a2e114",
+    "correlation_zero_policy": "zeros remain in detection; correlations are calculated only among detected primary features and detection must independently be at least 95 percent",
+    "thresholds": {
+      "concentration_spearman_min": 0.95,
+      "concentration_pearson_min": 0.95,
+      "primary_detection_rate_min": 0.95,
+      "fold_change_spearman_min": 0.95,
+      "fold_change_rmse_max": 0.50,
+      "fold_change_median_absolute_error_max": 0.35,
+      "nonunity_ratio_direction_accuracy_min": 0.95,
+      "nonunity_ratio_group_median_error_max": 0.35,
+      "unity_ratio_group_median_absolute_log2fc_max": 0.25
+    }
+  },
+  "determinism": {
+    "fresh_six_thread_runs_per_sample": 3,
+    "thread_matrix": [1, 2, 4, 6],
+    "quant_sf_byte_identity_required": true,
+    "fragment_accounting_exact_required": true
+  },
+  "cross_mapping": {
+    "warning_fraction": 0.0005,
+    "blocking_fraction": 0.001
+  },
+  "exclusions": [
+    "SIRV singleton spots are excluded from paired-input quantification and reported",
+    "ERCC lower concentration quartile is excluded only from primary accuracy gates and retained in secondary reporting"
+  ],
+  "forbidden_after_freeze": ["accession change", "threshold change", "subset change", "library type change based on accuracy", "SIRV-only primary promotion", "failed-run exclusion", "output rounding"]
+}

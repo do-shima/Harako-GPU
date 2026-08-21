@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "preregistration_id": "harako-parabricks-one-pass-workstation-v1",
+  "goal": "HARAKO_GPU_PARABRICKS_ONE_PASS_WORKSTATION_PROFILE_QUALIFICATION",
+  "frozen_before_quantification": true,
+  "frozen_at": "2026-08-17T00:00:00+09:00",
+  "parent_two_pass_capacity_report": {
+    "path": "docs/qualification/medium-human-capacity-resource-envelope.json",
+    "sha256": "e883730a3f0d2d7058ce3a4b13b8cc79e8c77ac43f0f36566609acf9187df693",
+    "historical_verdict": "HARAKO_GPU_MEDIUM_HUMAN_CAPACITY_AND_RESOURCE_ENVELOPE_BLOCKED",
+    "historical_profile_id": "parabricks_star_two_pass_high_memory",
+    "current_host_status": "unsupported_host_memory",
+    "preserve_without_overwrite": true
+  },
+  "parent_capacity_preregistration": {
+    "path": "docs/qualification/medium-human-capacity-preregistration.json",
+    "file_sha256": "be244859618a91d447bc4a5ffc99410bf86bad5197e307b52756c0d180bd865b",
+    "recorded_preregistration_sha256": "593e95828b14b474a9a61c90ebf8bd95542ebd313d16a4bbfcef50b0ba395123",
+    "unchanged": true
+  },
+  "scientific_contract_delta": {
+    "only_changed_parameter": "--two-pass-mode",
+    "historical_value": "Basic",
+    "candidate_value": "None",
+    "candidate_value_explicit_in_command": true,
+    "unchanged_parameters": [
+      "--low-memory",
+      "--quantMode TranscriptomeSAM GeneCounts",
+      "--no-markdups",
+      "--max-out-filter-multimap 20",
+      "--min-align-sjdb-overhang 1",
+      "--out-sam-strand-field intronMotif",
+      "--out-sam-attributes NH HI AS NM MD",
+      "read group identity"
+    ]
+  },
+  "alignment_profile": {
+    "profile_id": "parabricks_star_one_pass_workstation",
+    "status": "qualification_candidate",
+    "nf_core_revision": "3.26.0",
+    "nextflow_version": "25.04.3",
+    "parabricks_version": "4.6.0-1",
+    "parabricks_image_identity": "sha256:d0761eb4b9921bc046c53520287316d545eb79feaeb8f22387e9bb5734650447",
+    "low_memory": true,
+    "two_pass_mode": "None",
+    "mark_duplicates": false,
+    "quant_modes": ["TranscriptomeSAM", "GeneCounts"],
+    "bam_retention": "keep",
+    "annotation_backed": true
+  },
+  "dataset": {
+    "accession": "ERR188044",
+    "library_type_product": "U",
+    "library_type_salmon": "IU",
+    "source_and_subsets_manifest_sha256": "40bcbd0234064045e55cd05653baa08c588a3c201b9ee755d09373f502517806",
+    "result_dependent_selection": false,
+    "full_source_workflow_required": false
+  },
+  "reference": {
+    "reference_pack_id": "human_grch38p14_gencode49_harako_gpu_v1",
+    "assembly": "GRCh38.p14 primary assembly",
+    "annotation": "GENCODE 49",
+    "genome_sha256": "e49b92b3e4f321bf254c042f25b726d9931c4d74c7523e8b6bb530e63b0cfd4b",
+    "gtf_sha256": "8eb596086228540c93ccf56fbb6601fd99f19a6df2cecdde239af423e5db0729",
+    "transcript_targets_sha256": "c41a37f792b10399838246200dbaf54a334ec3f514cd36545bb2f9c9995b27ac",
+    "tx2gene_sha256": "5db4d8cf73e5c5087c50ae2c26ce081f7604947b5bde09c793e8ff7301b1f0d5",
+    "star_index_id": "star-2.7.2a-c15a9d6fe6df9716",
+    "star_index_sjdb_overhang": 74,
+    "salmon_1_10_3_index_id": "salmon-1.10.3-52224ad2355cc52b",
+    "salmon_2_5_1_index_id": "salmon-2.5.1-1c037278d376f40f",
+    "rebuild_permitted": false
+  },
+  "subsets": {
+    "C1_1M": {"pairs": 1000000, "r1_sha256": "4a0741bea63c0165d7b85eaa786b17da5a489e81d98b9c28325fbaeed6724ca1", "r2_sha256": "cd8cb74fea4fcf6e4cd5d4c9658fba1ec08b40b8e76ae02fde8bcbab1090daca"},
+    "C2_5M": {"pairs": 5000000, "r1_sha256": "c424fa3855d6aee87343e12a6ba7b73429254f561ce68224fd5ee13480be6231", "r2_sha256": "464c3421026baa03549aaad2daa67111b4275c2f9fd4a081b8eca5db192a993c"},
+    "C3_10M": {"pairs": 10000000, "r1_sha256": "d5417956ab423944692f41311a08eb14549c31e52dc6540431e228aa3910eea8", "r2_sha256": "648df81725e496ba7a3bcccd48cabe421ce697deb4b8acffdba5e5e45ab6aeb8"},
+    "C4_20M": {"pairs": 20000000, "r1_sha256": "5c30e49e0500b1ef898ff1dff5d87b469d85afc6d5a39c710e956b84dfb24a07", "r2_sha256": "4b916322c4e82a1c552d268acdfe0026023efd7457204cbfbaddc5b8996c970a"}
+  },
+  "capacity_ladder": [
+    {"id": "C1_1M", "mode": "recommended-only", "required": true, "progression": "must_be_COMFORTABLE"},
+    {"id": "C2_5M", "mode": "compare-both", "primary": "salmon_2_5_1_deterministic", "required_if_progressed": true, "progression": "must_be_COMFORTABLE"},
+    {"id": "C3_10M", "mode": "recommended-only", "required_if_progressed": true, "progression": "must_be_COMFORTABLE"},
+    {"id": "C4_20M", "mode": "recommended-only", "required": false, "progression": "strict_C3_safety_gate"}
+  ],
+  "resource_thresholds": {
+    "comfortable_ram_below_fraction": 0.8,
+    "comfortable_minimum_available_ram_gib": 8,
+    "comfortable_swap_below_gib": 1,
+    "comfortable_vram_below_fraction": 0.9,
+    "constrained_ram_fraction": [0.8, 0.9],
+    "constrained_minimum_available_ram_gib": [4, 8],
+    "constrained_swap_gib": [1, 4],
+    "unsafe_ram_at_or_above_fraction": 0.9,
+    "unsafe_minimum_available_ram_below_gib": 4,
+    "unsafe_swap_at_or_above_gib": 4,
+    "unsafe_vram_at_or_above_fraction": 0.95,
+    "disk_hard_reserve_gib": 40,
+    "disk_hard_reserve_fraction": 0.15,
+    "disk_estimate_safety_factor": 1.5
+  },
+  "c4_progression": {
+    "c3_classification": "COMFORTABLE",
+    "peak_ram_below_fraction": 0.75,
+    "minimum_available_ram_gib": 10,
+    "swap_below_gib": 1,
+    "peak_vram_below_fraction": 0.9,
+    "no_warning": true,
+    "disk_reserve_maintained": true
+  },
+  "small_fixture_comparison": {
+    "sample": "WT_REP1",
+    "historical_two_pass_run_id": "20260817T033952Z-69ee2e22",
+    "descriptive_only": true,
+    "equivalence_claim_permitted": false,
+    "metrics": ["mapping", "splices", "junction overlap", "BAM", "GeneCounts", "runtime", "RAM", "VRAM"]
+  },
+  "expected_artifacts": [
+    "processed paired FASTQ", "genomic BAM and BAI", "STAR Log.final.out", "SJ.out.tab",
+    "ReadsPerGene.out.tab", "selected GeneCounts", "transcriptome BAM", "MultiQC",
+    "Salmon quant.sf", "profile matrices", "Nextflow report trace timeline DAG",
+    "self-contained Harako report", "artifact manifest", "verification summary"
+  ],
+  "stop_conditions": [
+    "C1 is not COMFORTABLE", "C2 is not COMFORTABLE", "C3 is not COMFORTABLE",
+    "SIGKILL or OOM", "Docker instability", "required artifact invalid", "disk hard reserve failure"
+  ],
+  "forbidden": [
+    "threshold mutation after results", "two-pass rerun", "two-pass profile mutation",
+    "CPU STAR fallback", "reference or index rebuild", "WSL RAM or swap mutation",
+    "runtime artifact deletion", "result-dependent parameter change", "full-source claim"
+  ]
+}

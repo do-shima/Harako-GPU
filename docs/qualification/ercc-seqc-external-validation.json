@@ -1,0 +1,23 @@
+{
+  "schema_version": 2,
+  "arm": "ERCC_SEQC",
+  "metadata": "UNAMBIGUOUS",
+  "selection": "FROZEN",
+  "mix1_runs": ["SRR896983", "SRR896985"],
+  "mix2_runs": ["SRR897015", "SRR897017"],
+  "truth_rows": 92,
+  "truth_sha256": "5151b394332477301851404d37b907cb6f27c9aaa2569e288531a839d6ca2b3b",
+  "index_targets": 92,
+  "index_inventory_sha256": "dfe50d9027975ea649a21ae2d647c7411a0e35651b778babe39a2217d4cf4912",
+  "primary_features": 69,
+  "primary_detection_all_lanes": 1.0,
+  "pearson_range": [0.9956208764195235, 0.9958768094452437],
+  "spearman_range": [0.9939122665506642, 0.994687754831305],
+  "concentration_gate": "PASS",
+  "fold_change_spearman": 0.9682859287171082,
+  "fold_change_rmse": 0.17776241752532992,
+  "fold_change_median_absolute_error": 0.1123292678579978,
+  "ratio_group_gates": "PASS",
+  "fold_change_gate": "PASS",
+  "deterministic_reproducibility": "PASS_EXACT"
+}

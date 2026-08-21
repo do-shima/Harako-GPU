@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "arm": "SIRV",
+  "status": "PREREGISTRATION_BLOCKED_ZERO_VARIANCE",
+  "metadata": "UNAMBIGUOUS",
+  "run": "SRR3497201",
+  "mix": "E0",
+  "batch": "216652830",
+  "batch_sequence_zip_sha256": "e8685fc3b01f499b0cb05e45498575a59035e0b43d6b5095673da2954b690258",
+  "batch_concentration_xlsx_sha256": "d85afcedc7bf3cf663517885a61268e0445549fb5cff5a4007b64b72f2f6e1e1",
+  "batch_amendment_sha256": "3b41e939e412168b90aa3f8b01839e6411b4e0e0b02693e866d02b48e76ff9c3",
+  "e0_unique_expected_values": [1],
+  "fragmented_transcript": "SIRV502",
+  "primary_transcript_pearson": "UNDEFINED_ZERO_VARIANCE",
+  "primary_transcript_spearman": "UNDEFINED_ZERO_VARIANCE",
+  "index": "NOT_BUILT_PREREGISTRATION_BLOCKED",
+  "deterministic_repeats": "NOT_RUN",
+  "accuracy": "NOT_RUN",
+  "vendor_assets_committed": false
+}

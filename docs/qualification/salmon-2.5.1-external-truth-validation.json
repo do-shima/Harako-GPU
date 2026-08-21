@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "classification": "HARAKO_GPU_SALMON_2_5_1_EXTERNAL_TRUTH_VALIDATION_BLOCKED",
+  "start_commit": "519d82d903b563fbca15b032ecf9c1a807d91769",
+  "candidate_image_id": "sha256:e6e64f39a479458ef6f007757498321ee5a3ef8a2227ff2af414fbe3c36e6f7f",
+  "start_gate": "PASS",
+  "preregistration_file_sha256": "5ba814f25ce1bb1ab872a3649761f87bcb593af7797458b378933d8015c22077",
+  "sirv_metadata": "UNAMBIGUOUS",
+  "sirv_preregistration": "INVALID_ZERO_VARIANCE_CORRELATION_GATE",
+  "ercc_selection": "UNAMBIGUOUS_AND_FROZEN",
+  "primary_quantification": "NOT_RUN",
+  "deterministic_repeats": "NOT_RUN",
+  "cross_mapping": "NOT_RUN",
+  "version_comparison": "NOT_RUN",
+  "default_salmon_changed": false,
+  "candidate_image_pushed": false,
+  "vendor_assets_committed": false,
+  "external_runtime_artifacts_committed": false,
+  "full_size_human_transcriptome_run": false
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "goal": "HARAKO_GPU_PARABRICKS_ONE_PASS_WORKSTATION_PROFILE_QUALIFICATION",
+  "classification": "HARAKO_GPU_PARABRICKS_ONE_PASS_WORKSTATION_PROFILE_REJECTED",
+  "start_commit": "27d5fc959df5133064c2db15a05d35134fd89d2c",
+  "preregistration_sha256": "9bc1588860c19af00dd1b15ba8142c112754712ddceb403421b88147893425d6",
+  "profiles": {
+    "one_pass": {"id": "parabricks_star_one_pass_workstation", "status": "rejected_resource_failed_c1", "two_pass_mode": "None"},
+    "two_pass": {"id": "parabricks_star_two_pass_high_memory", "status": "unsupported_host_memory", "two_pass_mode": "Basic", "changed": false}
+  },
+  "host": {
+    "os": "Windows 11 Pro 10.0.26200",
+    "physical_ram_bytes": 68263985152,
+    "logical_processors": 32,
+    "wsl_ram_bytes": 50514726912,
+    "wsl_swap_bytes": 0,
+    "wsl_root_total_bytes": 539980652544,
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "gpu_uuid": "GPU-729a533c-e203-acc9-47b0-27ac387bc151",
+    "gpu_memory_mib": 24576
+  },
+  "runtime": {
+    "nf_core": "3.26.0",
+    "nextflow": "25.04.3",
+    "parabricks": "4.6.0-1",
+    "parabricks_image_identity": "sha256:d0761eb4b9921bc046c53520287316d545eb79feaeb8f22387e9bb5734650447"
+  },
+  "reference": {
+    "id": "human_grch38p14_gencode49_harako_gpu_v1",
+    "star_index_id": "star-2.7.2a-c15a9d6fe6df9716",
+    "sjdb_overhang": 74,
+    "salmon_1_10_3_index_id": "salmon-1.10.3-52224ad2355cc52b",
+    "salmon_2_5_1_index_id": "salmon-2.5.1-1c037278d376f40f",
+    "rebuilt": false
+  },
+  "small_fixture": {
+    "run_id": "20260817T081410Z-d10703fc",
+    "terminal_state": "COMPLETED",
+    "nextflow_completed_processes": 38,
+    "required_artifacts_valid": true,
+    "comparison": "docs/qualification/one-pass-vs-two-pass-small-fixture.json"
+  },
+  "levels": {
+    "C1_1M": {
+      "run_id": "20260817T082055Z-bfce8a8e",
+      "classification": "C1_RESOURCE_FAILED",
+      "terminal_state": "FAILED",
+      "failure": "Parabricks SIGKILL during one-pass mapping",
+      "parabricks_exit_code": 255,
+      "input_pairs": 1000000,
+      "processed_pairs": 958978,
+      "peak_ram_bytes": 46235611136,
+      "total_ram_bytes": 50514726912,
+      "peak_ram_fraction": 0.915268,
+      "minimum_available_ram_bytes": 4279115776,
+      "minimum_available_ram_gib": 3.98524,
+      "peak_swap_used_bytes": 0,
+      "peak_vram_mib": 12686,
+      "peak_vram_fraction": 0.516195,
+      "peak_cpu_utilization_percent": 61.77834,
+      "peak_memory_psi_some_avg10": 6.33,
+      "work_peak_bytes": 36978324245,
+      "result_peak_bytes": 301745035,
+      "minimum_filesystem_free_bytes": 144797442048,
+      "disk_reserve_maintained": true,
+      "required_artifacts_valid": false,
+      "controller_wall_seconds": 147,
+      "parabricks_duration_seconds": 68,
+      "support_bundle_sha256": "8b5890f78d63a5ca44025a8f058c18708bcb545561f2ff3e9b727a15264c3589"
+    },
+    "C2_5M": {"classification": "NOT_RUN_SAFETY_GATE", "reason": "C1 was not COMFORTABLE"},
+    "C3_10M": {"classification": "NOT_RUN_SAFETY_GATE", "reason": "C2 was not run"},
+    "C4_20M": {"classification": "NOT_RUN_SAFETY_GATE", "reason": "C3 strict gate unavailable"}
+  },
+  "maximum_tested_successful_scale": null,
+  "maximum_comfortable_scale": null,
+  "recommended_internal_operating_scale": null,
+  "tests": {"passed": 254},
+  "limitations": [
+    "no successful full-human scale", "no C2 compare-both run", "no C3 or C4 run",
+    "novel-junction sensitivity is not equivalent to two-pass", "full source not run",
+    "research use only", "non-diagnostic", "non-clinical"
+  ]
+}

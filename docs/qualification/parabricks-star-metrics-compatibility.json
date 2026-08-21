@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "completion_classification": "HARAKO_GPU_PARABRICKS_STAR_METRICS_COMPATIBILITY_QUALIFIED",
+  "qualified_scope": "one pinned paired-end nf-core test fixture only",
+  "repository": {
+    "branch": "fix/parabricks-star-metrics-compatibility",
+    "start_commit": "41e02283f75b8039de0217252022c459465d077d",
+    "origin_main_at_start": "46ee9f8214127bddf3967cd2651b0be864e345e6"
+  },
+  "pipeline": {
+    "name": "nf-core/rnaseq",
+    "revision": "3.26.0",
+    "resolved_commit": "e7ca46272c8f9d5ceee3f71759f4ba551d3217a4",
+    "nextflow": "25.04.3",
+    "parabricks": "4.6.0-1",
+    "parabricks_digest": "sha256:d0761eb4b9921bc046c53520287316d545eb79feaeb8f22387e9bb5734650447",
+    "star_oracle": "2.7.2a"
+  },
+  "root_cause": {
+    "generic_log_role": "parabricks_runtime_log",
+    "mislabelled_path": "sample.Log.final.out",
+    "star_required_fields_found": [],
+    "nf_core_parser_fallback": 0,
+    "multiqc_star_parser_result": null,
+    "false_warning_path": [
+      "PARABRICKS_RNAFQ2BAM.log_final",
+      "ALIGN_STAR.getStarPercentMapped",
+      "numeric_zero_fallback",
+      "min_mapped_reads_5_percent",
+      "fail_mapped_samples_mqc"
+    ]
+  },
+  "logfile_experiments": {
+    "shared_record_checksum": "51410770",
+    "A": {
+      "logfile": "sample.Log.final.out",
+      "exit_code": 0,
+      "elapsed_seconds": 40,
+      "top_level_log_kind": "PARABRICKS_GENERIC_LOG",
+      "bam_sha256": "02f0e3f0e52cf69b9765a899f4bcb0a757dc363471e4f5e973151e1f27b73ea6"
+    },
+    "B": {
+      "logfile": "sample.parabricks.log",
+      "exit_code": 0,
+      "elapsed_seconds": 39,
+      "top_level_log_kind": "STANDARD_STAR_LOG_FINAL",
+      "bam_sha256": "b8d1642483619b2a9c8d9c9cb9cbe953cf6ba6ea0a21d1c9a5a734245361767e"
+    },
+    "C": {
+      "logfile": null,
+      "stderr_captured": true,
+      "exit_code": 0,
+      "elapsed_seconds": 39,
+      "top_level_log_kind": "STANDARD_STAR_LOG_FINAL",
+      "bam_sha256": "d5de2452fc4ce0e0d1a53d042f2ec69a01de7d036d16b3c8191695546480033b"
+    }
+  },
+  "star_oracle": {
+    "exit_code": 0,
+    "elapsed_seconds": 33,
+    "counting_unit": "paired_fragments",
+    "scientific_field_tolerance": 0,
+    "matches_experiment_B": true,
+    "metrics": {
+      "input_fragments": 49747,
+      "uniquely_mapped_fragments": 43442,
+      "uniquely_mapped_percent": 87.33,
+      "multimapped_fragments": 986,
+      "multimapped_percent": 1.98,
+      "too_many_loci_fragments": 0,
+      "mapped_percent": 89.31
+    }
+  },
+  "strategy": {
+    "branch": "A_GENUINE_STAR_LOG",
+    "patch_id": "harako-parabricks-star-logfile-separation-v1",
+    "patch_sha256": "fce22aa246ab82532b0860dd74fcf5f285262ba1277b1df34d0359aab6d72410",
+    "source_module_sha256": "231d896e2ab0e7a474e42493c13ca209ab19c8d20df8a8cf7903cb3429894321",
+    "patched_module_sha256": "103a42559cf2f59788c92960a7c08250c021d548f5bc3761a9b74b61dcde3a9b",
+    "source_config_sha256": "23276136a2b40bec32f3a6e2ec066595a7d10583ebc39d664bb439015ce94308",
+    "patched_config_sha256": "1fea4eebd8214aaae94a28a1bb60ba5602fa9b3fffd63f8c7f82eb8638cc8c27",
+    "synthetic_metrics": false,
+    "mapping_threshold_suppressed": false,
+    "alignment_arguments_changed": false
+  },
+  "actual_run": {
+    "status": "TERMINAL_SUCCESS",
+    "plan_id": "5c048b2aa9d539d791b465955871d78566e097e84c658f1aa31c2f90c7bd6a1d",
+    "started_at_utc": "2026-08-15T18:47:17Z",
+    "ended_at_utc": "2026-08-15T18:51:51Z",
+    "wall_time_seconds": 274,
+    "nextflow_reported_duration": "4m 30s",
+    "succeeded_tasks": 47,
+    "failed_tasks": 0,
+    "parabricks_task_seconds": 39.3,
+    "parabricks_process_count": 1,
+    "native_star_alignment_process_count": 0,
+    "gpu": {
+      "uuid": "GPU-729a533c-e203-acc9-47b0-27ac387bc151",
+      "peak_vram_mib": 9398,
+      "maximum_utilization_percent": 83,
+      "peak_power_w": 211.44,
+      "maximum_temperature_c": 53
+    }
+  },
+  "mapping_and_multiqc": {
+    "nf_core_gate": "QC_PASS",
+    "threshold_percent": 5,
+    "observed_unique_percent": 87.33,
+    "fail_mapped_artifact_count": 0,
+    "multiqc_star_sample": "WT_REP1",
+    "generic_parabricks_log_registered_as_star": false,
+    "multiqc_html": "PASS",
+    "multiqc_data": "PASS"
+  },
+  "invariance": {
+    "prior_qualified_bam_sha256": "33372ca6b549b77e862cbb6a0845159170062330f74da24d4bde93931e8202d5",
+    "corrected_bam_sha256": "6e017271dfcaa11c67c14e501ed9d8da00210c94fe9bbdf5c086609fc5e73ea6",
+    "bam_byte_identity": false,
+    "bam_byte_difference_reason": "absolute Nextflow work/output paths in STAR @PG and @CO header fields",
+    "samtools_checksum_all_records_match": true,
+    "samtools_checksum_combined": "51410770",
+    "record_count": 92113,
+    "splice_junction_byte_identical": true,
+    "transcriptome_bam_record_checksum_identical": false,
+    "transcriptome_bam_variability_also_observed_across_direct_A_B_C": true,
+    "gene_counts_byte_identical": true,
+    "transcript_counts_byte_identical": true,
+    "salmon_numreads_max_absolute_difference": 0,
+    "salmon_effective_length_max_absolute_difference": 0.081,
+    "salmon_tpm_max_relative_difference": 0.0007638
+  },
+  "resume": {
+    "status": "PASS_WITH_REPORT_REGENERATION",
+    "wall_time_seconds": 34,
+    "task_count": 47,
+    "cached_tasks": 46,
+    "completed_tasks": 1,
+    "parabricks": "CACHED",
+    "bam_sort": "CACHED",
+    "salmon": "CACHED",
+    "multiqc": "REGENERATED_FOR_RUN_REPORT",
+    "bam_sha_and_mtime_unchanged": true,
+    "star_metric_unchanged": true,
+    "plan_patch_input_reference_identity_unchanged": true
+  },
+  "limitations": [
+    "Only the pinned small fixture is qualified.",
+    "Direct identical Parabricks A/B/C runs produced different transcriptome BAM record checksums; Salmon fresh-run TPM values showed bounded 0.0764 percent maximum relative re-estimation variance while counts were identical.",
+    "No full-size, performance, broad scientific equivalence, standard-memory, mark-duplicates, multi-GPU, production, or diagnostic claim is made."
+  ]
+}

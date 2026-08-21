@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "classification": "UBUNTU_NATIVE_GUI_ONE_PASS_TWO_PASS_APPTEST_QUALIFIED_BROWSER_RUNTIME_BLOCKED",
+  "repository": {
+    "source_branch_commit": "7327bf51e27d16c5e4b5af38854f740325efefa5",
+    "source_branch_tree": "6ce204e9af58270f98395870b516397413d5835a",
+    "tested_implementation_commit": "23b9ec3e52749c164071af8b3b2665b2fcf6e2ca",
+    "tested_implementation_tree": "ebdc01405956bdcae057b8a2847087797b66fe21",
+    "parent_main": "cf36828785e4da788b488223bf7309b878215d86"
+  },
+  "host": {
+    "profile_id": "ubuntu_native_rtx3090_ram128_v1",
+    "receipt_sha256": "edef6fdba77cb62b0aac3debf9e624acea97d3c75be48932653f9cb0051d5c47",
+    "execution_context": "native_linux",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "vram_mib": 24576,
+    "runtime_filesystem": "ext4"
+  },
+  "fixture": {
+    "accession": "ERR188044",
+    "paired_fragments": 1000000,
+    "r1_sha256": "4a0741bea63c0165d7b85eaa786b17da5a489e81d98b9c28325fbaeed6724ca1",
+    "r2_sha256": "cd8cb74fea4fcf6e4cd5d4c9658fba1ec08b40b8e76ae02fde8bcbab1090daca",
+    "reference_pack_id": "human_grch38p14_gencode49_harako_gpu_v1",
+    "star_index_id": "star-2.7.2a-c15a9d6fe6df9716",
+    "salmon_index_id": "salmon-2.5.1-1c037278d376f40f"
+  },
+  "gui": {
+    "eligibility": "AVAILABLE_QUALIFIED",
+    "app_test": "PASS",
+    "http_loopback_health": 200,
+    "http_loopback_root": 200,
+    "actual_browser": "ACTUAL_BROWSER_RUNTIME_UNAVAILABLE",
+    "scientific_launch_transport": "GUI_CONTROLLER_ADAPTER",
+    "cli_create_prepare_start": false,
+    "manual_scientific_override": false
+  },
+  "g1": {
+    "plan_id": "4f36f0fdaf2d850d65be1df59be10b048311cfda2f53768613089d4af0fe6b67",
+    "run_id": "20260821T035538Z-4f36f0fd",
+    "approval_hash": "d7845555bd5e9ca2c8cd86dae584754abba1dee554b3bca69b2891c67b9d8caf",
+    "analysis_series_id": "039d97c5c3b5bd6fdfd1a427e92ea96b88540a7380415f2614c9a75d93b5d3cb",
+    "workflow_backend": "harako_native_v1",
+    "alignment_profile": "parabricks_star_one_pass_workstation",
+    "resource_contract": {"id": "ubuntu_native_rtx3090_ram128_one_pass_42gb_v1", "memory": "42.GB", "cpus": 12},
+    "two_pass_mode": "None",
+    "state": "COMPLETED",
+    "nextflow_processes": {"completed": 5, "failed": 0},
+    "controller_tasks": {"succeeded": 9, "failed": 0},
+    "deep_artifact_verification_sha256": "6314dbc0812d6089b28b69e9b650e290127dd112cdf561ca948b2e1a41a1f7c0",
+    "support_bundle_sha256": "4ca9ac70f41ea8dcfed3470fece977680cb20c9e7864096678c5a186f0e264bf",
+    "support_bundle_audit": "PASS"
+  },
+  "g2": {
+    "plan_id": "1287685432806c3e75132a7b750dd4236d7caa1b339767be4edd37d1bb12fe14",
+    "run_id": "20260821T040226Z-12876854",
+    "approval_hash": "e9a98ad4419ae989574f948d30538726791b5b5c8f768fd0185f3651bfa442d1",
+    "analysis_series_id": "cb154451ca7b45db60dddc9e12ee64c7490ee469c745bb4069b982be296aaea1",
+    "workflow_backend": "harako_native_v1",
+    "alignment_profile": "parabricks_star_two_pass_high_memory",
+    "resource_contract": {"id": "ubuntu_native_rtx3090_ram128_two_pass_96gb_v1", "memory": "96.GB", "cpus": 12},
+    "two_pass_mode": "Basic",
+    "state": "COMPLETED",
+    "nextflow_processes": {"completed": 5, "failed": 0},
+    "controller_tasks": {"succeeded": 9, "failed": 0},
+    "deep_artifact_verification_sha256": "4ca76ab7ee7d710122e1f08709e1e038f8c081153fbfe00aeeb829220d69d5c5",
+    "support_bundle_sha256": "8cbec0d7414cb8df9aec7ebcd8dbad7d84d2e951d165ea369cce0d1555e0a385",
+    "support_bundle_audit": "PASS"
+  },
+  "frozen_contract": {
+    "featurecounts_feature_type": "exon",
+    "featurecounts_group_type": "gene_type",
+    "quantification_mode": "recommended_only",
+    "primary_profile": "salmon_2_5_1_deterministic",
+    "explicit_library_type": "ISR",
+    "requires_nf_schema": false,
+    "minimal_image_roles": ["parabricks", "fastp", "samtools", "subread_featurecounts", "multiqc", "salmon_2_5_1_deterministic"],
+    "cpu_star_fallback": false
+  },
+  "state_and_recovery": {
+    "refresh_rediscovery": "PASS",
+    "completed_resume_disabled": true,
+    "failed_fixture_resume_enabled": true,
+    "immutable_scientific_selectors_absent_on_recovery": true,
+    "stale_lock_presentation": "PASS",
+    "malformed_pid_classification": "STALE"
+  },
+  "implementation_repairs": [
+    {"commit": "773581f7cc64806b5562c98b214aa94b479730f2", "scope": "preserve explicit native GUI backend selection"},
+    {"commit": "3c433cc62a2b25718c784756e62f247050786bf2", "scope": "validate exact native GUI product evidence"},
+    {"commit": "cbd77062ae17bbbecf321881fc648c4961e6b513", "scope": "accept backend-aware GUI capability snapshots"},
+    {"commit": "23b9ec3e52749c164071af8b3b2665b2fcf6e2ca", "scope": "validate frozen GUI runs without source-plan siblings"}
+  ],
+  "final_regression": {"passed": 454, "skipped_browser_opt_in": 1, "failed": 0, "pip_check": "PASS", "compileall": "PASS"},
+  "support_bundle_biological_data_included": false,
+  "support_bundle_credentials_included": false,
+  "full_size_rerun": false,
+  "nfcore_scientific_rerun": false,
+  "salmon_version_comparison_rerun": false,
+  "windows_wsl_native_launch": "BLOCKED_UNCHANGED",
+  "cpu_star": "UNAVAILABLE",
+  "automatic_archive_delete": false,
+  "research_use_only": true,
+  "biological_truth": "NOT_EVALUATED"
+}

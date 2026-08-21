@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "goal": "HARAKO_GPU_MEDIUM_HUMAN_CAPACITY_AND_RESOURCE_ENVELOPE",
+  "classification": "HARAKO_GPU_MEDIUM_HUMAN_CAPACITY_AND_RESOURCE_ENVELOPE_BLOCKED",
+  "start_commit": "404efa59deace9ab3a40e264fffeebc96b5cc808",
+  "historical_blocker": {
+    "reason": "full-human reference preparation disk safety gate",
+    "wsl_root_free_gb": 89.33,
+    "preserved": true,
+    "overwritten": false
+  },
+  "storage_remediation_gate": {
+    "passed": true,
+    "wsl_root_total_gib": 502.896,
+    "wsl_root_free_gib": 322.407,
+    "existing_runtime_artifacts_deleted": false
+  },
+  "dataset": {
+    "accession": "ERR188044",
+    "study": "PRJEB3366",
+    "sample": "SAMEA1573216",
+    "experiment": "ERX162864",
+    "declared_pairs": 36349964,
+    "read_length": 76,
+    "library_type_product": "U",
+    "library_type_salmon": "IU",
+    "full_source_workflow_executed": false
+  },
+  "preregistration_sha256": "593e95828b14b474a9a61c90ebf8bd95542ebd313d16a4bbfcef50b0ba395123",
+  "reference_pack": {
+    "id": "human_grch38p14_gencode49_harako_gpu_v1",
+    "assembly": "GRCh38.p14 primary assembly",
+    "annotation": "GENCODE 49",
+    "transcript_targets": 533740,
+    "genes": 78899
+  },
+  "indices": {
+    "star": {"id": "star-2.7.2a-c15a9d6fe6df9716", "bytes": 30161099016, "wall_seconds": 1523.64, "peak_ram_bytes": 40931368960},
+    "salmon_1_10_3": {"id": "salmon-1.10.3-52224ad2355cc52b", "bytes": 18223695337, "wall_seconds": 1282.96, "peak_ram_bytes": 22400000000},
+    "salmon_2_5_1": {"id": "salmon-2.5.1-1c037278d376f40f", "bytes": 10034853064, "wall_seconds": 845.84, "peak_ram_bytes": 19270000000}
+  },
+  "levels": {
+    "C1_1M": {
+      "classification": "RESOURCE_FAILED",
+      "terminal_success": false,
+      "last_run_id": "20260817T065955Z-4ebc85a1",
+      "failure": "Parabricks SIGKILL during junction insertion",
+      "exit_code": 255,
+      "peak_ram_bytes": 48418181120,
+      "total_ram_bytes": 50514726912,
+      "minimum_available_ram_bytes": 2096545792,
+      "swap_bytes": 0,
+      "peak_vram_mib": 12695,
+      "total_vram_mib": 24576,
+      "peak_cpu_utilization_percent": 61.98118428334256,
+      "mean_cpu_utilization_percent": 17.8502381248495,
+      "peak_gpu_utilization_percent": 67.0,
+      "mean_gpu_utilization_percent": 12.145985401459853,
+      "peak_gpu_temperature_c": 58.0,
+      "work_peak_bytes": 37009951881,
+      "result_peak_bytes": 301745348,
+      "minimum_filesystem_free_bytes": 182672023552,
+      "disk_reserve_maintained": true,
+      "required_artifacts_valid": false
+    },
+    "C2_5M": {"classification": "NOT_RUN_SAFETY_GATE"},
+    "C3_10M": {"classification": "NOT_RUN_SAFETY_GATE"},
+    "C4_20M": {"classification": "NOT_RUN_SAFETY_GATE"}
+  },
+  "envelope": {
+    "maximum_tested_successful_scale": null,
+    "maximum_comfortable_scale": null,
+    "recommended_internal_operating_scale": null,
+    "estimator": "NOT_AVAILABLE_NO_SUCCESSFUL_OBSERVATION"
+  },
+  "tests_at_report_time": {"passed": 242},
+  "limitations": [
+    "no successful full-human capacity level",
+    "no compare-both capacity measurement",
+    "no native Linux run",
+    "no full-source workflow run",
+    "no BAM deletion",
+    "research use only",
+    "non-diagnostic"
+  ],
+  "later_one_pass_followup": {
+    "historical_record_unchanged": true,
+    "profile_id": "parabricks_star_one_pass_workstation",
+    "classification": "HARAKO_GPU_PARABRICKS_ONE_PASS_WORKSTATION_PROFILE_REJECTED",
+    "c1_failure": "SIGKILL during one-pass mapping at 91.53% WSL RAM",
+    "report": "docs/qualification/parabricks-one-pass-workstation-profile.json"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "claim_boundary": {
+    "biological_truth": "NOT_EVALUATED",
+    "cross_host_equality": "NOT_EVALUATED",
+    "general_speedup_ratio": null,
+    "matched_cpu_benchmark": false,
+    "research_use_only": true,
+    "salmon_comparison_n": 2
+  },
+  "gpu_observed": {
+    "host": {
+      "gpu": "NVIDIA GeForce RTX 3090",
+      "os": "Ubuntu 24.04.4 LTS",
+      "physical_ram_bytes": 134814732288,
+      "vram_mib": 24576
+    },
+    "input": {
+      "accession": "ERR188044",
+      "paired_fragments": 36349964,
+      "r1_sha256": "ee5d882165d967d9965e6b5b9c966ba86d6e913a9a13dd21d70e89f134a17b54",
+      "r2_sha256": "bee3094e5153963884ed4dd93b678b9083c84bb70e1f98f76bbb1bf89bf39f90"
+    },
+    "one_pass": {
+      "classification": "FULL_SIZE_ONE_PASS_END_TO_END_QUALIFIED",
+      "cpus": 12,
+      "duration_note": "The final FeatureCounts repair reused the cached alignment; no clean isolated one-pass task duration is published.",
+      "isolated_alignment_seconds": null,
+      "memory_contract_bytes": 45097156608,
+      "peak_host_ram_bytes": 52991762432,
+      "peak_vram_mib": 11598
+    },
+    "two_pass": {
+      "cgroup_peak_bytes": 80275611648,
+      "classification": "FULL_SIZE_TWO_PASS_END_TO_END_QUALIFIED_96GB",
+      "cpus": 12,
+      "isolated_alignment_seconds": 850,
+      "memory_contract_bytes": 103079215104,
+      "peak_host_ram_bytes": 61657542656,
+      "peak_vram_mib": 11606
+    }
+  },
+  "gui": {
+    "actual_browser": "ACTUAL_BROWSER_RUNTIME_UNAVAILABLE",
+    "app_test": "PASS",
+    "classification": "UBUNTU_NATIVE_GUI_ONE_PASS_TWO_PASS_APPTEST_QUALIFIED_BROWSER_RUNTIME_BLOCKED"
+  },
+  "parity": {
+    "classification": "HARAKO_NATIVE_C1_ONE_PASS_TWO_PASS_STRICT_SCIENTIFIC_PARITY",
+    "one_pass": "STRICT_SCIENTIFIC_PARITY",
+    "two_pass": "STRICT_SCIENTIFIC_PARITY"
+  },
+  "public_display_version": "v0.1.0-alpha.1",
+  "salmon": {
+    "fixture": {
+      "accession": "ERR188044",
+      "paired_fragments_raw": 1000000,
+      "r1_sha256": "4a0741bea63c0165d7b85eaa786b17da5a489e81d98b9c28325fbaeed6724ca1",
+      "r2_sha256": "cd8cb74fea4fcf6e4cd5d4c9658fba1ec08b40b8e76ae02fde8bcbab1090daca"
+    },
+    "median_wall_ratio_1_10_3_to_2_5_1": 1.2445654566148785,
+    "median_wall_seconds": {
+      "1.10.3": 28.199892380500387,
+      "2.5.1": 22.658424457000365
+    },
+    "method_sensitive_features": {
+      "gene_num_reads": {
+        "q1": 552,
+        "q2": 554
+      },
+      "gene_tpm": {
+        "q1": 733,
+        "q2": 731
+      },
+      "transcript_num_reads": {
+        "q1": 2929,
+        "q2": 2925
+      },
+      "transcript_tpm": {
+        "q1": 2882,
+        "q2": 2883
+      }
+    },
+    "policy": {
+      "future_default": "salmon_2_5_1_deterministic",
+      "observed_results_change_default": false,
+      "salmon_1_10_3_status": "VISIBLE_EXECUTABLE_BOUNDED_NUMERICAL_COMPATIBILITY"
+    },
+    "repeatability": {
+      "salmon_1_10_3": {
+        "byte_equal": false,
+        "classification": "BOUNDED_NUMERICAL",
+        "gene_num_reads": {
+          "log_pearson": 0.9999555057062659,
+          "maximum_absolute_difference": 7.143999999999998,
+          "median_absolute_difference": 0.0,
+          "spearman": 0.9999309299258744,
+          "top100_overlap": 1.0,
+          "zero_transitions": 2
+        },
+        "gene_tpm": {
+          "log_pearson": 0.9999419145025578,
+          "maximum_absolute_difference": 37.66399999999999,
+          "median_absolute_difference": 0.0,
+          "spearman": 0.9999314262347107,
+          "top100_overlap": 1.0,
+          "zero_transitions": 2
+        },
+        "numerical_digest_equal": false,
+        "transcript_num_reads": {
+          "log_pearson": 0.995991973593006,
+          "maximum_absolute_difference": 58.205,
+          "median_absolute_difference": 0.0,
+          "spearman": 0.99608787971529,
+          "top100_overlap": 1.0,
+          "zero_transitions": 199
+        },
+        "transcript_tpm": {
+          "log_pearson": 0.9963152961301194,
+          "maximum_absolute_difference": 119.12690099999998,
+          "median_absolute_difference": 0.0,
+          "spearman": 0.9961225906759682,
+          "top100_overlap": 1.0,
+          "zero_transitions": 199
+        }
+      },
+      "salmon_2_5_1": {
+        "byte_equal": true,
+        "feature_order_equal": true,
+        "matrix_sha256_equal": true,
+        "numerical_digest_equal": true,
+        "spearman": 1.0,
+        "zero_transitions": 0
+      }
+    },
+    "spearman": {
+      "gene_num_reads": {
+        "median": 0.9889100708593668,
+        "q1": 0.9889113989671028,
+        "q2": 0.9889087427516308
+      },
+      "gene_tpm": {
+        "median": 0.9874809273830688,
+        "q1": 0.9874856267579568,
+        "q2": 0.9874762280081808
+      },
+      "transcript_num_reads": {
+        "median": 0.9543892850761764,
+        "q1": 0.9544253337798938,
+        "q2": 0.9543532363724591
+      },
+      "transcript_tpm": {
+        "median": 0.9536972614857879,
+        "q1": 0.9537426072869233,
+        "q2": 0.9536519156846527
+      }
+    }
+  },
+  "schema_version": 1
+}

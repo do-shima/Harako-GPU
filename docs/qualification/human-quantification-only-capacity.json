@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "qualification_id": "human_quant_only_capacity_v1",
+  "classification": "QUALIFIED_FULL_SOURCE_CPU_QUANTIFICATION_ONLY",
+  "preregistration_sha256": "9f94cdbb93d4274816c7cbe1a45459c0d7eb5c3a1354ff8761e6b41bbe7df109",
+  "host_profile_id": "windows_wsl2_rtx3090_ram64_v1",
+  "route": "fastq_quantification_only",
+  "bam_output_mode": "none",
+  "gpu_used": false,
+  "dataset": {"accession": "ERR188044", "library_type_product": "U", "salmon_library_type": "IU", "full_pairs": 36349964},
+  "reference_pack_id": "human_grch38p14_gencode49_harako_gpu_v1",
+  "index_bytes": {"salmon_1_10_3": 18223695337, "salmon_2_5_1": 10034853064},
+  "levels": {
+    "Q1": {"pairs": 1000000, "mode": "recommended_only", "run_id": "20260817T090526Z-e10dca3a", "state": "COMPLETED", "classification": "COMFORTABLE", "controller_seconds": 64, "raw_input_bytes": 136546978, "processed_fastq_bytes": 133529736, "processed_pairs": 958978, "discarded_pairs": 41022, "mapped_pairs": 886938, "mapping_percent": 92.487836, "peak_ram_bytes": 12251869184, "minimum_available_ram_bytes": 38262857728, "swap_bytes": 0, "mean_cpu_percent": 13.94, "peak_cpu_percent": 51.79, "peak_iowait_percent": 3.38, "peak_vram_mib": 1086, "quant_bytes": 30701716, "matrix_bytes": 42664605, "result_peak_bytes": 289483867, "artifact_verification": "PASS", "support_bundle": "PASS"},
+    "Q2": {"pairs": 5000000, "mode": "compare_both", "run_id": "20260817T090844Z-ce46688c", "state": "COMPLETED", "classification": "COMFORTABLE", "controller_seconds": 297, "raw_input_bytes": 702839850, "processed_fastq_bytes": 683417040, "processed_pairs": 4783191, "discarded_pairs": 216809, "mapped_pairs": 4425030, "mapping_percent": 92.512091, "peak_ram_bytes": 20986675200, "minimum_available_ram_bytes": 29528051712, "swap_bytes": 0, "mean_cpu_percent": 19.47, "peak_cpu_percent": 54.53, "peak_iowait_percent": 2.83, "peak_vram_mib": 1088, "quant_bytes": 61880292, "matrix_bytes": 86406261, "concordance_bytes": 2341299, "result_peak_bytes": 1312726807, "gene_spearman": 0.9763484335879954, "transcript_spearman": 0.9527448076343121, "star_status": "NOT_APPLICABLE", "artifact_verification": "PASS"},
+    "Q3": {"pairs": 10000000, "mode": "recommended_only", "run_id": "20260817T091540Z-dbc1ae05", "state": "COMPLETED", "classification": "COMFORTABLE", "controller_seconds": 242, "raw_input_bytes": 1410546305, "processed_fastq_bytes": 1369338780, "processed_pairs": 9554142, "discarded_pairs": 445858, "mapped_pairs": 8840441, "mapping_percent": 92.529931, "peak_ram_bytes": 12784865280, "minimum_available_ram_bytes": 37729861632, "swap_bytes": 0, "mean_cpu_percent": 20.30, "peak_cpu_percent": 53.45, "peak_iowait_percent": 1.95, "peak_vram_mib": 1085, "quant_bytes": 30993348, "matrix_bytes": 43084920, "result_peak_bytes": 2590834200, "artifact_verification": "PASS"},
+    "Q4": {"pairs": 20000000, "mode": "compare_both", "run_id": "20260817T092127Z-ab29c370", "state": "COMPLETED", "classification": "COMFORTABLE", "controller_seconds": 735, "raw_input_bytes": 2830855783, "processed_fastq_bytes": 2744618097, "processed_pairs": 19094817, "discarded_pairs": 905183, "mapped_pairs": 17668820, "mapping_percent": 92.532021, "peak_ram_bytes": 21291425792, "minimum_available_ram_bytes": 29223301120, "swap_bytes": 0, "mean_cpu_percent": 24.45, "peak_cpu_percent": 59.54, "peak_iowait_percent": 2.11, "peak_vram_mib": 1089, "quant_bytes": 62375750, "matrix_bytes": 87104471, "concordance_bytes": 1776654, "result_peak_bytes": 5150821582, "gene_spearman": 0.9663357804997007, "transcript_spearman": 0.9491159104403274, "star_status": "NOT_APPLICABLE", "artifact_verification": "PASS"},
+    "Q5": {"pairs": 36349964, "mode": "recommended_only", "run_id": "20260817T093543Z-ae70a564", "state": "COMPLETED_AFTER_RESUME", "classification": "COMFORTABLE_WITH_CONTROLLER_RECOVERY", "normal_resume_attempt_seconds": 402, "recovery_inclusive_seconds": 1160, "raw_input_bytes": 5155400360, "processed_fastq_bytes": 4994167035, "processed_pairs": 34680047, "discarded_pairs": 1669917, "mapped_pairs": 32086808, "mapping_percent": 92.522389, "peak_ram_bytes": 12278222848, "minimum_available_ram_bytes": 38236504064, "swap_bytes": 0, "mean_cpu_percent": 33.03, "peak_cpu_percent": 59.65, "peak_iowait_percent": 1.50, "peak_vram_mib": 1094, "quant_bytes": 31223504, "matrix_bytes": 43772882, "result_peak_bytes": 9369153674, "artifact_verification": "PASS", "controller_issue": "transient Windows UNC atomic status replace denial", "fix": "bounded atomic replace retry and non-fatal telemetry heartbeat", "attempts_preserved": true}
+  },
+  "maximum_tested_successful_scale_pairs": 36349964,
+  "maximum_comfortable_scale_pairs": 36349964,
+  "recommended_internal_operating_scale_pairs": 20000000,
+  "storage": {"work_peak_bytes_all_levels": 4096, "disk_reserve_maintained_all_levels": true, "indices_accounted_separately": true},
+  "route_artifacts": {"BAM": "NOT_APPLICABLE", "BAI": "NOT_APPLICABLE", "junction": "NOT_APPLICABLE", "STAR_GeneCounts": "NOT_APPLICABLE", "alignment_MultiQC": "NOT_APPLICABLE"},
+  "tests": {"full_pytest": "275 passed", "artifact_verification": "PASS_ALL_LEVELS"},
+  "limitations": ["CPU-only", "no BAM", "no splice-junction output", "no STAR GeneCounts", "one public sample", "research use only", "non-diagnostic", "non-clinical"]
+}

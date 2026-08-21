@@ -1,0 +1,39 @@
+diff --git a/conf/modules/align_star.config b/conf/modules/align_star.config
+--- a/conf/modules/align_star.config
++++ b/conf/modules/align_star.config
+@@ -145,7 +145,7 @@ process {
+             [
+                 path: { "${params.outdir}/${task.ext.publish_prefix}${params.aligner}/log" },
+                 mode: params.publish_dir_mode,
+-                pattern: '*.{out,tab}'
++                pattern: '*.{out,tab,log}'
+             ],
+             [
+                 path: { params.save_align_intermeds ? "${params.outdir}/${task.ext.publish_prefix}${params.aligner}" : params.outdir },
+diff --git a/modules/nf-core/parabricks/rnafq2bam/main.nf b/modules/nf-core/parabricks/rnafq2bam/main.nf
+--- a/modules/nf-core/parabricks/rnafq2bam/main.nf
++++ b/modules/nf-core/parabricks/rnafq2bam/main.nf
+@@ -17,5 +17,6 @@ process PARABRICKS_RNAFQ2BAM {
+     output:
+     tuple val(meta), path("${prefix}.Log.final.out"),                           emit: log_final
++    tuple val(meta), path("${prefix}.parabricks.log"),                         emit: log_parabricks
+     tuple val(meta), path("${prefix}.Log.out"),                                 emit: log_out
+     tuple val(meta), path("${prefix}.Log.progress.out"),                        emit: log_progress
+     tuple val(meta), path("${prefix}.bam"),                                     emit: bam,                  optional:true
+@@ -61,7 +62,7 @@ process PARABRICKS_RNAFQ2BAM {
+         --output-dir . \\
+         --genome-lib-dir ${index} \\
+         --out-bam ${prefix}.bam \\
+-        --logfile ${prefix}.Log.final.out \\
++        --logfile ${prefix}.parabricks.log \\
+         --out-prefix ${prefix}. \\
+         ${num_gpus} \\
+         ${qc_metrics_command} \\
+@@ -82,6 +83,7 @@ process PARABRICKS_RNAFQ2BAM {
+     touch ${prefix}.bam
+     touch ${prefix}.bam.bai
+     touch ${prefix}.Log.final.out
++    touch ${prefix}.parabricks.log
+     touch ${prefix}.Log.out
+     touch ${prefix}.Log.progress.out
+     touch ${prefix}.sortedByCoord.out.bam

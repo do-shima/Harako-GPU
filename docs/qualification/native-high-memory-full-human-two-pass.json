@@ -1,0 +1,65 @@
+{
+  "archive": {
+    "contract_id": "harako-gpu-terminal-results-archive-v1",
+    "receipt_sha256": "71d5a3fa60c569d3ddf84c6696acf0d338379e012205a6c845ac69df5a5ad711",
+    "status": "VERIFIED_COMPLETE",
+    "terminal_results_sha256": "3755c8955e3e8258ab91ac4db1efdb4f2a59055606240b0d15594eeca32ee4a6"
+  },
+  "artifacts": {
+    "bam_quickcheck": "PASS",
+    "bam_records": 75213342,
+    "bam_sha256": "e62c4f167ea811d6ee8285596cd0d7bc377847619332b168054a7de4d46a76c4",
+    "bam_size_bytes": 4124063454,
+    "gene_matrix_dimensions": [82245, 1],
+    "multiqc": "PASS",
+    "star_gene_counts_rows": 78903,
+    "star_junction_rows": 274861,
+    "transcript_matrix_dimensions": [517232, 1]
+  },
+  "classification": "FULL_SIZE_TWO_PASS_END_TO_END_QUALIFIED_96GB",
+  "cross_host_equality": "NOT_EVALUATED",
+  "evidence_bundle": {
+    "bundle_id": "ubuntu-high-memory-host-capability-v1",
+    "bundle_manifest_sha256": "2775b48d226c107c99c29f6257431b132c05a480ede52ef61b3d73d8eb99afc9",
+    "normalized_evidence_sha256": "d13224114bdd9990bb4d299a654982380fcb85c253e95ee99120447be758f324",
+    "source_report_sha256": "48b3af66048e4e111c880c04aa0d1ee48b6679a6cb332a2718fb867e8ce16569",
+    "source_summary_sha256": "a3202718452356670571669c4690880892fb3ce7fa0d09f2656c3e6bd53b5afd"
+  },
+  "featurecounts": {"feature_type": "exon", "group_type": "gene_type"},
+  "host": {"gpu": "NVIDIA GeForce RTX 3090", "os": "Ubuntu 24.04.4 LTS", "physical_ram_bytes": 134814732288, "vram_mib": 24576},
+  "host_profile_id": "ubuntu_native_rtx3090_ram128_v1",
+  "input": {
+    "accession": "ERR188044",
+    "paired_fragments": 36349964,
+    "r1_sha256": "ee5d882165d967d9965e6b5b9c966ba86d6e913a9a13dd21d70e89f134a17b54",
+    "r2_sha256": "bee3094e5153963884ed4dd93b678b9083c84bb70e1f98f76bbb1bf89bf39f90"
+  },
+  "limitations": [
+    "fixed public ERR188044 and exact assets only",
+    "research use only; non-diagnostic; non-clinical",
+    "cross-host BAM equality was not evaluated",
+    "product Docker provenance was pending in the scientific run evidence"
+  ],
+  "pipeline": {"commit": "e7ca46272c8f9d5ceee3f71759f4ba551d3217a4", "nextflow": "25.04.3", "version": "3.26.0"},
+  "profile_id": "parabricks_star_two_pass_high_memory",
+  "reference": {
+    "pack_id": "human_grch38p14_gencode49_harako_gpu_v1",
+    "salmon_index_id": "salmon-2.5.1-1c037278d376f40f",
+    "star_index_id": "star-2.7.2a-c15a9d6fe6df9716"
+  },
+  "repository": {
+    "commit": "27706b9fb65b3c3ccf965e39a582e7947be9482b",
+    "tree": "e2efd73c0ed85b5d8f3e4b5f9190167de10c16f2"
+  },
+  "resource_contract": {
+    "cgroup_memory_peak_bytes": 80275611648,
+    "cpus": 12,
+    "id": "ubuntu_native_rtx3090_ram128_two_pass_96gb_v1",
+    "memory": "96.GB",
+    "memory_bytes": 103079215104,
+    "process": "NFCORE_RNASEQ:RNASEQ:ALIGN_STAR:PARABRICKS_RNA_FQ2BAM"
+  },
+  "salmon": {"mapped_fragments": 32086808, "profile": "salmon_2_5_1_deterministic", "version": "2.5.1"},
+  "schema_version": 1,
+  "terminal_success": true
+}

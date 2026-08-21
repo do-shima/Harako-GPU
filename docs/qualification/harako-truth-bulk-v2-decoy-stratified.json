@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "fixture_id": "harako_truth_bulk_v2_decoy_stratified",
+  "generator_version": 2,
+  "oracle_schema_version": "decoy_identifiability_v1",
+  "scientific_manifest_sha256": "d59b98d2ee229b3318562e4bda1488c198701804af121abc566c592f7e8a5821",
+  "transcripts": 48,
+  "genes": 30,
+  "decoys": 4,
+  "biological_samples": 6,
+  "biological_fragments_per_sample": 50000,
+  "diagnostic_samples": {
+    "decoy_unique_only": 20000,
+    "decoy_dominant_only": 20000,
+    "decoy_ambiguous_only": 20000,
+    "decoy_exact_tie_only": 20000
+  },
+  "read_length": 100,
+  "library_type": "ISR",
+  "deterministic_generation_repeat": "PASS",
+  "runtime_artifacts_committed": false
+}

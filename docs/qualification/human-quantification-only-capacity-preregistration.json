@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "preregistration_id": "human_quant_only_capacity_v1",
+  "parent_preregistration_id": "medium-human-capacity-resource-envelope-v1",
+  "amendment_reason": "Prospectively qualify CPU FASTQ quantification without BAM after retained full-human Parabricks host-memory failures.",
+  "amendment_performed_before_quantification": true,
+  "date": "2026-08-17",
+  "dataset": {
+    "accession": "ERR188044",
+    "subset_policy": "unchanged deterministic first-N paired records",
+    "library_type_product": "U",
+    "salmon_library_type": "IU"
+  },
+  "reference": {
+    "reference_pack_id": "human_grch38p14_gencode49_harako_gpu_v1",
+    "genome_sha256": "e49b92b3e4f321bf254c042f25b726d9931c4d74c7523e8b6bb530e63b0cfd4b",
+    "gtf_sha256": "8eb596086228540c93ccf56fbb6601fd99f19a6df2cecdde239af423e5db0729",
+    "transcript_targets_sha256": "c41a37f792b10399838246200dbaf54a334ec3f514cd36545bb2f9c9995b27ac"
+  },
+  "indices": {
+    "salmon_2_5_1": "salmon-2.5.1-1c037278d376f40f",
+    "salmon_1_10_3": "salmon-1.10.3-52224ad2355cc52b"
+  },
+  "fastp_contract": "harako-fastp-1.0.1-fixed-v1",
+  "execution_route": "fastq_quantification_only",
+  "bam_output_mode": "none",
+  "gpu_used": false,
+  "levels": {
+    "Q1": {"pairs": 1000000, "mode": "recommended_only", "required": true},
+    "Q2": {"pairs": 5000000, "mode": "compare_both", "required": true},
+    "Q3": {"pairs": 10000000, "mode": "recommended_only", "required": true},
+    "Q4": {"pairs": 20000000, "mode": "compare_both", "required": false, "requires": "Q3 comfortable, peak RAM <70%, available RAM >=14 GiB, disk reserve, no warning"},
+    "Q5": {"pairs": 36349964, "mode": "recommended_only", "required": false, "requires": "Q4 comfortable and two-times estimated disk safety margin"}
+  },
+  "resource_thresholds": {
+    "comfortable": "terminal success; artifacts valid; RAM <75%; available >=10 GiB; swap <1 GiB; disk reserve",
+    "constrained": "terminal success with RAM 75-90%, available 4-10 GiB, or swap 1-4 GiB",
+    "unsafe": "RAM >=90%, available <4 GiB, swap >=4 GiB, SIGKILL/OOM, or invalid artifact"
+  },
+  "stop_conditions": ["non-comfortable prior required level", "disk reserve failure", "OOM/SIGKILL", "invalid required artifact"],
+  "exclusion_rules": ["no result-dependent subset change", "no human BAM retry", "no CPU STAR fallback", "no runtime artifact deletion", "no threshold mutation"],
+  "expected_not_applicable": ["BAM", "BAI", "SJ.out.tab", "STAR GeneCounts", "alignment QC", "alignment MultiQC"],
+  "preregistration_hash_algorithm": "SHA-256 of compact JSON after removing preregistration_sha256",
+  "preregistration_sha256": "9f94cdbb93d4274816c7cbe1a45459c0d7eb5c3a1354ff8761e6b41bbe7df109"
+}

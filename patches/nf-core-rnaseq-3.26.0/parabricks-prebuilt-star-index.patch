@@ -1,0 +1,13 @@
+diff --git a/subworkflows/local/prepare_genome/main.nf b/subworkflows/local/prepare_genome/main.nf
+index 0000000..1111111 100644
+--- a/subworkflows/local/prepare_genome/main.nf
++++ b/subworkflows/local/prepare_genome/main.nf
+@@ -318,7 +318,7 @@ workflow PREPARE_GENOME {
+     //----------------------------------------------------
+     ch_star_index = channel.empty()
+     if (prepare_tool_indices.intersect(['star_salmon', 'star_rsem'])) {
+-        if (use_parabricks_star && fasta_provided) {
++        if (use_parabricks_star && fasta_provided && !star_index) {
+             // Parabricks needs its own STAR index built with its bundled STAR version
+             ch_star_index = PARABRICKS_STARGENOMEGENERATE(
+                 ch_fasta.map { item -> [ [:], item ] },

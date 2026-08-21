@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "completion_classification": "HARAKO_GPU_SALMON_REPRODUCIBILITY_BLOCKED",
+  "contract_decision": "MATERIAL_VARIABILITY",
+  "qualified_scope": "comparison contract and frozen-BAM characterization for one pinned small fixture",
+  "repository": {
+    "branch": "test/salmon-reproducibility-contract",
+    "start_commit": "b3658798258a3e83615c139fea74f794cf54e47e"
+  },
+  "backend": {
+    "pipeline": "nf-core/rnaseq",
+    "revision": "3.26.0",
+    "resolved_commit": "e7ca46272c8f9d5ceee3f71759f4ba551d3217a4",
+    "nextflow": "25.04.3",
+    "parabricks": "4.6.0-1",
+    "parabricks_digest": "sha256:d0761eb4b9921bc046c53520287316d545eb79feaeb8f22387e9bb5734650447",
+    "gpu": "NVIDIA GeForce RTX 3090"
+  },
+  "salmon_identity": {
+    "version": "1.10.3",
+    "image": "quay.io/biocontainers/salmon:1.10.3--h6dccd9a_2",
+    "image_digest": "sha256:f83ebb158845ee8138d793347f83b92c75e83c58dd8f4600c6fea2a2453ef08e",
+    "process": "NFCORE_RNASEQ:RNASEQ:QUANTIFY_BAM_SALMON:SALMON_QUANT",
+    "module_sha256": "0bccc867cefa756675de5ed3a7f8cdc312082844806282dc93c01910933c9cf3",
+    "threads": 6,
+    "library_type": "ISR",
+    "mapping_mode": "alignment",
+    "sequence_bias_correction": false,
+    "gc_bias_correction": false,
+    "command_argv": [
+      "salmon",
+      "quant",
+      "--geneMap",
+      "gene_map.gtf",
+      "--threads",
+      "6",
+      "--libType=ISR",
+      "-t",
+      "transcriptome.fasta",
+      "-a",
+      "transcriptome.bam",
+      "-o",
+      "WT_REP1"
+    ],
+    "environment": {
+      "container_user": "current WSL user",
+      "container_memory_limit_mib": 30720,
+      "NXF_DEBUG": "0",
+      "PYTHONNOUSERSITE": "1",
+      "R_PROFILE_USER": "/.Rprofile",
+      "R_ENVIRON_USER": "/.Renviron",
+      "JULIA_DEPOT_PATH": "/usr/local/share/julia"
+    }
+  },
+  "input_identity": {
+    "frozen_transcriptome_bam_sha256": "ef611c28bb7eec43f31c1ef48eaa1520a343d2b753e254d6d25049d06762a179",
+    "frozen_transcriptome_bam_scientific_checksum": "87f73033f3153360af07954f6e26f842fdd5f04a840ad9f0bc40e38631e5c9db",
+    "header_normalized_sha256": "13803055d1916173ff1c2ece24273b617722bf799240588eba56dd58f40e96da",
+    "record_multiset_sha256": "2479446427d16065e5d37530b7065e47b08c1d3f16b76e06c7d4a7aca7b1ca3f",
+    "record_order_sha256": "cb0b42ffebb04ca59ef0159bd7fee0256d072dcd7b3ff4de6682a958fe747944",
+    "record_count": 73886,
+    "unique_qname_count": 32980,
+    "qname_group_count": 33024,
+    "split_qname_count": 44,
+    "transcript_fasta_sha256": "4f6a6733546b01a96a71f13c63215d9b854dfb1873c2fa484ed69707d6443ac3",
+    "gene_map_sha256": "3274bed81a0f5c5217e4c98eaf56cf8f3a34544c14fb54003dd72c4e98b5fa61"
+  },
+  "tolerance": {
+    "schema_version": 1,
+    "fixed_thread_count": 6,
+    "effective_length_max_absolute": 0.1,
+    "transcript_tpm_ge_1_max_relative": 0.001,
+    "transcript_tpm_ge_0_1_lt_1_max_absolute": 0.001,
+    "gene_tpm_ge_1_max_relative": 0.001,
+    "transcript_tpm_spearman_minimum": 0.999999,
+    "gene_tpm_spearman_minimum": 0.999999,
+    "num_reads_serialization_quantum_max_absolute": 0.001,
+    "exact_fields": [
+      "feature ID sets and order",
+      "processed fragment count",
+      "mapped fragment count",
+      "library type",
+      "total NumReads",
+      "zero/non-zero status",
+      "plan/input/reference/container identity"
+    ]
+  },
+  "experiment_a_frozen_bam": {
+    "run_count": 10,
+    "pair_count": 45,
+    "classification": "BOUNDED_NUMERICAL_REPRODUCIBILITY",
+    "quant_sf_distinct_sha256_count": 10,
+    "canonical_numerical_digest_distinct_count": 10,
+    "processed_fragments": 33024,
+    "mapped_fragments": 33024,
+    "feature_count": 124,
+    "zero_feature_count": 42,
+    "tpm_ge_1_feature_count": 82,
+    "total_num_reads": 32775,
+    "num_reads_max_absolute_difference": 0.001,
+    "effective_length_max_absolute_difference": 0.002,
+    "effective_length_median_absolute_difference_max": 0.001,
+    "effective_length_p95_absolute_difference_max": 0.002,
+    "transcript_tpm_max_relative_difference": 0.0006766411421977891,
+    "transcript_tpm_pearson_minimum": 0.999999999992579,
+    "transcript_tpm_spearman_minimum": 1.0,
+    "gene_tpm_max_relative_difference": 0.0006755352317605487,
+    "gene_tpm_spearman_minimum": 1.0,
+    "zero_nonzero_transition_count": 0,
+    "fragment_length_mean_range": [167.350420129657, 167.351983682356],
+    "fragment_length_sd_range": [68.0124309496139, 68.0127703192423],
+    "fragment_length_distribution_distinct_count": 10,
+    "bias_model_distinct_count": 1,
+    "runtime_seconds_median": 1.562521148
+  },
+  "experiment_b_thread_matrix": {
+    "run_count": 12,
+    "within_thread": {
+      "1": {"classification": "BOUNDED_NUMERICAL_REPRODUCIBILITY", "tpm_max_relative_difference": 0.0003850858397248058},
+      "2": {"classification": "BOUNDED_NUMERICAL_REPRODUCIBILITY", "tpm_max_relative_difference": 0.0005743613858717361},
+      "4": {"classification": "BOUNDED_NUMERICAL_REPRODUCIBILITY", "tpm_max_relative_difference": 0.0007785879103674532},
+      "8": {"classification": "MATERIAL_VARIABILITY", "tpm_max_relative_difference": 0.0011825931335137967, "num_reads_max_absolute_difference": 0.002}
+    },
+    "cross_thread_classification": "MATERIAL_VARIABILITY",
+    "cross_thread_tpm_max_relative_difference": 0.001356764590767097,
+    "cross_thread_num_reads_max_absolute_difference": 0.002,
+    "policy": "thread count is part of plan identity; the pinned qualification thread count is 6"
+  },
+  "experiment_c_fresh_parabricks": {
+    "run_count": 5,
+    "parabricks_exit_zero_count": 5,
+    "salmon_exit_zero_count": 5,
+    "parabricks_runtime_seconds_range": [39.016319634, 39.525945532],
+    "gpu_monitor": {
+      "sample_count": 165,
+      "gpu_uuid": "GPU-729a533c-e203-acc9-47b0-27ac387bc151",
+      "peak_vram_mib": 9537,
+      "maximum_utilization_percent": 90,
+      "peak_power_w": 217.45
+    },
+    "genomic_bam": {
+      "record_count": 92113,
+      "distinct_byte_sha256_count": 5,
+      "distinct_header_normalized_sha256_count": 1,
+      "distinct_record_multiset_sha256_count": 1,
+      "distinct_record_order_sha256_count": 1
+    },
+    "transcriptome_bam": {
+      "record_count": 73886,
+      "unique_qname_count": 32980,
+      "distinct_byte_sha256_count": 5,
+      "distinct_header_normalized_sha256_count": 1,
+      "distinct_record_multiset_sha256_count": 1,
+      "distinct_record_order_sha256_count": 5,
+      "qname_group_count_range": [33011, 33030],
+      "split_qname_count_range": [31, 50]
+    },
+    "salmon": {
+      "classification": "MATERIAL_VARIABILITY",
+      "processed_fragment_count_range": [33011, 33030],
+      "mapped_fragment_count_range": [33011, 33030],
+      "processed_count_equals_qname_group_count": true,
+      "feature_id_set_exact": true,
+      "feature_order_exact": true,
+      "total_num_reads_exact": true,
+      "zero_nonzero_transition_count": 0,
+      "num_reads_max_absolute_difference": 0.001,
+      "effective_length_max_absolute_difference": 0.067,
+      "transcript_tpm_max_relative_difference": 0.0025748016099843684,
+      "transcript_tpm_pearson_minimum": 0.999999989158624,
+      "transcript_tpm_spearman_minimum": 1.0,
+      "gene_tpm_max_relative_difference": 0.0025764472949418713,
+      "gene_tpm_spearman_minimum": 1.0
+    }
+  },
+  "source_of_variation": {
+    "fixed_bam_salmon_inference": "present and bounded under the provisional ceiling at 6 threads",
+    "parabricks_alignment_record_content": "identical canonical multiset across five runs",
+    "parabricks_transcriptome_record_order": "different in all five runs",
+    "qname_grouping_effect": "Salmon processed/mapped count exactly followed contiguous QNAME group count rather than the 32980 unique QNAME count",
+    "release_gate_result": "failed because processed/mapped counts were not exact and transcript/gene TPM >=1 exceeded 0.1 percent"
+  },
+  "deterministic_capability": {
+    "deterministic_option": null,
+    "random_seed_option": null,
+    "seq_bias_option_available": true,
+    "gc_bias_option_available": true,
+    "status": "NOT_AVAILABLE_IN_PINNED_BACKEND"
+  },
+  "quantification_identity_contract": [
+    "Salmon version",
+    "image digest",
+    "structured command argv",
+    "thread count",
+    "input BAM scientific checksum including record order",
+    "transcript FASTA SHA-256",
+    "quant.sf byte SHA-256",
+    "canonical numerical digest",
+    "reproducibility class",
+    "tolerance schema version"
+  ],
+  "unqualified_scope": [
+    "fresh Parabricks transcriptome BAM to Salmon release reproducibility",
+    "8-thread and cross-thread numerical identity",
+    "full-size datasets",
+    "other backend versions",
+    "production or diagnostic use"
+  ],
+  "recommended_next_goal": "HARAKO_GPU_TRANSCRIPTOME_BAM_GROUPING_COMPATIBILITY"
+}

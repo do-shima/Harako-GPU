@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "classification": "AVAILABLE_QUALIFIED",
+  "source_audit": {
+    "rnafq2bam_module_blob": "ddaf70c77733e4d85a2a912e30d01e82652dba2b",
+    "align_star_config_blob": "3bdcb00cc8855b1604ea63279eaf1d3f8f051ce2",
+    "root_cause": "module output was optional and the stock config requested TranscriptomeSAM but not GeneCounts"
+  },
+  "capability": {
+    "parabricks_version": "4.6.0-1",
+    "image_digest": "sha256:d0761eb4b9921bc046c53520287316d545eb79feaeb8f22387e9bb5734650447",
+    "transcriptome_sam": true,
+    "gene_counts": true,
+    "variadic_quant_mode": true
+  },
+  "run": {
+    "sample": "WT_REP1",
+    "pipeline_tasks_succeeded": 46,
+    "pipeline_tasks_failed": 0,
+    "parabricks_realtime_seconds": 40.3,
+    "parabricks_peak_rss": "15.3 GB",
+    "reads_per_gene_rows": 128,
+    "gene_rows": 124,
+    "metadata_rows": 4,
+    "gtf_genes": 124,
+    "unexpected_gene_ids": 0,
+    "missing_gene_ids": 0,
+    "library_type": "ISR",
+    "selected_column": 4
+  },
+  "retained_tree_size_bytes": {
+    "previous_result": 56344478,
+    "genecounts_result": 49382087,
+    "difference": -6962391,
+    "previous_work": 91662068,
+    "genecounts_work": 69176413,
+    "work_difference": -22485655,
+    "interpretation": "observed retained trees only; not a causal GeneCounts storage estimate"
+  },
+  "alignment_invariance": {
+    "record_count": 88628,
+    "samtools_checksum_combined": "28352bb9",
+    "junction_sha256": "2d85ddcc5595b20c37989b6fdc08542ac7bc1303224f243ca36cc9cbf80e75e2",
+    "flagstat_sha256": "6132a0ca18b04f36316195e8d12a8d99ade451e9cec9842c2554a4bb3cb1e9b0",
+    "idxstats_sha256": "1f65f76cba5665467d4506d01c61f116092c0c56195358aa31de69cbe0a076bf",
+    "input_reads": 47605,
+    "uniquely_mapped_percent": 88.04,
+    "quickcheck": "PASS"
+  },
+  "runtime_artifacts_committed": false
+}

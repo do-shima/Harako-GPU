@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "preregistration_id": "harako-medium-human-capacity-v1",
+  "historical_parent": "HARAKO_GPU_MEDIUM_HUMAN_CAPACITY_AND_RESOURCE_ENVELOPE_BLOCKED_STORAGE_89_33_GB",
+  "frozen_before_acquisition": true,
+  "dataset_selection_id": "medium-human-err188044-v1",
+  "reference_pack_id": "human_grch38p14_gencode49_harako_gpu_v1",
+  "reference": {
+    "assembly": "GRCh38.p14 primary assembly",
+    "annotation_provider": "GENCODE",
+    "annotation_release": "49",
+    "genome_url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_49/GRCh38.primary_assembly.genome.fa.gz",
+    "transcripts_url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_49/gencode.v49.transcripts.fa.gz",
+    "gtf_url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_49/gencode.v49.primary_assembly.annotation.gtf.gz",
+    "genome_sha256": "3023c0705e83e86309271b09e25bdf678945fac98ce2fe5bb6b6e068f2225452",
+    "transcripts_sha256": "08ee7ee86514061de6fd62dc643c2fe962fbc393080589ebc491bd11e22b119e",
+    "gtf_md5": "8486a6bdcd27a8a7a08232d01cc13b77",
+    "sirv_targets": 0,
+    "ercc_targets": 0
+  },
+  "capacity_levels": [
+    {"id": "C1_1M", "pairs": 1000000, "mode": "recommended-only", "bam": "keep", "required": true, "deep_verify": true},
+    {"id": "C2_5M", "pairs": 5000000, "mode": "compare-both", "primary": "salmon_2_5_1_deterministic", "bam": "keep", "required": true, "deep_verify": false},
+    {"id": "C3_10M", "pairs": 10000000, "mode": "recommended-only", "bam": "keep", "required": true, "deep_verify": false},
+    {"id": "C4_20M", "pairs": 20000000, "mode": "recommended-only", "bam": "keep", "required": false, "conditional": true, "deep_verify": false}
+  ],
+  "subset": {
+    "method": "first-N paired FASTQ records",
+    "nested_prefix": true,
+    "random_seed": null,
+    "gzip_mtime": 0,
+    "gzip_compresslevel": 6,
+    "exact_pair_count": true,
+    "qname_pairing_required": true,
+    "result_dependent_selection": false
+  },
+  "execution": {
+    "nf_core_revision": "3.26.0",
+    "nextflow_version": "25.04.3",
+    "parabricks_version": "4.6.0-1",
+    "memory_profile": "low-memory",
+    "mark_duplicates": false,
+    "new_run_and_work_per_scale": true,
+    "cross_scale_cache": false,
+    "container_pull_time_excluded": true
+  },
+  "disk_gate": {
+    "hard_reserve_gib": 30,
+    "hard_reserve_fraction": 0.15,
+    "estimate_safety_factor": 1.5,
+    "required_expression": "free_bytes - estimated_stage_high_water_bytes >= max(30 GiB, filesystem_total_bytes * 0.15)"
+  },
+  "resource_gates": {
+    "ram_warning_fraction": 0.8,
+    "ram_hard_fraction": 0.9,
+    "available_ram_warning_gib": 8,
+    "available_ram_hard_gib": 4,
+    "available_ram_hard_duration_seconds": 30,
+    "vram_warning_fraction": 0.9,
+    "vram_hard_fraction": 0.95,
+    "resource_interval_seconds": 1,
+    "storage_interval_seconds": 5
+  },
+  "c4_progression": {
+    "c3_terminal_success": true,
+    "c3_artifacts_valid": true,
+    "peak_ram_below_fraction": 0.8,
+    "peak_vram_below_fraction": 0.9,
+    "oom_or_kernel_kill": false,
+    "disk_warning": false,
+    "hard_reserve_maintained": true
+  },
+  "classification_thresholds": {
+    "comfortable_ram_below": 0.8,
+    "comfortable_vram_below": 0.9,
+    "constrained_ram_range": [0.8, 0.9],
+    "constrained_vram_range": [0.9, 0.95]
+  },
+  "forbidden": [
+    "threshold mutation after results",
+    "full-source scientific accuracy claim",
+    "runtime artifact deletion",
+    "WSL configuration change",
+    "test-range extrapolation as qualified",
+    "result-dependent library-type selection"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "protocol_version": "local-user-acceptance-v1",
+  "status": "PENDING_EXTERNAL_USERS",
+  "performed_at": null,
+  "participants": [],
+  "results": [],
+  "aggregate": {
+    "critical_task_completion_rate": null,
+    "bam_gpu_primary_comprehension_rate": null,
+    "unsupported_route_launches": null,
+    "silent_fallback_misconceptions": null,
+    "data_loss_actions": null,
+    "critical_issues": null,
+    "unresolved_major_issues": null
+  },
+  "thresholds": {
+    "critical_task_completion_rate_minimum": 0.8,
+    "bam_gpu_primary_comprehension_rate_minimum": 0.8,
+    "unsupported_route_launches_maximum": 0,
+    "silent_fallback_misconceptions_maximum": 0,
+    "data_loss_actions_maximum": 0,
+    "critical_issues_maximum": 0,
+    "unresolved_major_issues_maximum": 0
+  },
+  "contains_personal_data": false,
+  "contains_participant_results": false
+}

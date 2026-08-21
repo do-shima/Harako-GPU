@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "goal": "HARAKO_GPU_REFERENCE_AWARE_GUI_MVP",
+  "verdict": "HARAKO_GPU_REFERENCE_AWARE_GUI_MVP_QUALIFIED",
+  "start_commit": "6f6a106a4e431d6b0c0f8c1089719940f360bc30",
+  "branch": "feat/reference-aware-gui-mvp",
+  "streamlit_version": "1.60.0",
+  "source_commit": "9d8628f48226c330e159ac79c14595f2cf65a551",
+  "local_health": {"host": "127.0.0.1", "status": 200, "body": "ok"},
+  "runtime_runs": {
+    "human_recommended": {"run_id": "20260817T120140Z-fb0d7922", "state": "COMPLETED", "elapsed_seconds": 78, "artifact_verification": true},
+    "human_compare_both": {"run_id": "20260817T120506Z-b41f8c39", "state": "COMPLETED", "elapsed_seconds": 192, "artifact_verification": true},
+    "small_gpu_bam": {"run_id": "20260817T121311Z-19125d89", "state": "COMPLETED", "elapsed_seconds": 109, "nextflow_completed": 38, "artifact_verification": true},
+    "retained_failure": {"run_id": "20260817T120940Z-53c27291", "state": "FAILED", "support_bundle": true}
+  },
+  "polling": {"atomic_updates": 1000, "bounded_attempts": 6, "corrupt_json": 0, "state_regressions": 0},
+  "responsiveness_seconds": {"app_health": 0.724, "fastq_scan": 0.040, "capability": 0.009, "status_poll": 0.036, "matrix_preview": 0.017, "report_read": 0.039},
+  "gui_cli_plan_id": "fb0d79228a2e440cae76ba3363ec12b6bded8429377098aed9202257b8b4d189",
+  "tests_passed": 298,
+  "limitations": [
+    "local single-user only",
+    "no cancel or background daemon",
+    "human BAM unsupported on this host",
+    "human quantification route is CPU-only",
+    "no custom reference, DESeq2, enrichment, diagnostic, or clinical use"
+  ]
+}

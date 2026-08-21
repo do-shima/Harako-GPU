@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "classification": "HARAKO_GPU_VERSIONED_QUANTIFICATION_PROFILES_AND_CONCORDANCE_QUALIFIED",
+  "start_commit": "104240350acda27188e5b6d1976bbf44219c663f",
+  "visible_profiles": ["salmon_2_5_1_deterministic", "salmon_1_10_3_compatibility"],
+  "hidden_profiles": ["salmon_1_12_1_rejected_hidden"],
+  "wt_rep1": {
+    "processed_fragments": 47605,
+    "salmon_2_5_1_mapped": 37397,
+    "salmon_1_10_3_mapped": 37586,
+    "salmon_2_5_1_three_repeat_byte_identity": true,
+    "salmon_1_10_3_three_repeat_byte_identity_observed": false,
+    "transcript_spearman": 0.9930641360422903,
+    "gene_spearman": 0.9930641360422903,
+    "gene_top100_overlap": 0.98,
+    "gene_high_priority_zero_transitions": 2,
+    "descriptive_tier": "B_MODERATE_METHOD_SENSITIVITY",
+    "star_vs_2_5_1_spearman": 0.9755666935434446,
+    "star_vs_1_10_3_spearman": 0.9795235062302171
+  },
+  "truth_v2": {
+    "samples": 6,
+    "common_genes": 30,
+    "sample_order_exact": true,
+    "feature_order_exact": true,
+    "descriptive_fold_change_only": true,
+    "gene_effective_length_contract": "TPM_WEIGHTED_TRANSCRIPT_EFFECTIVE_LENGTH_WITH_ARITHMETIC_ZERO_MASS_FALLBACK",
+    "p_values_generated": false,
+    "deg_generated": false
+  },
+  "star_comparator": "AVAILABLE_QUALIFIED",
+  "execution_policy": "sequential",
+  "default_adoption_scope": "new internal research series only",
+  "diagnostic_or_clinical": false,
+  "runtime_artifacts_committed": false
+}

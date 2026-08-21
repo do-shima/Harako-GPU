@@ -1,0 +1,71 @@
+{
+  "schema_version": 2,
+  "classification": "HARAKO_GPU_SALMON_2_5_1_EXTERNAL_TRUTH_FAILED",
+  "start_commit": "756a1a82b3bf846a99139a3ba7d3b8cfc81c172c",
+  "preregistration_v1_sha256": "5ba814f25ce1bb1ab872a3649761f87bcb593af7797458b378933d8015c22077",
+  "preregistration_v2_sha256": "d65570ad5d47bb99ad185e792ef1e1c9616016262189b1e24e84e43c59124794",
+  "candidate": {
+    "version": "2.5.1",
+    "implementation": "rust",
+    "deterministic": true,
+    "decoder": "serial",
+    "threads": 6,
+    "image_id": "sha256:e6e64f39a479458ef6f007757498321ee5a3ef8a2227ff2af414fbe3c36e6f7f",
+    "status": "qualification_only_non_default"
+  },
+  "sirv": {
+    "accession": "SRR3497201",
+    "mix": "E0",
+    "batch": "216652830",
+    "processed_fragments": 1291246,
+    "mapped_fragments": 1290551,
+    "correlation": "NOT_APPLICABLE_ZERO_VARIANCE",
+    "identifiable_features": 63,
+    "identifiable_detected": 63,
+    "all_transcripts_detected": 69,
+    "transcript_median_absolute_log2_molar_error": 0.42051758812237083,
+    "transcript_p90_absolute_log2_molar_error": 1.4605396002692699,
+    "transcript_gate": "PASS",
+    "genes_detected": 7,
+    "gene_median_absolute_log2_molar_error": 0.18188289509844022,
+    "gene_p90_absolute_log2_molar_error": 0.5351809859244283,
+    "gene_gate": "PASS",
+    "equivalence_groups": 67,
+    "equivalence_median_relative_error": 0.2898375655177101,
+    "equivalence_p90_relative_error": 0.7867943804540132,
+    "equivalence_gate": "FAIL"
+  },
+  "ercc": {
+    "mix1_runs": ["SRR896983", "SRR896985"],
+    "mix2_runs": ["SRR897015", "SRR897017"],
+    "primary_features": 69,
+    "primary_detection_all_lanes": 1.0,
+    "pearson_range": [0.9956208764195235, 0.9958768094452437],
+    "spearman_range": [0.9939122665506642, 0.994687754831305],
+    "concentration_gate": "PASS",
+    "fold_change_spearman": 0.9682859287171082,
+    "fold_change_rmse": 0.17776241752532992,
+    "fold_change_median_absolute_error": 0.1123292678579978,
+    "fold_change_gate": "PASS"
+  },
+  "reproducibility": {
+    "samples": 5,
+    "six_thread_fresh_runs_per_sample": 3,
+    "thread_matrix": [1, 2, 4, 6],
+    "quant_sf_byte_identity": "PASS",
+    "quant_genes_sf_byte_identity": "PASS",
+    "fragment_accounting": "PASS"
+  },
+  "cross_mapping": {
+    "sirv_to_ercc_fraction": 0.0,
+    "srr896983_to_combined_fraction": 0.00024696805450801495,
+    "srr896985_to_combined_fraction": 0.00024950937889766727,
+    "srr897015_to_combined_fraction": 0.0013004798724117018,
+    "srr897017_to_combined_fraction": 0.0013156144917073541,
+    "hard_limit": 0.001,
+    "gate": "FAIL"
+  },
+  "conditional_nfcore_regression": "NOT_RUN_EXTERNAL_GATE_FAILED",
+  "default_salmon_changed": false,
+  "runtime_artifacts_committed": false
+}

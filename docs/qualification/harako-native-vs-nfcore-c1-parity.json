@@ -1,0 +1,122 @@
+{
+  "classification": "HARAKO_NATIVE_C1_ONE_PASS_TWO_PASS_STRICT_SCIENTIFIC_PARITY",
+  "schema_version": 1,
+  "repository": {
+    "source_commit": "20fd6801eac1af046ffe39b9d1b695207ce9c21c",
+    "source_tree": "b957743b2474aca21449030f88a0a13acc351602",
+    "qualification_implementation_commit": "c9f998c6ed5a0035d2b7f3cb9966ff918cdc80bb",
+    "qualification_implementation_tree": "13c596b28c0e96b79842a39b3030a016358b483b"
+  },
+  "host": {
+    "profile_id": "ubuntu_native_rtx3090_ram128_v1",
+    "receipt_sha256": "edef6fdba77cb62b0aac3debf9e624acea97d3c75be48932653f9cb0051d5c47",
+    "gpu": "NVIDIA GeForce RTX 3090",
+    "nextflow_version": "25.04.3"
+  },
+  "fixture": {
+    "accession": "ERR188044",
+    "sample": "ERR188044_C1",
+    "paired_fragments": 1000000,
+    "r1_sha256": "4a0741bea63c0165d7b85eaa786b17da5a489e81d98b9c28325fbaeed6724ca1",
+    "r2_sha256": "cd8cb74fea4fcf6e4cd5d4c9658fba1ec08b40b8e76ae02fde8bcbab1090daca"
+  },
+  "assets": {
+    "reference_pack_id": "human_grch38p14_gencode49_harako_gpu_v1",
+    "star_index_id": "star-2.7.2a-c15a9d6fe6df9716",
+    "sjdb_overhang": 74,
+    "salmon_index_id": "salmon-2.5.1-1c037278d376f40f",
+    "salmon_profile_id": "salmon_2_5_1_deterministic"
+  },
+  "runs": {
+    "N1": {
+      "workflow_backend": "harako_native_v1",
+      "alignment_profile": "parabricks_star_one_pass_workstation",
+      "plan_id": "27654ab93320c7ac3c82b3bfce457bd2c91468238838f47b0c82ad754f92c9cf",
+      "run_id": "20260820T013020Z-27654ab9",
+      "approval_hash": "1094ef219e54157000ba0a60568bb86e739e89cac4858d6cc23ae35efbe3a18c",
+      "resource_contract": {"id": "ubuntu_native_rtx3090_ram128_one_pass_42gb_v1", "memory": "42.GB", "cpus": 12},
+      "nextflow_tasks": 5,
+      "deep_artifact_verification_sha256": "7f13e8a6d2ce2c4ae937678a41e6c9ad7fe002c3e351c963099f658b0682238f",
+      "support_bundle_sha256": "a2db0b1ff51c7ab64ad02826e0b36a34a297613ddc18e2b932cb7ba12420bce8"
+    },
+    "R1": {
+      "workflow_backend": "nfcore_rnaseq_3_26_reference",
+      "alignment_profile": "parabricks_star_one_pass_workstation",
+      "plan_id": "883aed2f79544236145d99ce120afe4e327b9756df09459b5cc9bf4173011ba8",
+      "run_id": "20260820T013739Z-883aed2f",
+      "approval_hash": "a0be359c1f957f8b19b12a5d693aed9b1c016622a19889d3efc04676371dfafa",
+      "resource_contract": {"id": "ubuntu_native_rtx3090_ram128_one_pass_42gb_v1", "memory": "42.GB", "cpus": 12},
+      "nextflow_tasks": 37,
+      "deep_artifact_verification_sha256": "8e440d3c9ffa566bcc5ef374357e826dacb7599115094292c1130f7287949f9e",
+      "support_bundle_sha256": "99686320f922c68749dd725b943a2c1bc48ef5c5b6ee538e4421c645571712df",
+      "execution_note": "external controller interruption; resumed through public CLI"
+    },
+    "R2": {
+      "workflow_backend": "nfcore_rnaseq_3_26_reference",
+      "alignment_profile": "parabricks_star_two_pass_high_memory",
+      "plan_id": "9c289ade67fd334a72f7ad9ad4f9ec96e7550c2534445168d79886e1b73339e1",
+      "run_id": "20260821T011347Z-9c289ade",
+      "approval_hash": "fe551111c866aab9f926a4fa0e466bc8d4295f7b9ee85bd4bfbf6cd699eaaeb1",
+      "resource_contract": {"id": "ubuntu_native_rtx3090_ram128_two_pass_96gb_v1", "memory": "96.GB", "cpus": 12},
+      "nextflow_tasks": 37,
+      "deep_artifact_verification_sha256": "1813c84c562a627a568a2188a1b042f7ae7b72bffdaced049fa8b5ddc6df3acd",
+      "support_bundle_sha256": "757a6b1db91f31167f7dd1f1d4f7adf98071cf7867293246bbe693ffc8ffebad"
+    },
+    "N2": {
+      "workflow_backend": "harako_native_v1",
+      "alignment_profile": "parabricks_star_two_pass_high_memory",
+      "plan_id": "0bc42417b9e8493e8b1cdae59cda346c8fb673dafb2c708d9ae1e2c7934f2ad0",
+      "run_id": "20260821T013655Z-0bc42417",
+      "approval_hash": "b607d5df2f01bcd553b1867bdd8efffd8619c9c300b452a6f379bc43d6986e9e",
+      "resource_contract": {"id": "ubuntu_native_rtx3090_ram128_two_pass_96gb_v1", "memory": "96.GB", "cpus": 12},
+      "nextflow_tasks": 5,
+      "deep_artifact_verification_sha256": "e586cd541dc33d8324b4d8225a51a3520953030b217ebdb480efe6057c514d9e",
+      "support_bundle_sha256": "0b63019c2d42dbbf432552f36c6948f87491be822710136d36ab1fa3bf9eaec5"
+    }
+  },
+  "parity": {
+    "one_pass": {
+      "classification": "STRICT_SCIENTIFIC_PARITY",
+      "evidence_sha256": "c32419fdbc6073bc5b92ccd06b6f1a25d9d5c3746f365f0d56ab128e984f3838",
+      "bam_record_stream_sha256": "aa78911e6e7bd89da35dd45171a83c1a65c0b9569174a7c7917e16be240e1874",
+      "bam_records": 2053436,
+      "junction_rows": 94766
+    },
+    "two_pass": {
+      "classification": "STRICT_SCIENTIFIC_PARITY",
+      "evidence_sha256": "8bd77a3253448e7b6c817226aa002d8c6428ebf46030205f6f7fe5e9436f6bac",
+      "bam_record_stream_sha256": "2097b8cff067213d5e3bbadee3eeea55660386efa7b853d4ba119ef5d6e6cd40",
+      "bam_records": 2059010,
+      "junction_rows": 94704
+    },
+    "processed_fastq_exact": true,
+    "parabricks_scientific_argv_exact": true,
+    "star_gene_counts_all_columns_exact": true,
+    "star_gene_counts_rows": 78903,
+    "featurecounts_gene_type_rows": 38,
+    "featurecounts_counts_and_summary_exact": true,
+    "salmon_quant_and_matrix_files_exact": true,
+    "matrix_dimensions": {"transcripts": [517232, 1], "genes": [87501, 1]},
+    "multiqc_overlapping_core_metrics_exact": true,
+    "reference_additional_qc": "REFERENCE_BACKEND_ADDITIONAL_QC"
+  },
+  "representation_differences": [
+    "BAM compressed bytes and @PG command/path records",
+    "nf-core post-alignment Samtools sort provenance",
+    "fastp failed/unpaired side-output capture in the reference backend",
+    "FeatureCounts GTF/output path text",
+    "MultiQC HTML bytes and optional nf-core QC modules",
+    "task count, work layout, timing, and storage"
+  ],
+  "performance_evidence_sha256": "71b07d51aa00c8f9b213cf5574b99036f3a688395c89d982996d909b855d4dd0",
+  "public_lifecycle": ["plan create", "plan validate", "run prepare", "run inspect", "run start", "run resume", "run status", "artifacts list", "artifacts verify --deep", "support-bundle create"],
+  "support_bundle_biological_data_included": false,
+  "manual_scientific_override": false,
+  "cpu_star_fallback": false,
+  "full_size_rerun": false,
+  "salmon_version_comparison_rerun": false,
+  "cpu_star_qualified": false,
+  "native_gui_scientific_launch": "GUARDED",
+  "cross_host_equality": "NOT_EVALUATED",
+  "biological_truth": "NOT_EVALUATED"
+}

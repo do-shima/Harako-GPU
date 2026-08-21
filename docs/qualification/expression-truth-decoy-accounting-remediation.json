@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "classification": "HARAKO_GPU_SALMON_2_5_1_TECHNICALLY_QUALIFIED_EXTERNAL_TRUTH_REQUIRED",
+  "start_commit": "4c76735aca8bb5b86bcadc2fa15ccf7ad7aa6e19",
+  "original_candidate_status": "HARAKO_GPU_SALMON_2_5_1_CANDIDATE_REJECTED",
+  "truth_v1": {
+    "scientific_manifest_sha256": "2302601bc962a5d9880e93fe3f56b813355bad56817b4141da2c510b195c42c6",
+    "old_leakage_fraction": 0.194,
+    "old_value_preserved": true,
+    "classes": {"unique": 1621, "dominant": 767, "ambiguous": 30, "exact_tie": 582},
+    "reclassification": "PARTIALLY_VALID_WITH_IDENTIFIABILITY_STRATIFICATION"
+  },
+  "truth_v2": {
+    "fixture_id": "harako_truth_bulk_v2_decoy_stratified",
+    "scientific_manifest_sha256": "d59b98d2ee229b3318562e4bda1488c198701804af121abc566c592f7e8a5821",
+    "generation_repeat": "PASS",
+    "diagnostic_fragments_per_class": 20000,
+    "biological_samples": 6,
+    "biological_fragments_per_sample": 50000
+  },
+  "indices": {
+    "transcript_only_id": "0c3a4edffe5bc6f4dedd2b486e6c112e9350f01af8cdb5cff712a1a356371480",
+    "decoy_aware_id": "1955f03bf5f19f21efd90cb9a69dc85cdb7e5f321d23e43dfbcac962af13f054",
+    "decoy_count": 4,
+    "kmer": 31
+  },
+  "decoy_gates": {
+    "threshold": 0.01,
+    "relative_reduction_threshold": 0.9,
+    "unique": {"transcript_only_mass": 5108.0, "decoy_aware_mass": 0.0, "passed": true},
+    "dominant": {"transcript_only_mass": 44.0, "decoy_aware_mass": 0.0, "passed": true},
+    "ambiguous": {"decoy_aware_mass": 0.0, "gate": null},
+    "exact_tie": {"decoy_aware_mass": 19998.0, "label": "unidentifiable_assignment_mass", "gate": null}
+  },
+  "determinism": {
+    "runs": 62,
+    "diagnostic_repeats_per_sample": 10,
+    "biological_repeats_per_sample": 3,
+    "threads": [1, 2, 4, 6],
+    "byte_identity": "PASS",
+    "scientific_digest": "267ee915a286e682e497fa350eeb71434f8854bc0e42ae8f838abe86ffd22102"
+  },
+  "biological_truth": {
+    "passed": true,
+    "transcript_pearson": 1.0,
+    "transcript_spearman": 1.0,
+    "gene_pearson": 1.0,
+    "gene_spearman": 1.0,
+    "median_ape": 0.0,
+    "p95_ape": 0.0,
+    "identifiable_zero_mass_fraction": 0.0,
+    "unidentifiable_assignment_mass": 750.0,
+    "fold_change_direction_accuracy": 1.0,
+    "fold_change_rmse": 0.0,
+    "fold_change_spearman": 1.0
+  },
+  "rad_accounting": {
+    "rad_retained": true,
+    "rad_binary_parsed": false,
+    "metadata_classification": "METADATA_COUNTERS_DO_NOT_EXPOSE_INDEX_DECOY_ACCOUNTING"
+  },
+  "conditional_nfcore": {
+    "terminal_success": true,
+    "nextflow_version": "25.04.3",
+    "parabricks_success": true,
+    "bam_salmon_tasks": 0,
+    "fastq_salmon_version": "2.5.1",
+    "salmon_processed": 47605,
+    "salmon_mapped": 37397,
+    "star_unique_mapped_percent": 88.04,
+    "bam_quickcheck": true,
+    "tximport": "PASS",
+    "multiqc": "PASS",
+    "resume_cached": 43,
+    "resume_regenerated": ["MULTIQC"],
+    "quant_sf_sha256": "44020ba1bc41c8d395fb41be44796c9e0877a42153101845e6060a3a3fd5c31c"
+  },
+  "external_truth": "NOT_RUN",
+  "default_salmon_changed": false,
+  "candidate_image_pushed": false,
+  "runtime_artifacts_committed": false,
+  "full_size_dataset_run": false
+}

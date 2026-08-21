@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "source_private_repository_name": "do-shima/Harako-GPU",
+  "source_private_merge_commit": "51e8edef784dd7f6947a7bb4a981bf1ab5ae17c9",
+  "source_private_merge_tree": "1abb95181c97632aed7e879f767f847de5fb89d4",
+  "public_version": "0.1.0a1",
+  "display_version": "v0.1.0-alpha.1",
+  "inventory_excludes_this_manifest": true,
+  "inventory_file_count": 405,
+  "inventory_total_bytes": 3206537,
+  "file_inventory_algorithm": "sha256(compact-json(sorted[{path,bytes,sha256}]))",
+  "file_inventory_sha256": "2783f02dc6ecedc6b905660c6ae07d1c88cd7cd44e0b90845b4ca02483e73ed9",
+  "tree_content_algorithm": "sha256(concat(path,NUL,sha256,NUL,bytes,LF))",
+  "public_snapshot_tree_content_sha256": "c6ed4b90ec040b4d60eb78f8f9d3b75117e917d3e46654618020bb98eb7fa58f",
+  "excluded_path_categories": [
+    "version-control history and metadata",
+    "internal operating instructions",
+    "private full-history publication audit details",
+    "internal one-off qualification harnesses",
+    "runtime evidence and support bundles",
+    "development caches and build artifacts"
+  ],
+  "qualification_summary_sha256": {
+    "native_high_memory_full_human_one_pass": "4c8017e5f37fe9b530c41ca18e56ac7bc5890ff53534910dd252d720508cca68",
+    "native_high_memory_full_human_two_pass": "6f1511fe70997337971f2849d9b7ee0793d9b57692510788173d69419baed1db",
+    "salmon_1_10_3_vs_2_5_1_c1_comparison": "00ac39f2b18cb2b4053bb1c0141f523d9294707e5eb029bdf876b76d79972d3b",
+    "harako_native_vs_nfcore_c1_parity": "8ee18a091408dc4433725ed7515bb3b2210395beede91487ce0adebbc4a37ccc",
+    "ubuntu_native_gui_scientific_launch": "e6ce232a2c7a010705cf788afe0cd510e9b93685bc277fda45a12fff56ac7eee"
+  },
+  "contains_credentials": false,
+  "contains_biological_data": false,
+  "history_included": false
+}

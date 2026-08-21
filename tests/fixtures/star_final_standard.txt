@@ -1,0 +1,10 @@
+                          Number of input reads | 49747
+                   Uniquely mapped reads number | 43442
+                        Uniquely mapped reads % | 87.33%
+        Number of reads mapped to multiple loci | 986
+             % of reads mapped to multiple loci | 1.98%
+        Number of reads mapped to too many loci | 0
+             % of reads mapped to too many loci | 0.00%
+       % of reads unmapped: too many mismatches | 0.00%
+                 % of reads unmapped: too short | 4.18%
+                     % of reads unmapped: other | 6.51%

@@ -1,0 +1,10 @@
+{
+  "salmon_version": "1.10.3",
+  "mapping_type": "alignment",
+  "library_types": ["ISR"],
+  "num_processed": 33024,
+  "num_mapped": 33024,
+  "num_valid_targets": 4,
+  "seq_bias_correct": false,
+  "gc_bias_correct": false
+}

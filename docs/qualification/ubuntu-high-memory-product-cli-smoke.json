@@ -1,0 +1,73 @@
+{
+  "classification": "PUBLIC_PRODUCT_CLI_ONE_PASS_TWO_PASS_QUALIFIED",
+  "cross_host_equality": "NOT_EVALUATED",
+  "fixture": {
+    "accession": "ERR188044",
+    "paired_fragments": 1000000,
+    "r1_sha256": "4a0741bea63c0165d7b85eaa786b17da5a489e81d98b9c28325fbaeed6724ca1",
+    "r2_sha256": "cd8cb74fea4fcf6e4cd5d4c9658fba1ec08b40b8e76ae02fde8bcbab1090daca"
+  },
+  "host_profile_id": "ubuntu_native_rtx3090_ram128_v1",
+  "host_receipt_sha256": "edef6fdba77cb62b0aac3debf9e624acea97d3c75be48932653f9cb0051d5c47",
+  "manual_scientific_override": false,
+  "p1": {
+    "alignment_profile_id": "parabricks_star_one_pass_workstation",
+    "analysis_series_id": "3abef4ed82572eb0d4e99d20c05163e3946bba69047391ceed7e49eff7d69f3a",
+    "approval_hash": "eb1862de95735775df0ae49b2137684be7ca99405bd823068b5979be535a3e96",
+    "artifact_deep_verification": "PASS",
+    "bam": {"records": 2053436, "sha256": "ffa614905bf5325eb9ecefbd0e8d0ccc4e04b95d42065a30745b408f0e6725b6", "size_bytes": 127006635},
+    "featurecounts": {"feature_type": "exon", "group_type": "gene_type"},
+    "junction_rows": 94766,
+    "matrix_dimensions": {"genes": [87501, 1], "transcripts": [517232, 1]},
+    "multiqc": "PASS",
+    "nextflow_tasks": {"completed": 37, "failed": 0},
+    "parabricks_args": ["--low-memory", "--quantMode TranscriptomeSAM GeneCounts", "--sjdb-overhang 74", "--two-pass-mode None"],
+    "plan_id": "a3f5a2ab18757a88729ffffe44b5318f90b3ea56b06753f5ef9e5fefc733d123",
+    "resource_contract": {"cpus": 12, "id": "ubuntu_native_rtx3090_ram128_one_pass_42gb_v1", "memory": "42.GB"},
+    "run_id": "20260819T131703Z-a3f5a2ab",
+    "salmon": {"fragments_per_second": 36876.95250056861, "mapped_fragments": 455691, "mapped_percent": 47.51839979644997, "processed_fragments": 958978, "profile_id": "salmon_2_5_1_deterministic", "version": "2.5.1", "wall_seconds": 26.004806118000488},
+    "star_gene_counts_rows": 78903,
+    "state": "COMPLETED",
+    "support_bundle": {"biological_data_included": false, "status": "PASS"}
+  },
+  "p2": {
+    "alignment_profile_id": "parabricks_star_two_pass_high_memory",
+    "analysis_series_id": "211760be61774ed3eeaa6c491e0aaddc3a44d78770a5ada407b066b0a20c68f6",
+    "approval_hash": "1783b40b6b08fd3a8ca028225d20c79dcd46e925d9872fa8e3ffb265fb11e868",
+    "artifact_deep_verification": "PASS",
+    "bam": {"records": 2059010, "sha256": "0656d2ec0a52d8ce8262fedc7573d75b075a66aac3b669f8bfb423831eb92efb", "size_bytes": 127184641},
+    "featurecounts": {"feature_type": "exon", "group_type": "gene_type"},
+    "junction_rows": 94704,
+    "matrix_dimensions": {"genes": [87501, 1], "transcripts": [517232, 1]},
+    "multiqc": "PASS",
+    "nextflow_tasks": {"completed": 37, "failed": 0},
+    "parabricks_args": ["--low-memory", "--quantMode TranscriptomeSAM GeneCounts", "--sjdb-overhang 74", "--two-pass-mode Basic"],
+    "plan_id": "0a06c07264e94d69544962aa93c71d64306800e9f1c8fddb54e730ec640cbf68",
+    "resource_contract": {"cpus": 12, "id": "ubuntu_native_rtx3090_ram128_two_pass_96gb_v1", "memory": "96.GB"},
+    "run_id": "20260819T132754Z-0a06c072",
+    "salmon": {"fragments_per_second": 38351.69994780688, "mapped_fragments": 455691, "mapped_percent": 47.51839979644997, "processed_fragments": 958978, "profile_id": "salmon_2_5_1_deterministic", "version": "2.5.1", "wall_seconds": 25.00483684699975},
+    "star_gene_counts_rows": 78903,
+    "state": "COMPLETED",
+    "support_bundle": {"biological_data_included": false, "status": "PASS"}
+  },
+  "pipeline": {"commit": "e7ca46272c8f9d5ceee3f71759f4ba551d3217a4", "nextflow_version": "25.04.3", "version": "3.26.0"},
+  "product_docker_provenance": "VERIFIED_BY_INSTALLED_HOST_RECEIPT",
+  "reference": {"pack_id": "human_grch38p14_gencode49_harako_gpu_v1", "salmon_2_5_1_index_id": "salmon-2.5.1-1c037278d376f40f", "star_index_id": "star-2.7.2a-c15a9d6fe6df9716"},
+  "repository": {"commit": "74cffb8fa8c40be3fcf2a99f60c4563ed88fbd88", "starting_commit": "51cc22440e695864293f870a78d1282d7f402338", "starting_tree": "0b57617ddaf79008ef94d2c0a81cc161164de9dc", "tree": "b95b1cbfb96c2228e1f552a22954d0e5b25daa1d"},
+  "salmon_1_10_3": {
+    "asset_status": "PENDING_TARGETED_ASSET_HANDOFF",
+    "builder_version": "1.10.3",
+    "expected_image_identity": "sha256:f83ebb158845ee8138d793347f83b92c75e83c58dd8f4600c6fea2a2453ef08e",
+    "expected_index_id": "salmon-1.10.3-52224ad2355cc52b",
+    "profile_id": "salmon_1_10_3_compatibility",
+    "profile_status": "VISIBLE_EXECUTABLE_BOUNDED_NUMERICAL_COMPATIBILITY",
+    "q1_q2": "NOT_RUN_ASSET_ABSENT"
+  },
+  "schema_version": 1,
+  "task_image_closure": {
+    "bam_validator": {"identity": "sha256:b762af53a769d82aa0111bfbc4574c8bb8c07f9257a8e09c8403c4f540a10a07", "identity_kind": "image_id", "process_role": "SAMTOOLS", "reference": "community.wave.seqera.io/library/htslib_samtools:1.23.1--5b6bb4ede7e612e5"},
+    "closure_sha256": "4fc56c8eb1a0a7c7eea75f8dfbffbc459a9d0698e20313e094105e714a3c31bb"
+  },
+  "tested_public_lifecycle": ["plan create", "plan validate", "run prepare", "run inspect", "run start", "run resume", "run status", "artifacts list", "artifacts verify --deep", "support-bundle create"],
+  "ui_native_scientific_launch": "GUARDED"
+}

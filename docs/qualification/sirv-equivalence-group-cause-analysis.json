@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "historical_result_preserved": true,
+  "classification": "METRIC_CONTRACT_INVALID_FOR_ALGORITHMIC_REJECTION",
+  "gate_scale": {
+    "classification": "INCOMPARABLE_METRICS",
+    "transcript_median_log2_0_75_relative_equivalents": {"over": 0.6817928305, "under": 0.4053964425},
+    "transcript_p90_log2_1_50_relative_equivalents": {"over": 1.8284271247, "under": 0.6464466094},
+    "group_median_relative_0_25_log2_equivalents": {"over": 0.3219280949, "under": 0.4150374993},
+    "group_p90_relative_0_50_log2_equivalents": {"over": 0.5849625007, "under": 1.0},
+    "finding": "relative group thresholds are asymmetric on the log2 scale and materially stricter than the transcript thresholds"
+  },
+  "partition": {
+    "transcripts": 69,
+    "groups": 67,
+    "singleton_groups": 66,
+    "multi_transcript_groups": 1,
+    "duplicate_membership": 0,
+    "missing_transcripts": 0,
+    "expected_fraction_sum": 1.0,
+    "estimated_fraction_sum": 1.0,
+    "zero_denominators": 0,
+    "valid_partition": true
+  },
+  "salmon_2_5_1": {
+    "all_groups": {"median_relative_error": 0.2898375655, "p90_relative_error": 0.7867943805, "gate": "FAIL"},
+    "singleton_groups": {"median_relative_error": 0.3078716, "p90_relative_error": 0.7868596, "gate": "FAIL"},
+    "multi_transcript_group": {"relative_error": 0.1341526, "gate": "PASS"},
+    "sirv502_group_relative_error": 0.99921,
+    "excluding_sirv502_diagnostic": {"median_relative_error": 0.2882771, "p90_relative_error": 0.7827988, "gate": "FAIL"}
+  },
+  "sirv502": {
+    "classification": "PARTIAL_CONTRIBUTOR",
+    "reference_length": 2014,
+    "aligned_records": 39229,
+    "mean_coverage": 2332.254716981132,
+    "coverage_cv": 0.5802945101479536,
+    "zero_coverage_fraction": 0.044190665342601784,
+    "quartile_mean_coverage": [546.5844930417495, 2711.244532803181, 3257.62027833002, 2811.6633663366338],
+    "official_affected_interval": "NOT_SPECIFIED_IN_BATCH_AMENDMENT"
+  },
+  "reference_competition": {
+    "classification": "LIBRARY_OR_METRIC_CONTRIBUTOR",
+    "combined_median_relative_error": 0.2898375655,
+    "sirv_only_median_relative_error": 0.2898375655,
+    "combined_p90_relative_error": 0.7867943805,
+    "sirv_only_p90_relative_error": 0.7867943805,
+    "combined_human_tpm": 0.0,
+    "combined_human_numreads": 0.0
+  },
+  "version_comparison": {
+    "classification": "SALMON_1X_AND_2X_SHARED",
+    "salmon_1_10_3": {"median": 0.28658, "p90": 0.800476, "gate": "FAIL"},
+    "salmon_1_12_1": {"median": 0.342464, "p90": 1.0, "gate": "FAIL"},
+    "salmon_2_5_1": {"median": 0.2898375655, "p90": 0.7867943805, "gate": "FAIL"},
+    "independent_quantifier": "NOT_RUN_NOT_LOCALLY_AVAILABLE"
+  },
+  "sirvsuite": "NOT_RUN_OPTIONAL",
+  "thresholds_changed": false,
+  "original_fail_reclassified_as_pass": false
+}
