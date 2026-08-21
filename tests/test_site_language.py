@@ -140,15 +140,15 @@ def test_japanese_prose_uses_natural_version_and_workflow_terms() -> None:
     for phrase in ("receiptで", "claim", "silent merge"):
         assert phrase not in text
     assert "数値は完全には一致しません" in text
-    assert "これは単純な丸め誤差だけを指すものではありません" in text
+    assert "これは、単純な丸め誤差だけを指すものではありません" in text
 
 
 def test_salmon_compatibility_is_explained_without_rejection_language() -> None:
     english = combined(ENGLISH_PAGES)
     japanese = combined(JAPANESE_PAGES)
     assert "Salmon 1.10.3 remains available for compatibility" in english
-    assert "highly concordant, but not numerically identical" in english
-    assert "Salmon 1.10.3も互換性のため選択して実行できます" in japanese
+    assert "highly concordant, but the numerical results were not identical" in english
+    assert "Salmon 1.10.3を選択することもできます" in japanese
     combined_text = f"{english}\n{japanese}".casefold()
     assert "salmon 1.10.3 is rejected" not in combined_text
     assert "salmon 1.10.3はrejected" not in combined_text
@@ -164,7 +164,7 @@ def test_release_link_and_user_value_statements_are_bilingual() -> None:
     )
     assert not any(value in english_install + japanese_install for value in stale)
     assert "For laboratories that already operate a compatible NVIDIA GPU workstation" in parse("index.html").text
-    assert "すでに適合するNVIDIA GPU環境を運用している研究室では" in parse("ja/index.html").text
+    assert "すでに要件を満たすNVIDIA GPU環境を運用している研究室では" in parse("ja/index.html").text
 
 
 def test_titles_and_descriptions_are_nonempty_and_language_appropriate() -> None:
@@ -200,8 +200,8 @@ def test_critical_benchmark_values_and_claim_limits_remain_visible() -> None:
         "554",
     ):
         assert value in english and value in japanese
-    assert "No general speedup ratio is claimed" in english
-    assert "生物学的な正解" in japanese
+    assert "general GPU speedup estimate" in english
+    assert "生物学的な真値" in japanese
     assert "CPU版に対する速度向上" in combined(JAPANESE_PAGES)
 
 

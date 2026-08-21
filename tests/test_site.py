@@ -220,12 +220,13 @@ def test_public_claim_boundaries_and_version_pinning_copy() -> None:
     assert not re.search(r"\d+(?:\.\d+)?\s*[x×]\s*(?:cpu|faster)", lowered)
     assert "salmon 1.10.3 is rejected" not in lowered
     assert "salmon 1.10.3はrejected" not in lowered
-    assert "no general speedup ratio is claimed" in lowered
+    assert "general gpu speedup estimate" in lowered
     english = (SITE / "methods/index.html").read_text(encoding="utf-8")
-    assert "Results generated with different Salmon versions can differ because of software implementation, index construction, and execution behavior—not only because of floating-point rounding." in english
+    assert "Differences caused by the software version, implementation, index, and execution conditions can be confounded with biological differences between experimental groups." in english
+    assert "This concern is not limited to floating-point rounding." in english
     japanese = (SITE / "ja/methods/index.html").read_text(encoding="utf-8")
-    assert "Salmonのバージョンを固定しない場合、ソフトウェアのバージョン、実装、インデックス、実行条件に由来する数値差が、実験条件による差に混入する可能性があります。" in japanese
-    assert "これは単純な丸め誤差だけを指すものではありません。" in japanese
+    assert "Salmonのバージョンを固定しない場合、ソフトウェアのバージョン、実装、インデックス、実行条件に由来する数値差が、実験条件間の生物学的な差と区別できなくなる可能性があります。" in japanese
+    assert "これは、単純な丸め誤差だけを指すものではありません。" in japanese
 
 
 def test_site_contains_no_private_path_or_biological_binary() -> None:
