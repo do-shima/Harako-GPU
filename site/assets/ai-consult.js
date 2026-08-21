@@ -6,7 +6,7 @@
   const button = document.createElement("button");
   button.type = "button";
   button.className = "evidence-toggle";
-  button.textContent = language === "ja" ? "証拠境界を見る" : "Show evidence boundary";
+  button.textContent = language === "ja" ? "検証範囲を確認する" : "Review validation limits";
   button.setAttribute("aria-expanded", "false");
   button.addEventListener("click", () => {
     const visible = note.hasAttribute("hidden");
