@@ -146,9 +146,9 @@ def test_cpu_relationship_and_required_navigation_are_public() -> None:
         assert CPU_SITE in text
         assert "https://github.com/do-shima/Harako-GPU" in text
     english = (SITE / "index.html").read_text(encoding="utf-8")
-    assert "Harako-GPU does not supersede Harako-RNAseq" in english
+    assert "Harako-GPU does not replace Harako-RNAseq" in english
     assert "Harako-RNAseq (CPU)" in english
-    assert "GPU-assisted BAM/junction/GeneCounts" in english
+    assert "GPU-assisted BAM, junction, and GeneCounts generation" in english
 
 
 def test_accessible_svg_charts_have_adjacent_html_tables() -> None:
@@ -221,9 +221,11 @@ def test_public_claim_boundaries_and_version_pinning_copy() -> None:
     assert "salmon 1.10.3 is rejected" not in lowered
     assert "salmon 1.10.3はrejected" not in lowered
     assert "no general speedup ratio is claimed" in lowered
+    english = (SITE / "methods/index.html").read_text(encoding="utf-8")
+    assert "Results generated with different Salmon versions can differ because of software implementation, index construction, and execution behavior—not only because of floating-point rounding." in english
     japanese = (SITE / "ja/methods/index.html").read_text(encoding="utf-8")
-    assert "Salmonのversionを固定しなければ、software versionに依存する数値差やmethod-dependent variationが、実験条件による差に混入する可能性があります。" in japanese
-    assert "ここでいう差は、単純な丸め誤差だけではなく、version、implementation、index、execution behaviorに依存する差を含みます。" in japanese
+    assert "Salmonのバージョンを固定しない場合、ソフトウェアのバージョン、実装、インデックス、実行条件に由来する数値差が、実験条件による差に混入する可能性があります。" in japanese
+    assert "これは単純な丸め誤差だけを指すものではありません。" in japanese
 
 
 def test_site_contains_no_private_path_or_biological_binary() -> None:
